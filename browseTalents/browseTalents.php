@@ -13,11 +13,25 @@
 </head>
 <div id="mainContainer">
     <header>
-        <!-- Paste Iarina's Header Code
-        For now using color blocks for header-->
+        <!-- Paste Iarina's header code
+        For now using color block for header-->
         <h1>Placeholder for header</h1>
     </header>
+    <!-- Start of talent categories section
+         "cat" = "categories"-->
     <main>
+        <div id="catContainer">
+            <div id="musicCat">
+                <h1>Concerts</h1>
+            </div>
+            <div id="partiesCat">
+                <h1>Parties</h1>
+            </div>
+            <div id="othersCat">
+                <h1>Others</h1>
+            </div>
+
+        </div>
 
     </main>
 </div>
