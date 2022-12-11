@@ -10,37 +10,52 @@
     <body>
         <div id="container">
             <main>
+                <div id="mainTitle">
+                    <h2>HOT EVENT</h2>
+                    <h1>Annual Emmen Music Festival 2023</h1>
+                </div>
 
-                <h3>HOT EVENT</h3>
-                <h1>Annual Emmen Music Festival 2023</h1>
-                <p><b>May 20th, 2023</b></p>
-                <p>Radhuisplein</p>
-                <p>7811 DC, Emmen</p>
+                <div id="mainSubtitle">
+                    <p><b>May 20th, 2023</b></p>
+                    <p>Radhuisplein</p>
+                    <p>7811 DC, Emmen</p>
+                </div>
 
-                <a href="">FIND OUT MORE</a>
+                <a href="" id="mainLink"><h2>FIND OUT MORE</h2></a>
 
             </main>
 
             <aside>
-                <h4>UPCOMING EVENTS</h4>
+                <h1>UPCOMING EVENTS</h1>
 
                 <div class="event">
-                    <p>Date</p>
-                    <h2>EVENT 1</h2>
-                    <a href="">More Info</a>
+                    <div class="asideText">
+                        <p>Date</p>
+                        <h2>EVENT 1</h2>
+                    </div>
+
+                    <a href="" class="asideLink">More Info</a>
                 </div>
 
                 <div class="event">
-                    <p>Date</p>
-                    <h2>EVENT 2</h2>
-                    <a href="">More Info</a>
+                    <div class="asideText">
+                        <p>Date</p>
+                        <h2>EVENT 2</h2>
+                    </div>
+
+                    <a href="" class="asideLink">More Info</a>
                 </div>
 
                 <div class="event">
-                    <p>Date</p>
-                    <h2>EVENT 3</h2>
-                    <a href="">More Info</a>
+                    <div class="asideText">
+                        <p>Date</p>
+                        <h2>EVENT 3</h2>
+                    </div>
+
+                    <a href="" class="asideLink">More Info</a>
                 </div>
+
+                <p></p>
             </aside>
         </div>
     </body>
