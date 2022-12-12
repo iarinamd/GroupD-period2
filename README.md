@@ -6,7 +6,7 @@ An NHL Stenden project in cooperation with an imaginary event compay that is rep
 ## Group Members 
 * Iarina Dicu (team leader): iarina.dicu@student.nhlstenden.com
 * Alex Schuepbach (secretary): alex.schuepbach@student.nhlstenden.com
-* Izabela rybinska: izabela.rybinska@student.nhlstenden.com
+* Izabela Rybinska: izabela.rybinska@student.nhlstenden.com
 * Alicia Rodriguez: alicia.rodriguez.benaches@student.nhlstenden.com
 * Patrick Beligeanu: patrick.beligeanu@student.nhlstenden.com
 * Alex Mednov: alex.mednov@student.nhlstenden.com
