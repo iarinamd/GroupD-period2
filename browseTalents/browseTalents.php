@@ -8,7 +8,7 @@
     <!-- Linking CSS and meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.2.css">
     <title>Browse Talents</title>
 </head>
 <div id="mainContainer">
@@ -23,6 +23,10 @@
         <div id="catContainer">
             <div id="musicCat">
                 <h1>Concerts</h1>
+                <!--<img src="img/event_images/concerts/concert_5.jpg"
+                     id="imgMusicCat"
+                     alt="Drum set">-->
+
             </div>
             <div id="partiesCat">
                 <h1>Parties</h1>
