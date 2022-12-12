@@ -9,7 +9,7 @@
     <body>
         <div id="container">
             <div id="talent1">
-                <img class="picture" alt="talent picture">
+                <img class="picture1" src="images/b_3.jpg" alt="talent picture">
                 <div class="information">
                     <div class="description">
 
@@ -23,10 +23,10 @@
 
                     </div>
                 </div>
-                <img class="picture" alt="talent picture">
+                <img class="picture2" src="images/a_1.jpg" alt="talent picture">
             </div>
             <div id="talent3">
-                <img class="picture" alt="talent picture">
+                <img class="picture3" src="images/c_1.jpg" alt="talent picture">
                 <div class="information">
                     <div class="description">
 
