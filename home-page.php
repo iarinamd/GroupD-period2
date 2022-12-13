@@ -11,27 +11,32 @@
         <div id="container">
             <main>
                 <div id="mainTitle">
-                    <h2>HOT EVENT</h2>
+                    <h3>HOT EVENT</h3>
                     <h1>Annual Emmen Music Festival 2023</h1>
                 </div>
 
                 <div id="mainSubtitle">
-                    <p><b>May 20th, 2023</b></p>
+                    <h4><b>May 20th, 2023</b></h4>
                     <p>Radhuisplein</p>
                     <p>7811 DC, Emmen</p>
                 </div>
 
-                <a href="" id="mainLink"><h2>FIND OUT MORE</h2></a>
+                <div id="featuredArtists">
+                    <h2>Featured Artists</h2>
+                    <h3>Artist1, Artist2, Artist3</h3>
+                </div>
+
+                <a href="" id="mainLink"><h3>FIND OUT MORE</h3></a>
 
             </main>
 
             <aside>
-                <h2>UPCOMING EVENTS</h2>
+                <h3>UPCOMING EVENTS</h3>
 
                 <div class="event">
                     <div class="asideText">
                         <p>Date</p>
-                        <h2>EVENT 1</h2>
+                        <h3>EVENT 1</h3>
                     </div>
 
                     <a href="" class="asideLink">More Info</a>
@@ -40,7 +45,7 @@
                 <div class="event">
                     <div class="asideText">
                         <p>Date</p>
-                        <h2>EVENT 2</h2>
+                        <h3>EVENT 2</h3>
                     </div>
 
                     <a href="" class="asideLink">More Info</a>
@@ -49,7 +54,7 @@
                 <div class="event">
                     <div class="asideText">
                         <p>Date</p>
-                        <h2>EVENT 3</h2>
+                        <h3>EVENT 3</h3>
                     </div>
 
                     <a href="" class="asideLink">More Info</a>

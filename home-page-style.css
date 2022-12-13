@@ -26,8 +26,20 @@ h1{
 }
 
 h2{
+    font-size: 36pt;
+    font-family: "Montserrat Bold", sans-serif;
+    margin: 0;
+}
+
+h3{
     font-size: 24pt;
     font-family: "Montserrat SemiBold", sans-serif;
+    margin: 0;
+}
+
+h4{
+    font-size: 16pt;
+    font-family: "Montserrat", sans-serif;
     margin: 0;
 }
 
@@ -45,8 +57,8 @@ a:link, a:visited, a:hover{
     color: white;
     text-decoration: none;
 
-    background-color: #BF8EE5;
-    padding: 0.25rem;
+    background-color: #7B5C94;
+    padding: 1%;
 }
 
 main{
@@ -60,16 +72,35 @@ main{
     justify-content: space-around;
     padding-top: 0.5rem;
 
-    background-color: #7B5C94;
+    background-image: url("img/concerts/concert_4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+
     color: white;
 }
 
 #mainTitle{
-    margin: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
 }
 
 #mainSubtitle{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+#featuredArtists{
     margin: 1rem;
+    text-align: end;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    align-self: end;
 }
 
 #mainLink{
@@ -102,6 +133,7 @@ aside > h2{
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     background-color: #BEBEBE;
     padding: 0.5rem;
