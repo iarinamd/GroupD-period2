@@ -22,6 +22,7 @@
     <main>
         <div class="catContainer">
             <div class="musicCat">
+                <!-- will add links later-->
                 <h1 class="concerts"><a href="#">Concerts</a></h1>
             </div>
             <div class="partiesCat">
