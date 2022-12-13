@@ -9,12 +9,16 @@
 </head>
 <body>
     <div id = "grid_container">
-        <footer>
-            Header
+        <header>
+            <img src="img/E3T_LOGO_1.png" alt="E3T_logo">
             <nav>
-                nav
+                <ul>
+                    <li>BROWSE TALENTS</li>
+                    <li>EVENTS</li>
+                    <li>LOGIN</li>
+                </ul>
             </nav>
-        </footer>
+        </header>
         <div id = "main_body">
             main body
 
