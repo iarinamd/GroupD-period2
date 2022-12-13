@@ -30,7 +30,7 @@
                             <p>-> Specialty3</p>
                         </div>
                         <div class="button">
-                            <p>Find out more</p>
+                            Find out more
                         </div>
                     </div>
 
@@ -57,7 +57,7 @@
                             <p>-> Specialty3</p>
                         </div>
                         <div class="button">
-                            <p>Find out more</p>
+                            Find out more
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
             </div>
             <div id="talent3">
                 <img class="picture3" src="images/c_1.jpg" alt="talent picture">
-                <div class="information1">
+                <div class="information3">
                     <div class="column21">
                         <h1>Talent's name</h1>
                         <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
@@ -85,7 +85,7 @@
                             <p>-> Specialty3</p>
                         </div>
                         <div class="button">
-                            <p>Find out more</p>
+                            Find out more
                         </div>
                     </div>
             </div>
