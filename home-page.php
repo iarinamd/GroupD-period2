@@ -26,7 +26,7 @@
             </main>
 
             <aside>
-                <h1>UPCOMING EVENTS</h1>
+                <h2>UPCOMING EVENTS</h2>
 
                 <div class="event">
                     <div class="asideText">
