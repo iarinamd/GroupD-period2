@@ -61,20 +61,26 @@ p{
 }
 
 .column21{
-    background-color: aliceblue;
     width: 60%;
 }
 .column22{
-    width: 10%;
+    width: 40%;
     font-size: 24px;
 }
-.column23{
-    width: 30%;
-    font-size: 24px;
+.specialty{
+    word-spacing: 20px;
 }
 .button{
+    height: 50px;
     background-color: purple;
+    color: white;
     margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    margin-left: 30px
 }
 .information3{
     width: 1000px;
