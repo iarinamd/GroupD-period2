@@ -8,12 +8,14 @@
 
     <body>
         <div id="container">
-            <div id="talent1">
+            <! horizontal box including image and description>
+            <div id="talent">
                 <img class="picture1" src="images/b_3.jpg" alt="talent picture">
-                <div class="information1">
-                    <div class="column21">
+                <! Grey box for the info about the talent>
+                <div class="information">
+                    <div class="description"> <! left column>
                         <h1>Talent's name</h1>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
                             leo, sed blandit felis. Sed ultricies consectetur quam quis efficitur. Etiam id magna id
                             felis suscipit aliquet. Ut eros enim, interdum non ipsum id, suscipit congue ex. Duis laoreet,
                             lorem quis egestas imperdiet, urna justo pharetra ex, ut laoreet nisl nibh sed neque.
@@ -23,8 +25,8 @@
                             ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus dignissim
                             aliquet mauris, quis pellentesque justo semper sed.</p>
                     </div>
-                    <div class="column22">
-                        <div class="specialty">
+                    <div class="specialty"> <! right column>
+                        <div>
                             <p>-> Specialty1</p>
                             <p>-> Specialty2</p>
                             <p>-> Specialty3</p>
@@ -36,11 +38,13 @@
 
                 </div>
             </div>
-            <div id="talent2">
+            <! horizontal box including image and description>
+            <div id="talent">
+                <! different class as margins are different>
                 <div class="information2">
-                    <div class="column21">
+                    <div class="description"> <! left column>
                         <h1>Talent's name</h1>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
                             leo, sed blandit felis. Sed ultricies consectetur quam quis efficitur. Etiam id magna id
                             felis suscipit aliquet. Ut eros enim, interdum non ipsum id, suscipit congue ex. Duis laoreet,
                             lorem quis egestas imperdiet, urna justo pharetra ex, ut laoreet nisl nibh sed neque.
@@ -50,8 +54,8 @@
                             ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus dignissim
                             aliquet mauris, quis pellentesque justo semper sed.</p>
                     </div>
-                    <div class="column22">
-                        <div class="specialty">
+                    <div class="specialty"><! right column>
+                        <div>
                             <p>-> Specialty1</p>
                             <p>-> Specialty2</p>
                             <p>-> Specialty3</p>
@@ -63,12 +67,14 @@
                 </div>
                 <img class="picture2" src="images/a_1.jpg" alt="talent picture">
             </div>
-            <div id="talent3">
+            <! horizontal box including image and description>
+            <div id="talent">
                 <img class="picture3" src="images/c_1.jpg" alt="talent picture">
-                <div class="information3">
-                    <div class="column21">
+                <! Grey box for the info about the talent>
+                <div class="information">
+                    <div class="description"> <! left column>
                         <h1>Talent's name</h1>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
                             leo, sed blandit felis. Sed ultricies consectetur quam quis efficitur. Etiam id magna id
                             felis suscipit aliquet. Ut eros enim, interdum non ipsum id, suscipit congue ex. Duis laoreet,
                             lorem quis egestas imperdiet, urna justo pharetra ex, ut laoreet nisl nibh sed neque.
@@ -78,8 +84,8 @@
                             ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus dignissim
                             aliquet mauris, quis pellentesque justo semper sed.</p>
                     </div>
-                    <div class="column22">
-                        <div class="specialty">
+                    <div class="specialty"> <! right column>
+                        <div>
                             <p>-> Specialty1</p>
                             <p>-> Specialty2</p>
                             <p>-> Specialty3</p>
@@ -88,6 +94,7 @@
                             Find out more
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </body>
