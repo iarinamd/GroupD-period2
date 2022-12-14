@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="li-profile.css">
+    <link rel="stylesheet" type="text/css" href="css/li-profile.css">
 </head>
 <body>
 <div id="maincontainer">
