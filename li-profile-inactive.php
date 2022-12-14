@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Profile</title>
-  <link rel="stylesheet" type="text/css" href="li-profile-inactive.css">
+  <link rel="stylesheet" type="text/css" href="css/li-profile-inactive.css">
 </head>
 <body>
 <div id="maincontainer">
@@ -20,7 +20,7 @@
       </div>
 
       <div class="top2">
-        <button><a href="li-profile-edit.php">Edit Profile</a></button>
+        <button><a>Edit Profile</a></button>
       </div>
 
     </div>
