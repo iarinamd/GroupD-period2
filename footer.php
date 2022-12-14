@@ -13,12 +13,10 @@
             <span>+31 123456789 contact@e3t.com </span>
             <span>+31 987654321 1111AA, Emmen</span>
         </div>
-
         <div class="openHours">
             <h3>OPENING HOURS</h3>
             <span>Monday - Saturday: 9:30 - 18:00</span>
-                <span>Sunday: Closed</span>
-
+            <span>Sunday: Closed</span>
         </div>
         <div class="iconImg">
             <a href="#">

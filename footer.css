@@ -31,6 +31,7 @@ footer{
 span{
     display:block;
 }
+
 .openHours{
     grid-column:2/3;
     color: #FFFCFC;
@@ -54,6 +55,5 @@ span{
 }
 img{
     width: 30%;
-
 }
 
