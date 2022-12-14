@@ -19,13 +19,13 @@
             <span>Sunday: Closed</span>
         </div>
         <div class="iconImg">
-            <a href="#">
+            <a href="https://nl-nl.facebook.com/">
                 <img class="facebookImg" src="image/facebook_logo.png" alt="facebook logo">
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/">
                 <img class="instagramImg" src="image/instagram_logo.png" alt="instagram logo">
             </a>
-            <a href="#">
+            <a href="https://www.tiktok.com/login">
                 <img class="tiktokImg" src="image/tiktok_logo.png" alt="tiktok logo">
             </a>
         </div>
