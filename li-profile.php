@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/li-profile.css">
 </head>
 <body>
+
 <div id="maincontainer">
     <header>
         <h1>Header</h1> <h1>Header</h1> <h1>Header</h1> <h1>Header</h1>
