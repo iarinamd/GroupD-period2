@@ -1,7 +1,7 @@
 # GroupD-period2
 ## Project E3T
 
-An NHL Stenden project in cooperation with an imaginary event compay that is represented by teacher Gerjan Van Oenen
+An NHL Stenden project in cooperation with an imaginary event company that is represented by teacher Gerjan Van Oenen
 
 ## Group Members 
 * Iarina Dicu (team leader): iarina.dicu@student.nhlstenden.com
