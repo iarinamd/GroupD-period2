@@ -34,7 +34,47 @@
 
             if($dbHandler){
 
-                
+                try{
+                    //data for HOT EVENT
+                    $mainEventQry = $dbHandler -> prepare("SELECT * FROM `events` WHERE `hot` = 1 ORDER BY `start_time` ASC LIMIT 1");
+                    $mainEventQry -> execute();
+
+                    $mainEventInfo = $mainEventQry->fetchAll(PDO::FETCH_ASSOC);
+                    $mainEvent = $mainEventInfo[0]["name"];
+                    $mainEventDate = $mainEventInfo[0]["start_time"];
+                    $mainEventLocation = $mainEventInfo[0]["location"];
+                    $mainEventImage = $mainEventInfo[0]["photos"];
+                    $mainEventLink = "";
+
+                    //getting the artist list from the main event
+                    $artistQry = $dbHandler -> prepare("SELECT * FROM `talents`");
+                    $artistQry -> execute();
+
+                    $mainEventArtistList = "";
+
+                    $artists = $artistQry -> fetchAll(PDO::FETCH_ASSOC);
+
+                    //data for events in the aside
+                    $recentQry = $dbHandler -> prepare("SELECT * FROM `events` ORDER BY `start_time` ASC LIMIT 3");
+                    $recentQry -> execute();
+
+                    $recentEvents = $recentQry->fetchAll(PDO::FETCH_ASSOC);
+
+                    $event1 = $recentEvents[0]["name"];
+                    $event1Date = $recentEvents[0]["start_time"];
+                    $event1PageLink = "";
+
+                    $event2 = $recentEvents[1]["name"];
+                    $event2Date = $recentEvents[1]["start_time"];
+                    $event2PageLink = "";
+
+                    $event3 = $recentEvents[2]["name"];
+                    $event3Date = $recentEvents[2]["start_time"];
+                    $event3PageLink = "";
+
+                }catch(Exception $ex){
+                    echo $ex;
+                }
 
             }//end if
 
@@ -55,7 +95,7 @@
                     </div>
 
                     <div id="mainSubtitle">
-                        <h4><b>May 20th, 2023</b></h4>
+                        <h4><b><?php echo $mainEventDate;?>May 20th, 2023</b></h4>
                         <p><?php echo $mainEventLocation;?>Radhuisplein 7811 DC, Emmen</p>
                     </div>
 
@@ -75,24 +115,24 @@
 
                 <div class="event">
                     <div class="asideText">
-                        <?php echo "<p>$event1Date Date</p>"; ?>
-                        <?php echo "<h3>$event1 Event1</h3>"; ?>
+                        <p><?php echo $event1Date; ?>Date</p>
+                        <h3><?php echo $event1; ?>Event</h3>
                     </div>
                     <a href="<?php echo $event1PageLink;?>" class="asideLink">More Info</a>
                 </div>
 
                 <div class="event">
                     <div class="asideText">
-                        <?php echo "<p>$event2Date Date</p>"; ?>
-                        <?php echo "<h3>$event2 Event2</h3>"; ?>
+                        <p><?php echo $event2Date; ?>Date</p>
+                        <h3><?php echo $event2; ?>Event</h3>
                     </div>
                     <a href="<?php echo $event2PageLink;?>" class="asideLink">More Info</a>
                 </div>
 
                 <div class="event">
                     <div class="asideText">
-                        <?php echo "<p>$event3Date Date</p>"; ?>
-                        <?php echo "<h3>$event3 Event3</h3>"; ?>
+                        <p><?php echo $event3Date; ?>Date</p>
+                        <h3><?php echo $event3; ?>Event</h3>
                     </div>
                     <a href="<?php echo $event3PageLink;?>" class="asideLink">More Info</a>
                 </div>
