@@ -24,25 +24,49 @@
             </nav>
         </header>
 
+        <?php
+
+            try{
+                $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty")
+            }catch (Exception $ex){
+                echo $ex;
+            }//end try-catch
+
+            if($dbHandler){
+
+                
+
+            }//end if
+
+        ?>
+
         <div id="container">
             <main>
-                <div id="mainTitle">
-                    <h3>HOT EVENT</h3>
-                    <h1>Annual Emmen Music Festival 2023</h1>
-                </div>
 
-                <div id="mainSubtitle">
-                    <h4><b>May 20th, 2023</b></h4>
-                    <p>Radhuisplein</p>
-                    <p>7811 DC, Emmen</p>
-                </div>
+                <div id="backgroundImage">
 
-                <div id="featuredArtists">
-                    <h2>Featured Artists</h2>
-                    <h3>Artist1, Artist2, Artist3</h3>
-                </div>
+                    <?php
+                        echo "<img src='" .$mainEventImage. "' alt='Main Event Image'";
+                    ?>
 
-                <a href="" id="mainLink"><h3>FIND OUT MORE</h3></a>
+                    <div id="mainTitle">
+                        <h3>HOT EVENT</h3>
+                        <h1><?php echo $mainEvent;?>Annual Emmen Music Festival 2023</h1>
+                    </div>
+
+                    <div id="mainSubtitle">
+                        <h4><b>May 20th, 2023</b></h4>
+                        <p><?php echo $mainEventLocation;?>Radhuisplein 7811 DC, Emmen</p>
+                    </div>
+
+                    <div id="featuredArtists">
+                        <h2>Featured Artists</h2>
+                        <h3><?php echo $mainEventArtistList;?>Artist1, Artist2, Artist3</h3>
+                    </div>
+
+                    <a href="<?php echo $mainEventLink;?>" id="mainLink"><h3>FIND OUT MORE</h3></a>
+
+                </div>
 
             </main>
 
@@ -51,29 +75,26 @@
 
                 <div class="event">
                     <div class="asideText">
-                        <p>Date</p>
-                        <h3>EVENT 1</h3>
+                        <?php echo "<p>$event1Date Date</p>"; ?>
+                        <?php echo "<h3>$event1 Event1</h3>"; ?>
                     </div>
-
-                    <a href="" class="asideLink">More Info</a>
+                    <a href="<?php echo $event1PageLink;?>" class="asideLink">More Info</a>
                 </div>
 
                 <div class="event">
                     <div class="asideText">
-                        <p>Date</p>
-                        <h3>EVENT 2</h3>
+                        <?php echo "<p>$event2Date Date</p>"; ?>
+                        <?php echo "<h3>$event2 Event2</h3>"; ?>
                     </div>
-
-                    <a href="" class="asideLink">More Info</a>
+                    <a href="<?php echo $event2PageLink;?>" class="asideLink">More Info</a>
                 </div>
 
                 <div class="event">
                     <div class="asideText">
-                        <p>Date</p>
-                        <h3>EVENT 3</h3>
+                        <?php echo "<p>$event3Date Date</p>"; ?>
+                        <?php echo "<h3>$event3 Event3</h3>"; ?>
                     </div>
-
-                    <a href="" class="asideLink">More Info</a>
+                    <a href="<?php echo $event3PageLink;?>" class="asideLink">More Info</a>
                 </div>
 
                 <p></p>
@@ -103,6 +124,6 @@
                 </a>
             </div>
         </footer>
-    
+
     </body>
 </html>
