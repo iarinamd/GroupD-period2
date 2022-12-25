@@ -36,14 +36,15 @@ CREATE TABLE `events` (
   `end_time` datetime NOT NULL,
   `capacity` int(11) NOT NULL,
   `photos` varchar(100) NOT NULL
+  `hot` bit NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `name`, `descriptions`, `location`, `start_time`, `end_time`, `capacity`, `photos`) VALUES
-(1, 'The Weeknd Concert', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Emmen, Netherlands ', '2022-12-19 22:35:33', '2022-12-19 00:35:33', 100, 'img/festivals/festival_4.jpg');
+INSERT INTO `events` (`id`, `name`, `descriptions`, `location`, `start_time`, `end_time`, `capacity`, `photos`, `hot`) VALUES
+(1, 'The Weeknd Concert', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Emmen, Netherlands ', '2022-12-19 22:35:33', '2022-12-19 00:35:33', 100, 'img/festivals/festival_4.jpg', 1);
 
 -- --------------------------------------------------------
 
