@@ -8,12 +8,48 @@
 
     <body>
     <!-- Header -->
+    <?php
+        $err = [];
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+            $dropDown = filter_input(INPUT_POST, "dropDown", FILTER-SANITIZE-SPECIAL-CHARS);
+            $date = filter_input(INPUT_POST, "date", FILTER_SANITIZE_SPECIAL_CHARS);
+            $time = filter_input(INPUT_POST, "text", FILTER_SANITIZE_SPECIAL_CHARS);
+            $address = filter_input(INPUT_POST, "address", FILTER_SANITIZE_SPECIAL_CHARS);
+            $zipCode = filter_input(INPUT_POST, "zipCode", FILTER_SANITIZE_SPECIAL_CHARS);
+            $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_SPECIAL_CHARS);
+
+            if(empty ($dropDown)){
+                $err[]= "Please select an option";
+            }
+            if(empty($date)){
+                $err[]= "Please select a date";
+            }
+            if(empty($time)){
+                $err[]= "Please enter a time";
+            }
+            if(empty($address)){
+                $err[]= "Please enter an address";
+            }
+            if(strlen($address) <5){
+                $err[]= "Please enter a valid address";
+            }
+            if(empty($zipCode)){
+                $err[]= "Please enter a zip code";
+            }
+            if(empty($description)){
+                $err[]= "Please enter a description";
+            }
+            if(strlen($description) < 5){
+                $err[]= "The description should contain at least 5 words";
+            }
+        }
+    ?>
         <h1>Book a talent</h1>
         <div id="container">
             <form name="booking" action="bookingSystem.php" method="POST" id="form">
                 <div class="row1">
                     <div class="talent">
-                        <select name="type" id="type">
+                        <select name="dropDown" id="dropDown">
                             <option disabled selected>Select a talent</option>
                             <option>Talent1</option>
                             <option>Talent2</option>
@@ -30,11 +66,11 @@
 
                 <div class="row2">
                     <div class="category">
-                        <select name="type" id="type">
+                        <select name="dropDown" id="dropDown">
                             <option diable selected>Category</option>
-                            <option>Category1</option>
-                            <option>Category2</option>
-                            <option>Category3</option>
+                            <option>Music</option>
+                            <option>Parties</option>
+                            <option>Other</option>
                         </select>
                     </div>
                     <div class="address">
@@ -45,11 +81,11 @@
                     </div>
                 </div>
                 <div class="description">
-                    <textarea placeholder="Description"></textarea>
+                    <textarea name="description" placeholder="Description"></textarea>
                 </div>
                 <div class="uploadFile">
                     <label for="uploadFile">Upload files(optional)</label>
-                    <input type="file" name="uploadedFile" id="uploadedFile">
+                    <input type="file" name="uploadFile" id="uploadFile">
                 </div>
             </form>
             <!-- Footer -->
