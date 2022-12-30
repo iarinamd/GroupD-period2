@@ -30,6 +30,7 @@
                 $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty")
             }catch (Exception $ex){
                 echo $ex;
+                echo "Something went wrong with the database connection";
             }//end try-catch
 
             if($dbHandler){
@@ -49,10 +50,15 @@
                     //getting the artist list from the main event
                     $artistQry = $dbHandler -> prepare("SELECT * FROM `talents`");
                     $artistQry -> execute();
+                    $artistQry->bindColumn("name", $artistName, PDO::PARAM_STR);
 
-                    $mainEventArtistList = "";
+                    $mainEventArtistList = []; //init empty array
+                    while($result = artistQry->fetch(PDO::FETCH_ASSOC)){
+                        $mainEventArtistList[] = $artistName; //add artist names to array
+                    }//end while
+                    $mainEventArtistList = implode(", ", $mainEventArtistList); //display the artist names
 
-                    $artists = $artistQry -> fetchAll(PDO::FETCH_ASSOC);
+                    $artists = $artistQry -> fetch(PDO::FETCH_ASSOC);
 
                     //data for events in the aside
                     $recentQry = $dbHandler -> prepare("SELECT * FROM `events` ORDER BY `start_time` ASC LIMIT 3");
@@ -74,7 +80,8 @@
 
                 }catch(Exception $ex){
                     echo $ex;
-                }
+                    echo "Something went wrong loading events";
+                }//end try-catch
 
             }//end if
 
