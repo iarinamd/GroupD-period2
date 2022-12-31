@@ -11,7 +11,7 @@
     <?php
         $err = [];
         if($_SERVER["REQUEST_METHOD"]=="POST"){
-            $dropDown = filter_input(INPUT_POST, "dropDown", FILTER-SANITIZE-SPECIAL-CHARS);
+            $dropDown = filter_input(INPUT_POST, "dropDown");
             $date = filter_input(INPUT_POST, "date", FILTER_SANITIZE_SPECIAL_CHARS);
             $time = filter_input(INPUT_POST, "text", FILTER_SANITIZE_SPECIAL_CHARS);
             $address = filter_input(INPUT_POST, "address", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -46,7 +46,7 @@
     ?>
         <h1>Book a talent</h1>
         <div id="container">
-            <form name="booking" action="bookingSystem.php" method="POST" id="form">
+            <form name="booking" action="bookingSystem.php" enctype="multipart/form-data" method="POST" id="form">
                 <div class="row1">
                     <div class="talent">
                         <select name="dropDown" id="dropDown">
@@ -83,9 +83,13 @@
                 <div class="description">
                     <textarea name="description" placeholder="Description"></textarea>
                 </div>
-                <div class="uploadFile">
-                    <label for="uploadFile">Upload files(optional)</label>
-                    <input type="file" name="uploadFile" id="uploadFile">
+                <div dropzone="copy">
+                    <label for="files" class="dropZone">
+                        <input type="file" name="uploadFile" id="uploadFile" accept="*" required>
+                    </label>
+                </div>
+                <div class="submitButton">
+                    <button type="submit" value="submit">Submit</button>
                 </div>
             </form>
             <!-- Footer -->

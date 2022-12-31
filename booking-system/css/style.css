@@ -15,6 +15,7 @@ h1{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 30px;
 }
 .date{
     width: 310px;
@@ -42,6 +43,18 @@ textarea {
 input{
     width: 300px;
 }
-.uploadFile{
-    width: 90%;
+input[type=file]{
+    border: 1px solid #555;
+}
+.dropZone{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #FFFFFF;
+    border: 1px solid #555;
 }
