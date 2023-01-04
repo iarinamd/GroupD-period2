@@ -35,7 +35,7 @@ CREATE TABLE `events` (
   `start_time` datetime NOT NULL,
   `end_time` datetime NOT NULL,
   `capacity` int(11) NOT NULL,
-  `photos` varchar(100) NOT NULL
+  `photos` varchar(100) NOT NULL,
   `hot` bit NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
