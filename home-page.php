@@ -65,7 +65,7 @@
                     $artists = $artistQry -> fetch(PDO::FETCH_ASSOC);
 
                     //data for events in the aside
-                    $recentQry = $dbHandler -> prepare("SELECT * FROM `events` ORDER BY `start_time` ASC LIMIT 3");
+                    $recentQry = $dbHandler -> prepare("SELECT * FROM `events` WHERE `hot` != 1 ORDER BY `start_time` ASC LIMIT 3");
                     $recentQry -> execute();
 
                     $recentEvents = $recentQry->fetchAll(PDO::FETCH_ASSOC);
