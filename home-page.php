@@ -27,7 +27,7 @@
         <?php
 
             try{
-                $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty")
+                $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
             }catch (Exception $ex){
                 echo $ex;
                 echo "Something went wrong with the database connection";
@@ -42,10 +42,14 @@
 
                     $mainEventInfo = $mainEventQry->fetchAll(PDO::FETCH_ASSOC);
                     $mainEvent = $mainEventInfo[0]["name"];
-                    $mainEventDate = $mainEventInfo[0]["start_time"];
+                    $mainEventDateTime = $mainEventInfo[0]["start_time"];
                     $mainEventLocation = $mainEventInfo[0]["location"];
                     $mainEventImage = $mainEventInfo[0]["photos"];
                     $mainEventLink = "";
+
+                    //splitting the date into date and time for easier reading
+                    $mainEventDate = "Date: " .substr($mainEventDateTime, 0, 10);
+                    $mainEventTime = "Time: " .substr($mainEventDateTime, -8);
 
                     //getting the artist list from the main event
                     $artistQry = $dbHandler -> prepare("SELECT * FROM `talents`");
@@ -53,7 +57,7 @@
                     $artistQry->bindColumn("name", $artistName, PDO::PARAM_STR);
 
                     $mainEventArtistList = []; //init empty array
-                    while($result = artistQry->fetch(PDO::FETCH_ASSOC)){
+                    while($result = $artistQry->fetch(PDO::FETCH_ASSOC)){
                         $mainEventArtistList[] = $artistName; //add artist names to array
                     }//end while
                     $mainEventArtistList = implode(", ", $mainEventArtistList); //display the artist names
@@ -90,30 +94,23 @@
         <div id="container">
             <main>
 
-                <div id="backgroundImage">
-
-                    <?php
-                        echo "<img src='" .$mainEventImage. "' alt='Main Event Image'";
-                    ?>
-
-                    <div id="mainTitle">
-                        <h3>HOT EVENT</h3>
-                        <h1><?php echo $mainEvent;?>Annual Emmen Music Festival 2023</h1>
-                    </div>
-
-                    <div id="mainSubtitle">
-                        <h4><b><?php echo $mainEventDate;?>May 20th, 2023</b></h4>
-                        <p><?php echo $mainEventLocation;?>Radhuisplein 7811 DC, Emmen</p>
-                    </div>
-
-                    <div id="featuredArtists">
-                        <h2>Featured Artists</h2>
-                        <h3><?php echo $mainEventArtistList;?>Artist1, Artist2, Artist3</h3>
-                    </div>
-
-                    <a href="<?php echo $mainEventLink;?>" id="mainLink"><h3>FIND OUT MORE</h3></a>
-
+                <div id="mainTitle">
+                    <h3>HOT EVENT</h3>
+                    <h1><?php echo $mainEvent;?></h1>
                 </div>
+
+                <div id="mainSubtitle">
+                    <h4><b><?php echo $mainEventDate;?></b></h4>
+                    <h4><b><?php echo $mainEventTime;?></b></h4>
+                    <p><?php echo $mainEventLocation;?></p>
+                </div>
+
+                <div id="featuredArtists">
+                    <h2>Featured Artists</h2>
+                    <h3><?php echo $mainEventArtistList;?></h3>
+                </div>
+
+                <a href="<?php echo $mainEventLink;?>" id="mainLink"><h3>FIND OUT MORE</h3></a>
 
             </main>
 

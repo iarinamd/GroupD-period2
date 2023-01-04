@@ -72,18 +72,13 @@ main{
     justify-content: space-around;
     padding-top: 0.5rem;
 
+    background-image: url("../img/festivals/festival_4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: grey;
     background-blend-mode: multiply;
 
     color: white;
-}
-
-#backgroundImage > img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
 }
 
 #mainTitle{
