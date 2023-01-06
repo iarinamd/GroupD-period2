@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,26 @@
     <title>Event</title>
 </head>
 <body>
+    <?php
+        try{
+            $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+        }
+        catch(Exception $ex){
+            echo $ex;
+        }
+        //$ev_id = $_GET['id'];
+        $ev_id = 1;
+        try{
+            $stmt = $dbHandler -> prepare("SELECT * FROM events WHERE id=:id");
+            $stmt -> bindParam(":id", $ev_id, PDO::PARAM_INT);
+            $stmt -> execute();
+
+            $event = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        catch(Exception $ex){
+            echo $ex;
+        }
+    ?>
     <div id = "gridContainer">
         <header>
             <img src="img/e3tLogo.png" alt="E3T_logo">
@@ -15,26 +36,35 @@
                 <ul>
                     <li><a href="#">BROWSE TALENTS</a></li>
                     <li><a href="#">EVENTS</a></li>
-                    <li><a href = "#">LOGIN</a></li>
+                    <?php
+                        if(isset($_SESSION['login']) AND $_SESSION['login'] == 'loged'){
+                            echo"<li><a href = '#'>PROFILE</a></li>";
+                        }
+                        else{
+                            echo"<li><a href = '#'>LOGIN</a></li>";
+                        }
+                    ?>
                 </ul>
             </nav>
         </header>
         <div id = "mainBody">
             <div id = "eventInf">
-                <h1>Place holder event name</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Ligula ullamcorper malesuada proin libero nunc consequat interdum. </p>
+                <?php
+                echo"<h1>".$event['name']."</h1>";
+                echo"<p>".$event['descriptions']."</p>";
+                ?>
                 <div id="shapes">
                     <div class="shapesTextBox">
                         <img src="img/placeShape.png" alt="Place icon" class="shapes">
-                        <a href="#" class="anchor">Location</a>
+                        <?php echo"<p class='anchor'>".$event['location']."</p>"?>
                     </div>
                     <div class="shapesTextBox">
                         <img src="img/timeShape.png" alt="Time icon" class="shapes">
-                        <a href="#" class="anchor">Time</a>
+                        <?php echo"<p class='anchor'>".$event['start_time']."</p>"?>
                     </div>
                     <div class="shapesTextBox">
                         <img src="img/capacityShape.png" alt="Capacity icon" class="shapes">
-                        <a href="#" class="anchor">Capacity</a>
+                        <?php echo"<p class='anchor'>".$event['capacity']."</p>"?>
                     </div>
                 </div>
                 <button onclick="location.href='#'" id="button">BOOK</button>
@@ -57,9 +87,9 @@
                 <p>Sunday: Closed</p>
             </div>
             <div>
-                <img src="img/facebookLogo.png" alt="Facebook logo" class="footerLogos">
-                <img src="img/instagramLogo.png" alt="Instagram logo" class="footerLogos">
-                <img src="img/tiktokLogo.png" alt="tiktok logo" class="footerLogos">
+                <a href="https://nl-nl.facebook.com/"><img src="img/facebookLogo.png" alt="Facebook logo" class="footerLogos"></a>
+                <a href="https://www.instagram.com/"><img src="img/instagramLogo.png" alt="Instagram logo" class="footerLogos"></a>
+                <a href="https://www.tiktok.com/login"><img src="img/tiktokLogo.png" alt="tiktok logo" class="footerLogos"></a>
             </div>
         </footer>
     </div>
