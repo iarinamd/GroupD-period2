@@ -1,3 +1,29 @@
-body{
+*{
+    margin: 0%;
+}
+
+
+#container{
+    grid-template-columns: repeat(12,1fr);
+    display: grid;
+    font-family: Montserrat;
+}
+
+#header{
+    grid-column: 1/13;
+    background-color: mediumslateblue;
+    height: 50px;
+    padding: 10px;
+}
+
+#mainContainer{
+    grid-column: 2/12;
+    padding: 10px;
+
+}
+
+#fName, #lName{
+    width: 34.8%;
+    margin: 10px 5px 10px 0px;
     font-family: Montserrat;
 }
