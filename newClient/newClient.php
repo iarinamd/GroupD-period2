@@ -44,8 +44,8 @@
                             <input type="tel" name="phoneNr" id="phoneNr" placeholder="Phone Number">
                             <input type="text" name="zip" id="zip" placeholder="ZIP Code">
                         </div>
-                        <div id="thirdRowInput">
-                            <textarea>Write your description here</textarea>
+                        <textarea>Write your description here</textarea>
+                        <div id="fileUpload">
                             <input type="file" name="uploadedFile" id="uploadedFile">
                             <p></p>
                         </div>
