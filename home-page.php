@@ -4,25 +4,10 @@
         <title>Home page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/home-page-style.css";
+        <link rel="stylesheet" type="text/css" href="css/home-page-style.css">
     </head>
 
     <body>
-
-        <header>
-            <div id ="headerImage">
-                <a href="#">
-                    <img class="logoImg" src="image/E3T_LOGO.png" alt="E3T logo">
-                </a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">BROWSE TALENTS</a></li>
-                    <li><a href="#">EVENTS</a></li>
-                    <li><a href="#">LOGIN</a></li>
-                </ul>
-            </nav>
-        </header>
 
         <?php
 
@@ -72,15 +57,15 @@
 
                     $event1 = $recentEvents[0]["name"];
                     $event1Date = $recentEvents[0]["start_time"];
-                    $event1PageLink = "";
+                    $event1PageLink = "indexEv1.php?id=" .$recentEvents[0]["id"];
 
                     $event2 = $recentEvents[1]["name"];
                     $event2Date = $recentEvents[1]["start_time"];
-                    $event2PageLink = "";
+                    $event2PageLink = "indexEv1.php?id=" .$recentEvents[1]["id"];
 
                     $event3 = $recentEvents[2]["name"];
                     $event3Date = $recentEvents[2]["start_time"];
-                    $event3PageLink = "";
+                    $event3PageLink = "indexEv1.php?id=" .$recentEvents[2]["id"];
 
                 }catch(Exception $ex){
                     echo $ex;
@@ -90,6 +75,17 @@
             }//end if
 
         ?>
+
+        <header>
+            <img src="img/e3tLogo.png" alt="E3T_logo">
+            <nav>
+                <ul>
+                    <li><a href="#">BROWSE TALENTS</a></li>
+                    <li><a href="#">EVENTS</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <div id="container">
             <main>
@@ -145,27 +141,29 @@
             </aside>
         </div>
 
+        <?php
+            include_once("footer.php");
+        ?>
+
         <footer>
-            <div class="contactInformations">
-                <h3> CONTACT</h3>
-                <span>+31 123456789 contact@e3t.com </span>
-                <span>+31 987654321 1111AA, Emmen</span>
+            <div>
+                <h2>CONTACT</h2>
+                <p>+31 123456789</p>
+                <p>+31 987654321</p>
             </div>
-            <div class="openHours">
-                <h3>OPENING HOURS</h3>
-                <span>Monday - Saturday: 9:30 - 18:00</span>
-                <span>Sunday: Closed</span>
+            <div>
+                <p>contact@e3t.com</p>
+                <p>111AA, Emmen</p>
             </div>
-            <div class="iconImg">
-                <a href="https://nl-nl.facebook.com/">
-                    <img class="facebookImg" src="image/facebook_logo.png" alt="facebook logo">
-                </a>
-                <a href="https://www.instagram.com/">
-                    <img class="instagramImg" src="image/instagram_logo.png" alt="instagram logo">
-                </a>
-                <a href="https://www.tiktok.com/login">
-                    <img class="tiktokImg" src="image/tiktok_logo.png" alt="tiktok logo">
-                </a>
+            <div>
+                <h2>OPENING HOURS</h2>
+                <p>Monday-Saturday: 9:30-18:00</p>
+                <p>Sunday: Closed</p>
+            </div>
+            <div>
+                <img src="img/facebookLogo.png" alt="Facebook logo" class="footerLogos">
+                <img src="img/instagramLogo.png" alt="Instagram logo" class="footerLogos">
+                <img src="img/tiktokLogo.png" alt="tiktok logo" class="footerLogos">
             </div>
         </footer>
 
