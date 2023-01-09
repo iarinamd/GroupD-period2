@@ -30,14 +30,14 @@
                     $mainEventDateTime = $mainEventInfo[0]["start_time"];
                     $mainEventLocation = $mainEventInfo[0]["location"];
                     $mainEventImage = $mainEventInfo[0]["photos"];
-                    $mainEventLink = "";
+                    $mainEventLink = "indexEv1.php?id=" .$mainEventInfo[0]["id"];
 
                     //splitting the date into date and time for easier reading
                     $mainEventDate = "Date: " .substr($mainEventDateTime, 0, 10);
                     $mainEventTime = "Time: " .substr($mainEventDateTime, -8);
 
                     //getting the artist list from the main event
-                    $artistQry = $dbHandler -> prepare("SELECT * FROM `talents`");
+                    $artistQry = $dbHandler -> prepare("SELECT * FROM `talents` LIMIT 3");
                     $artistQry -> execute();
                     $artistQry->bindColumn("name", $artistName, PDO::PARAM_STR);
 
@@ -52,20 +52,9 @@
                     //data for events in the aside
                     $recentQry = $dbHandler -> prepare("SELECT * FROM `events` WHERE `hot` != 1 ORDER BY `start_time` ASC LIMIT 3");
                     $recentQry -> execute();
-
-                    $recentEvents = $recentQry->fetchAll(PDO::FETCH_ASSOC);
-
-                    $event1 = $recentEvents[0]["name"];
-                    $event1Date = $recentEvents[0]["start_time"];
-                    $event1PageLink = "indexEv1.php?id=" .$recentEvents[0]["id"];
-
-                    $event2 = $recentEvents[1]["name"];
-                    $event2Date = $recentEvents[1]["start_time"];
-                    $event2PageLink = "indexEv1.php?id=" .$recentEvents[1]["id"];
-
-                    $event3 = $recentEvents[2]["name"];
-                    $event3Date = $recentEvents[2]["start_time"];
-                    $event3PageLink = "indexEv1.php?id=" .$recentEvents[2]["id"];
+                    $recentQry -> bindColumn("name", $eventName);
+                    $recentQry -> bindColumn("start_time", $eventDate);
+                    $recentQry -> bindColumn("id", $eventID);
 
                 }catch(Exception $ex){
                     echo $ex;
@@ -113,29 +102,23 @@
             <aside>
                 <h3>UPCOMING EVENTS</h3>
 
-                <div class="event">
-                    <div class="asideText">
-                        <p><?php echo $event1Date; ?>Date</p>
-                        <h3><?php echo $event1; ?>Event</h3>
-                    </div>
-                    <a href="<?php echo $event1PageLink;?>" class="asideLink">More Info</a>
-                </div>
+                <?php
+                    while($recentEvents = $recentQry->fetch(PDO::FETCH_ASSOC)){
 
-                <div class="event">
-                    <div class="asideText">
-                        <p><?php echo $event2Date; ?>Date</p>
-                        <h3><?php echo $event2; ?>Event</h3>
-                    </div>
-                    <a href="<?php echo $event2PageLink;?>" class="asideLink">More Info</a>
-                </div>
+                        $eventDate = substr($eventDate, 0, 10);
+                        $eventPageLink = "indexEv1.php?id=" .$eventID;
 
-                <div class="event">
-                    <div class="asideText">
-                        <p><?php echo $event3Date; ?>Date</p>
-                        <h3><?php echo $event3; ?>Event</h3>
-                    </div>
-                    <a href="<?php echo $event3PageLink;?>" class="asideLink">More Info</a>
-                </div>
+                        echo "
+                        <div class='event'>
+                            <div class='asideText'>
+                                <p>" .$eventDate. "</p>
+                                <h3>" .$eventName. "</h3>
+                            </div>
+                            <a href=' .$eventPageLink. ' class='asideLink'>More Info</a>
+                        </div>
+                        ";
+                    }
+                ?>
 
                 <p></p>
             </aside>
