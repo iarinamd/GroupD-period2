@@ -11,6 +11,7 @@
 
         <?php
 
+            //create connection with database
             try{
                 $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
             }catch (Exception $ex){
@@ -18,6 +19,7 @@
                 echo "Something went wrong with the database connection";
             }//end try-catch
 
+            //if database connection established, continue
             if($dbHandler){
 
                 try{
@@ -46,8 +48,6 @@
                         $mainEventArtistList[] = $artistName; //add artist names to array
                     }//end while
                     $mainEventArtistList = implode(", ", $mainEventArtistList); //display the artist names
-
-                    $artists = $artistQry -> fetch(PDO::FETCH_ASSOC);
 
                     //data for events in the aside
                     $recentQry = $dbHandler -> prepare("SELECT * FROM `events` WHERE `hot` != 1 ORDER BY `start_time` ASC LIMIT 3");
@@ -103,6 +103,7 @@
                 <h3>UPCOMING EVENTS</h3>
 
                 <?php
+                    //dynamic generation of aside events
                     while($recentEvents = $recentQry->fetch(PDO::FETCH_ASSOC)){
 
                         $eventDate = substr($eventDate, 0, 10);
@@ -117,16 +118,12 @@
                             <a href=' .$eventPageLink. ' class='asideLink'>More Info</a>
                         </div>
                         ";
-                    }
+                    }//end while
                 ?>
 
                 <p></p>
             </aside>
         </div>
-
-        <?php
-            include_once("footer.php");
-        ?>
 
         <footer>
             <div>
