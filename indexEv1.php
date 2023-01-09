@@ -16,8 +16,12 @@
         catch(Exception $ex){
             echo $ex;
         }
-        //$ev_id = $_GET['id'];
-        $ev_id = 1;
+        if(isset($_GET['id'])){
+            $ev_id = $_GET['id'];
+        }
+        else{
+            $ev_id = 1;
+        }
         try{
             $stmt = $dbHandler -> prepare("SELECT * FROM events WHERE id=:id");
             $stmt -> bindParam(":id", $ev_id, PDO::PARAM_INT);
@@ -69,7 +73,7 @@
                 </div>
                 <button onclick="location.href='#'" id="button">BOOK</button>
             </div>
-            <img src="img/placeHolder.jpg" alt="PlaceHolder" id = "eventPicture">
+            <img src=<?php echo $event["photos"]?> alt="PlaceHolder" id = "eventPicture">
         </div>
         <footer>
             <div>
