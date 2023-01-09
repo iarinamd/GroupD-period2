@@ -20,7 +20,8 @@
             $ev_id = $_GET['id'];
         }
         else{
-            $ev_id = 1;
+            echo"<h1>Something went wrong, please go back</h1>";
+            exit();
         }
         try{
             $stmt = $dbHandler -> prepare("SELECT * FROM events WHERE id=:id");
