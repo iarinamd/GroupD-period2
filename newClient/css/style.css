@@ -42,8 +42,8 @@ select{
     padding: 10px 0px 10px 5px;
 }
 
-#phoneNr , #zip{
-    width: 29.8%;
+#phoneNr{
+    width: 47.5%;
     margin: 10px 5.7px 20px 0px;
     font-family: Montserrat;
     border: darkgray solid 2px;

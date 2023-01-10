@@ -42,7 +42,8 @@
                         <div id="secondRowInput">
                             <input type="email" name="email" id="email" placeholder="E-Mail">
                             <input type="tel" name="phoneNr" id="phoneNr" placeholder="Phone Number">
-                            <input type="text" name="zip" id="zip" placeholder="ZIP Code">
+                            <label for="bday">Date of Birth</label>
+                            <input type="date" name="bday" id="bday" placeholder="Day of Birth">
                         </div>
                         <textarea>Write your description here</textarea>
                         <div id="fileUpload">

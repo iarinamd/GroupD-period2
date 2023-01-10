@@ -20,6 +20,15 @@
             }
         } if (empty($_POST["specialty"])){
             $specialtyErr = "Please select a specialty.";
+        } else{
+            echo "Specialty selected";
+        }
+        if (empty($_POST["email"])){
+            $emailErr= "Valid E-Mail.";
+        } else{
+            $email= test_input($_POST["email"]);
+        } if (!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            $emailErr = "The E-Mail address is not a correct format";
         }
     }
 ?>
