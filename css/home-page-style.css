@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@font-face{
+    font-family: Montserrat;
+    src: url(fonts/Montserrat-Regular.ttf);
+}
+
+@font-face{
+    font-family: Montserrat Bold;
+    src: url(fonts/Montserrat-Bold.ttf);
+}
+
+@font-face{
+    font-family: Montserrat SemiBold;
+    src: url(fonts/Montserrat-SemiBold.ttf);
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family: Montserrat, sans-serif;
+}
+
+h1{
+    font-size: 48pt;
+    font-family: "Montserrat Bold", sans-serif;
+    margin: 0;
+}
+
+h2{
+    font-size: 36pt;
+    font-family: "Montserrat Bold", sans-serif;
+    margin: 0;
+}
+
+h3{
+    font-size: 24pt;
+    font-family: "Montserrat SemiBold", sans-serif;
+    margin: 0;
+}
+
+h4{
+    font-size: 16pt;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+}
+
+#container{
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2rem;
+    margin: 2rem;
+
+    height: 100vh;
+}
+
+a:link, a:visited, a:hover{
+    color: white;
+    text-decoration: none;
+
+    background-color: #7B5C94;
+    padding: 1%;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    grid-column: 1/5;
+    grid-row: 2/3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+
+    background-image: url("../img/festivals/festival_5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+
+    color: white;
+}
+
+#mainTitle{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+#mainSubtitle{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+#featuredArtists{
+    margin: 1rem;
+    text-align: end;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    align-self: end;
+}
+
+#mainLink{
+    align-self: center;
+    margin: 1rem;
+}
+
+aside{
+    width: 100%;
+    height: 100%;
+    grid-column: 5/7;
+    grid-row: 2/3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 0.5rem;
+
+    background-color: #D9D9D9;
+}
+
+aside > h2{
+    color: #7B5C94;
+}
+
+.event{
+    width: 90%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: #BEBEBE;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.asideLink{
+    align-self: end;
+}
+
+
+
+
+
+
+header{
+    grid-column: 1/13;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 10px 10px #888888;
+    width: 100%;
+    height: 100px;
+}
+
+header>img{
+    height: 100px;
+    width: auto;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+}
+
+ul>li>a{
+    text-decoration: none;
+    color: RGBA(161, 119, 193, 1);
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+footer{
+    background-color: RGBA(123, 92, 148, 1);
+    grid-column: 1/13;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footerLogos{
+    height: 100px;
+    width: 100px;
+}
+
+footer>div>h2{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+footer>div>p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 20px;
+}

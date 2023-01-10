@@ -66,6 +66,7 @@ h1{
 }
 .anchor{
     font-size: 22px;
+    font-size: 30px;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
@@ -75,6 +76,7 @@ h1{
 p{
     line-height: 150%;
     font-size: 20px;
+    font-size: 30px;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
 }

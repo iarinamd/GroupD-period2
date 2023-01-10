@@ -1,0 +1,237 @@
+@font-face{
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat-Regular.ttf");
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat;
+}
+#maincontainer{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+header{
+    display: flex;
+    grid-column: 1/7;
+    gap: 20px;
+    background-color: #fffff;
+    box-shadow: 2px 2px;
+    margin-left: -2vw;
+    margin-right: -2vw;
+}
+#top{
+    display: flex;
+    grid-column: 1/7;
+    justify-content: space-between;
+}
+.top1 > h1{
+    font-size: 64px;
+}
+.top1{
+    display: flex;
+}
+.top2{
+    margin-top: 3vw;
+    display:flex;
+}
+.top2 > button{
+    background-color: #7B5C94;
+    color: white;
+    width:16vw;
+    height: 3vw;
+    font-size: 33.45px;
+    border: 0px;
+    font-family: Montserrat;
+}
+.top2 > h1{
+    color: white;
+}
+.top2 > button > a {
+    text-decoration: none;
+    color: white;
+}
+#about{
+    display: flex;
+    grid-column: 1/7;
+    background-color: #D9D9D9;
+    height: 20vw;
+    justify-content: space-around;
+    align-items: center;
+}
+.about1 > img{
+    width:17.9vw;
+    height:18vw;
+    object-fit:cover;
+    object-position:50% 50%;
+    margin-top: 0.3vw;
+}
+.about2{
+    display: flex;
+    width: 73.8vw;
+    height: 18vw;
+    background-color: #A1A1A1;
+    justify-content: space-between;
+
+}
+.abouttext{
+    flex-direction: column;
+
+}
+.editbutton{
+    display: flex;
+}
+.editbutton > button{
+    height: 3vw;
+    margin-top: auto;
+    background-color: #7B5C94;
+    color: white;
+    border-width: 0px;
+    font-family: Montserrat;
+    font-size: 33.4545px;
+    cursor: pointer;
+    float: bottom;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+}
+.editbutton > button > a {
+    text-decoration: none;
+    color: white;
+}
+.about2_1{
+    display: flex;
+}
+.about2_1 > h2{
+    font-size: 40px;
+    margin: 0;
+    margin-left: 2vw;
+    margin-top: 1vw;
+}
+.about2_2{
+    display: flex;
+    margin-left: 2vw;
+    max-width: 65vw;
+}
+.about2_2 > p{
+    font-size: 24px;
+}
+#pictures{
+    grid-column: 1/7;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4vw;
+    gap: 3.5vw;
+}
+#pictures > img{
+    width:436px;
+    height:359px;
+    object-fit:cover;
+    object-position:50% 50%;
+}
+#upperfooter{
+    display: flex;
+    grid-column: 1/7;
+    margin-top: 4vw;
+    justify-content: space-between;
+    gap: -7vw;
+}
+#events{
+    width:561px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+}
+.eventsh1{
+    color: #7B5C94;
+    font-weight: 600;
+    font-size: 25.1818px;
+    line-height: 61px;
+}
+.eventbox{
+    margin-bottom: 4.5vw;
+    display: flex;
+    width: 496px;
+    height: 202px;
+    background-color: #BEBEBE;
+    justify-content: space-between;
+}
+.buttondiv > button{
+    height: 2vw;
+    margin-top: auto;
+    width:184px;
+    height: 47px;
+    background-color: #7B5C94;
+    color: white;
+    border-width: 0px;
+    font-family: Montserrat;
+    font-size: 33.4545px;
+    cursor: pointer;
+}
+.buttondiv > button > a {
+    text-decoration: none;
+    color: white;
+}
+.buttondiv{
+    display: flex;
+    float: right;
+    top: 0px;
+    justify-content: flex-end;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+}
+.eventheader{
+    display:flex;
+    margin-left: 2vw;
+    flex-direction: column;
+}
+.eventheader > p{
+    font-size: 27.8788px;
+    padding: 0px;
+}
+.eventheader > h1{
+    font-size: 50.1818px;
+    margin-top: 0px;
+}
+#reviews{
+    width:55vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #D9D9D9;
+}
+.reviewbox{
+    display: flex;
+    flex-direction: column;
+    background-color: #A1A1A1;
+    margin-bottom: 4.5vw;
+    width: 52vw;
+    max-height: 13vw;
+}
+.reviewtext{
+    margin-left: 2vw;
+}
+.reviewsheader{
+    font-size: 25.1818px;
+    color: #7B5C94;
+    float: left;
+}
+.reviewboxinner{
+    display: flex;
+    margin-left: 1.5vw;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #D9D9D9;
+}
+.createreview{
+    display: flex;
+    flex-direction: column;
+    background-color: #A1A1A1;
+    margin-bottom: 4.5vw;
+    width: 52vw;
+    height: 14vw;
+    max-height: 13vw;
+}
