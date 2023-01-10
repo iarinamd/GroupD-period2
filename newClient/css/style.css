@@ -26,25 +26,18 @@ select{
     font-family: Montserrat;
     border: darkgray solid 2px;
     padding: 10px 0px 10px 5px;
+    margin: 10px;
 }
 #fName, #lName{
-    width: 42%;
+    width: 48%;
     margin: 10px 5px 10px 0px;
     font-family: Montserrat;
     border: darkgray solid 2px;
     padding: 10px 0px 10px 5px;
 }
-#email{
-    width: 34.8%;
+#email, #phoneNr{
+    width: 48%;
     margin: 10px 5px 10px 0px;
-    font-family: Montserrat;
-    border: darkgray solid 2px;
-    padding: 10px 0px 10px 5px;
-}
-
-#phoneNr{
-    width: 47.5%;
-    margin: 10px 5.7px 20px 0px;
     font-family: Montserrat;
     border: darkgray solid 2px;
     padding: 10px 0px 10px 5px;
@@ -72,4 +65,8 @@ input[type="submit"], input[type="file"]{
     padding: 15px;
     margin-bottom: 20px;
     background-color: white;
+}
+
+input[type="date"]{
+    margin: 10px
 }
