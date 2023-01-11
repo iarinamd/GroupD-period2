@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') // related to form, verify if the meth
                     break;
                     default:
                         echo "<script type='text/javascript'>alert('Something went wrong.Please try again!');</script>";
-                        echo '<script type="text/javascript">location.href = "login.html";</script>';
+                        echo '<script type="text/javascript">location.href = "login2.php";</script>';
                 }
             }
             else
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') // related to form, verify if the meth
                 //This is happening if the username and password do not match
                 session_destroy();
                 echo "<script type='text/javascript'>alert('Incorrect username or password.Please try again');</script>";
-                echo '<script type="text/javascript">location.href = "login.html";</script>';
+                echo '<script type="text/javascript">location.href = "login2.php";</script>';
             }
         }
         else
@@ -70,13 +70,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') // related to form, verify if the meth
             //This is happening when the database is empty.
             session_destroy();
             echo "<script type='text/javascript'>alert('The username can not be found.Please try again!');</script>";
-            echo '<script type="text/javascript">location.href = "login.html";</script>';
+            echo '<script type="text/javascript">location.href = "login2.php";</script>';
         }
     }
     else
     {
         echo "<script type='text/javascript'>alert('The connection can not be establish.Please try again later!');</script>";
-        echo '<script type="text/javascript">location.href = "login.html";</script>';
+        echo '<script type="text/javascript">location.href = "login2.php";</script>';
     }
 }
 ?>
