@@ -3,12 +3,14 @@
     <head>
         <title>bookingSystem</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bookingSystem.css">
     </head>
 
     <body>
     <?php
     //Header
+
+    //Form validation
         $err = [];
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             $talent = filter_input(INPUT_POST, "talent", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -58,6 +60,7 @@
             }
         }
         else{
+            //Form
             echo'<h1>Book a talent</h1>
         <div id="container">
             <form name="booking" action="bookingSystem.php" enctype="multipart/form-data" method="POST" id="form">
