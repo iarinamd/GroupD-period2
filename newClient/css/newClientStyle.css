@@ -70,5 +70,6 @@ input[type="submit"], input[type="file"]{
 }
 
 input[type="date"]{
-    margin: 10px
+    margin: 10px;
+    
 }
