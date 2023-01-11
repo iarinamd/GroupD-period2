@@ -19,7 +19,7 @@
                 It has survived not only five centuries, but also the leap into electronic typesetting, 
                 remaining essentially unchanged. </p>
                 <img src="img/bar.png" title="bar" alt="bar">
-                <div class="buttonplace"><button>BOOK</button></div>
+                <div  class="buttonPlace"><button>BOOK</button></div>
             </div>
         </section>
         <img id="partyimg" src="img/partyimg.jpeg" title="partyimg" alt="partyimg">
@@ -27,3 +27,5 @@
     </div>
 </body>
 </html>
+
+<?php
