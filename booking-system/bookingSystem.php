@@ -10,27 +10,57 @@
     <?php
     //Header
 
+    ob_start();
+    $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
+    try{
+        $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+    }catch (Exception $ex){
+        print $ex;
+    }
+    try {
+        $sql = $dbHandler->prepare("SELECT * FROM 'booking'");
+        $sql ->execute();
+    } catch (Exception $ex){
+        print $ex;
+    }
+    try{
+        $sql ->bindParam("id", $id, PDO::PARAM_INT);
+        $sql ->execute();
+    }catch(Exception $ex){
+        print $ex;
+    }
+
+        $sql -> bindColumn("talent", $talent);
+        $sql -> bindColumn("date", $time);
+        $sql -> bindColumn("time", $time);
+        $sql -> bindColumn("category", $category);
+        $sql -> bindColumn("zipCode", $zipCode);
+        $sql -> bindColumn("description", $description);
+        $sql -> bindColumn("uploadedFile", $uploadedFile);
+
+        $result = $sql->fetch();
+        $dbHandler=NULL;
     //Form validation
         $err = [];
         if($_SERVER["REQUEST_METHOD"]=="POST"){
-            $talent = filter_input(INPUT_POST, "talent", FILTER_SANITIZE_SPECIAL_CHARS);
+            $currentTalent = filter_input(INPUT_POST, "talent", FILTER_SANITIZE_SPECIAL_CHARS);
             $category = filter_input(INPUT_POST,"category", FILTER_SANITIZE_SPECIAL_CHARS);
-            $date = filter_input(INPUT_POST, "date", FILTER_SANITIZE_SPECIAL_CHARS);
-            $time = filter_input(INPUT_POST, "time", FILTER_SANITIZE_SPECIAL_CHARS);
+            $currentDate = filter_input(INPUT_POST, "date", FILTER_SANITIZE_SPECIAL_CHARS);
+            $currentTime = filter_input(INPUT_POST, "time", FILTER_SANITIZE_SPECIAL_CHARS);
             $address = filter_input(INPUT_POST, "address", FILTER_SANITIZE_SPECIAL_CHARS);
             $zipCode = filter_input(INPUT_POST, "zipCode", FILTER_SANITIZE_SPECIAL_CHARS);
             $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_SPECIAL_CHARS);
 
-            if(empty ($talent)){
+            if(empty ($currentTalent)){
                 $err[]= "Please select a talent";
             }
             if(empty($category)){
                 $err[]= "Please select a category";
             }
-            if(empty($date)){
+            if(empty($currentDate)){
                 $err[]= "Please select a date";
             }
-            if(empty($time)){
+            if(empty($currentTime)){
                 $err[]= "Please enter a time";
             }
             if(empty($address)){
@@ -56,8 +86,32 @@
                 echo"</ul>";
             }
             if(count($err) == 0){
-                echo "Booking complete";
+                echo "Booking complete with the following data:" . "<br>";
+                echo"Talent: ". $currentTalent . "<br>";
+                echo "Date: ". $currentDate ."<br>";
+                echo "Time: ". $currentTime . "<br>";
+                echo "Category: ". $category . "<br>";
+                echo "Address: ". $address . "<br>";
+                echo "Zip code: ". $zipCode . "<br>";
             }
+            if(!$currentTalent && !$currentDate && !$currentTime &&!$category && !$address && !$zipCode){
+                $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+                $sql= $dbHandler->prepare("INSERT INTO 'booking'(`id`, `talent`, `date`, `time`, `category`, `address`, `zip`, `description`, `uploadedFile`)
+                    VALUES(NULL, ':talent', ':date', ':time', ':category', ':address', ':zip',':description',':uploadedFIle');");
+                $sql->bindParam("id", $id, PDO::PARAM_INT);
+                $sql->bindParam("talent", $talent, PDO::PARAM_INT);
+                $sql->bindParam("date", $date, PDO::PARAM_STR);
+                $sql->bindParam("time", $time, PDO::PARAM_STR);
+                $sql->bindParam("category", $category, PDO::PARAM_STR);
+                $sql->bindParam("address", $address, PDO::PARAM_STR);
+                $sql->bindParam("zip", $zipCode, PDO::PARAM_STR);
+
+                $sql->execute();
+
+                $dbHandler = null;
+                header("Location:bookingSystem.php");
+            }
+
         }
         else{
             //Form
