@@ -1,0 +1,220 @@
+<<<<<<< HEAD
+@font-face {
+    font-family: Montserrat;
+    src: url(fonts/Montserrat/static/Montserrat-Regular.ttf)
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+#talent{
+    grid-column: 1/7;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.picture1{
+    object-fit: cover;
+    object-position: 100% 35%;
+    height: 300px;
+    width: 300px;
+    margin-left: 30px;
+}
+.picture2{
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+    margin-right: 30px;
+}
+.picture3{
+    object-fit: cover;
+    height: 310px;
+    width: 300px;
+    margin-left: 30px;
+}
+.information{
+    width: 1000px;
+    background-color: #D9D9D9;
+    margin-left: 50px;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.information2{
+    width: 1000px;
+    background-color: #D9D9D9;
+    margin-right: 50px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.description{
+    width: 60%;
+}
+.specialty{
+    width: 40%;
+    font-size: 24px;
+    word-spacing: 20px;
+    font-weight: 500;
+    font-family: Montserrat;
+}
+.button{
+    height: 50px;
+    background-color: #7B5C94;
+    color: white;
+    font-family: Montserrat;
+    font-weight: bold;
+    word-spacing: 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+h1{
+    margin-left: 30px;
+    font-weight: 600;
+    font-family: Montserrat;
+}
+p{
+    margin-left: 30px;
+    margin-right: 30px;
+    font-weight: 500;
+    font-family: Montserrat;
+=======
+
+body{
+    color: black;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+}
+
+section{
+    grid-column: 1/10;
+    background-color: #D9D9D9;
+    margin: 40px 30px;
+    height: 661px;
+}
+
+#partyimg{
+    grid-column: 10/16;
+    margin-top: 40px;
+}
+
+section > div > h1{
+    font-size: 64px;
+    margin: 0;
+}
+
+#textcontent{
+    padding: 10px;
+}
+
+.textsettings{
+    font-size: 36px;
+    
+}
+
+section > div > img{
+    width: 700px;
+    height: 70px;
+    margin-left: 10px;
+}
+
+.buttonplace{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section > div > div > button{
+    background-color: #7B5C94;
+    color: white;
+    border: none;
+    width: 189px;
+    height: 58px;
+    font-size: 36px;
+    font-family: Arial, serif;
+    margin-top: 15px;
+
+*{
+    margin: 0%;
+}
+.mainContainer{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    font-family: Montserrat;
+}
+
+header{
+    grid-column: 1/13;
+    background-color: mediumslateblue;
+    padding: 1em;
+    margin-bottom: 5em;
+
+}
+main{
+    grid-column: 2/12;
+}
+.catContainer{
+    height: 27em;
+    display: flex;
+    background-color: lightgrey;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.catContainer > div{
+    width: 23em;
+    height: 23em;
+    text-align: center;
+    color: white;
+
+}
+.musicCat{
+    background-image: url("../img/event_images/concerts/concert_5.jpg");
+    background-size: cover;
+    display: grid;
+
+}
+
+.partiesCat{
+    background-image: url("../img/event_images/formal/formal_4.jpg");
+    background-size: cover;
+    display: grid;
+}
+
+.othersCat{
+    background-image: url("../img/event_images/formal/formal_1.jpg");
+    background-size: cover;
+    display: grid;
+}
+.concerts{
+    display: grid;
+    align-items: center;
+}
+
+.parties{
+    display: grid;
+    align-content: center;
+}
+
+.others{
+    display: grid;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: bisque;
+
+>>>>>>> 01d86e7f314d7161de44ce0c8c2ae9358db264df
+}
