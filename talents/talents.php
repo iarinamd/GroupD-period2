@@ -13,15 +13,12 @@
         }catch (Exception $ex){
             echo $ex;
         }
+        if($dbHandler) {
+            try {
+                $talentQry = $dbHandler->prepare("SELECT * FROM `talents` ORDER BY 'id'");
+                $talentQry->execute();
 
-        if($dbHandler){
-
-            try{
-                $talent = $dbHandler -> prepare("SELECT * FROM `talents` ORDER BY 'id'");
-                $talent -> execute();
-
-                $talentInfo = $talent->fetchAll(PDO::FETCH_ASSOC);
-
+                $talentInfo = $talentQry->fetchAll(PDO::FETCH_ASSOC);
                 $talent1 = $talentInfo[0]["name"];
                 $talent1Description = $talentInfo[0]["descriptions"];
                 $talent1speciality1 = $talentInfo[0]["speciality_1"];
@@ -42,7 +39,7 @@
                 $talent3speciality2 = $talentInfo[2]["speciality_2"];
                 $talent3speciality3 = $talentInfo[2]["speciality_3"];
                 $talent3Photo = $talentInfo[2]["photos"];
-            }catch(Exception $ex){
+            } catch (Exception $ex) {
                 echo $ex;
             }
         }
@@ -54,22 +51,14 @@
                 <! Grey box for the info about the talent>
                 <div class="information">
                     <div class="description"> <! left column>
-                        <h1>Talent's name</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
-                            leo, sed blandit felis. Sed ultricies consectetur quam quis efficitur. Etiam id magna id
-                            felis suscipit aliquet. Ut eros enim, interdum non ipsum id, suscipit congue ex. Duis laoreet,
-                            lorem quis egestas imperdiet, urna justo pharetra ex, ut laoreet nisl nibh sed neque.
-                            Maecenas eget mi quam. Nunc molestie aliquet nisl a vestibulum. Morbi pellentesque, libero
-                            id fermentum elementum, tellus nisl aliquam nisl, sed commodo purus nunc et massa. Vestibulum
-                            ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ante
-                            ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus dignissim
-                            aliquet mauris, quis pellentesque justo semper sed.</p>
+                        <h1><?php echo $talent1;?></h1>
+                        <p><?php echo $talent1Description;?></p>
                     </div>
                     <div class="specialty"> <! right column>
                         <div>
-                            <p>-> Specialty1</p>
-                            <p>-> Specialty2</p>
-                            <p>-> Specialty3</p>
+                            <p>-> <?php echo $talent1speciality1;?></p>
+                            <p>-> <?php echo $talent1speciality2;?></p>
+                            <p>-> <?php echo $talent1speciality3;?></p>
                         </div>
                         <div class="button">
                             Find out more
@@ -83,22 +72,14 @@
                 <! different class as margins are different>
                 <div class="information2">
                     <div class="description"> <! left column>
-                        <h1>Talent's name</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
-                            leo, sed blandit felis. Sed ultricies consectetur quam quis efficitur. Etiam id magna id
-                            felis suscipit aliquet. Ut eros enim, interdum non ipsum id, suscipit congue ex. Duis laoreet,
-                            lorem quis egestas imperdiet, urna justo pharetra ex, ut laoreet nisl nibh sed neque.
-                            Maecenas eget mi quam. Nunc molestie aliquet nisl a vestibulum. Morbi pellentesque, libero
-                            id fermentum elementum, tellus nisl aliquam nisl, sed commodo purus nunc et massa. Vestibulum
-                            ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ante
-                            ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus dignissim
-                            aliquet mauris, quis pellentesque justo semper sed.</p>
+                        <h1><?php echo $talent2;?></h1>
+                        <p><?php echo $talent2Description;?></p>
                     </div>
                     <div class="specialty"><! right column>
                         <div>
-                            <p>-> Specialty1</p>
-                            <p>-> Specialty2</p>
-                            <p>-> Specialty3</p>
+                            <p>-> <?php echo $talent2speciality1;?></p>
+                            <p>-> <?php echo $talent2speciality2;?></p>
+                            <p>-> <?php echo $talent2speciality3;?></p>
                         </div>
                         <div class="button">
                             Find out more
@@ -113,22 +94,14 @@
                 <! Grey box for the info about the talent>
                 <div class="information">
                     <div class="description"> <! left column>
-                        <h1>Talent's name</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lacinia
-                            leo, sed blandit felis. Sed ultricies consectetur quam quis efficitur. Etiam id magna id
-                            felis suscipit aliquet. Ut eros enim, interdum non ipsum id, suscipit congue ex. Duis laoreet,
-                            lorem quis egestas imperdiet, urna justo pharetra ex, ut laoreet nisl nibh sed neque.
-                            Maecenas eget mi quam. Nunc molestie aliquet nisl a vestibulum. Morbi pellentesque, libero
-                            id fermentum elementum, tellus nisl aliquam nisl, sed commodo purus nunc et massa. Vestibulum
-                            ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ante
-                            ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus dignissim
-                            aliquet mauris, quis pellentesque justo semper sed.</p>
+                        <h1><?php echo $talent3;?></h1>
+                        <p><?php echo $talent3Description;?></p>
                     </div>
                     <div class="specialty"> <! right column>
                         <div>
-                            <p>-> Specialty1</p>
-                            <p>-> Specialty2</p>
-                            <p>-> Specialty3</p>
+                            <p>-> <?php echo $talent3speciality1;?></p>
+                            <p>-> <?php echo $talent3speciality2;?></p>
+                            <p>-> <?php echo $talent3speciality3;?></p>
                         </div>
                         <div class="button">
                             Find out more
