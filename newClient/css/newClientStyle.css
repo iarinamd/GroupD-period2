@@ -29,6 +29,7 @@ select{
     border: darkgray solid 2px;
     padding: 10px 0px 10px 5px;
     margin: 10px;
+    width: 21.4%;
 }
 #fName, #lName{
     width: 48%;
@@ -43,6 +44,15 @@ select{
     font-family: Montserrat;
     border: darkgray solid 2px;
     padding: 10px 0px 10px 5px;
+}
+
+#bday{
+    width: 14%;
+    margin: 10px 5px 10px 0px;
+    font-family: Montserrat;
+    border: darkgray solid 2px;
+    padding: 10px 0px 10px 5px;
+    
 }
 
 textarea{
