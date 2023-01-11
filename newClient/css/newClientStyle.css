@@ -1,12 +1,14 @@
 *{
     margin: 0%;
 }
-
+@font-face {
+    font-family: Montserrat;
+}
 
 #container{
     grid-template-columns: repeat(12,1fr);
     display: grid;
-    font-family: Montserrat;
+    font-family: Montserrat,sans-serif;
 }
 
 #header{
