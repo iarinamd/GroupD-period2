@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
     <head>
         <title>Talents</title>
         <meta charset="UTF-8">
@@ -7,6 +7,46 @@
     </head>
 
     <body>
+    <?php
+        try{
+            $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+        }catch (Exception $ex){
+            echo $ex;
+        }
+
+        if($dbHandler){
+
+            try{
+                $talent = $dbHandler -> prepare("SELECT * FROM `talents` ORDER BY 'id'");
+                $talent -> execute();
+
+                $talentInfo = $talent->fetchAll(PDO::FETCH_ASSOC);
+
+                $talent1 = $talentInfo[0]["name"];
+                $talent1Description = $talentInfo[0]["descriptions"];
+                $talent1speciality1 = $talentInfo[0]["speciality_1"];
+                $talent1speciality2 = $talentInfo[0]["speciality_2"];
+                $talent1speciality3 = $talentInfo[0]["speciality_3"];
+                $talent1Photo = $talentInfo[0]["photos"];
+
+                $talent2 = $talentInfo[1]["name"];
+                $talent2Description = $talentInfo[1]["descriptions"];
+                $talent2speciality1 = $talentInfo[1]["speciality_1"];
+                $talent2speciality2 = $talentInfo[1]["speciality_2"];
+                $talent2speciality3 = $talentInfo[1]["speciality_3"];
+                $talent2Photo = $talentInfo[1]["photos"];
+
+                $talent3 = $talentInfo[2]["name"];
+                $talent3Description = $talentInfo[2]["descriptions"];
+                $talent3speciality1 = $talentInfo[2]["speciality_1"];
+                $talent3speciality2 = $talentInfo[2]["speciality_2"];
+                $talent3speciality3 = $talentInfo[2]["speciality_3"];
+                $talent3Photo = $talentInfo[2]["photos"];
+            }catch(Exception $ex){
+                echo $ex;
+            }
+        }
+    ?>
         <div id="container">
             <! horizontal box including image and description>
             <div id="talent">
