@@ -123,6 +123,7 @@ try {
                             <input type="text" name="fName" id="fName" placeholder="First Name">
                             <input type="text" name="lName" id="lName" placeholder="Last Name">
                             <p></p>
+
                             <label for="specialty1">Specialty 1</label>
                             <select name="specialty1" autocomplete="off">
                                 <optgroup label="Music">
@@ -138,7 +139,6 @@ try {
                                     <option value="other">Other</option>
                                 </optgroup>
                             </select>
-                            <p></p>
                             <label for="specialty2">Specialty 2</label>
                             <select name="specialty2" autocomplete="off">
                                 <optgroup label="Music">
@@ -154,7 +154,6 @@ try {
                                     <option value="other">Other</option>
                                 </optgroup>
                             </select>
-                            <p></p>
                             <label for="specialty3">Specialty 3</label>
                             <select name="specialty3" autocomplete="off">
                                 <optgroup label="Music">
@@ -191,3 +190,4 @@ try {
         </div>
     </body>
 </html>
+
