@@ -1,4 +1,3 @@
-
     <footer>
         <div class="contactInformations">
            <h3> CONTACT</h3>
@@ -12,13 +11,13 @@
         </div>
         <div class="iconImg">
             <a href="https://nl-nl.facebook.com/">
-                <img class="facebookImg" src="image/facebook_logo.png" alt="facebook logo">
+                <img class="facebookImg" src="img/facebookLogo.png" alt="facebook logo">
             </a>
             <a href="https://www.instagram.com/">
-                <img class="instagramImg" src="image/instagram_logo.png" alt="instagram logo">
+                <img class="instagramImg" src="img/instagramLogo.png" alt="instagram logo">
             </a>
             <a href="https://www.tiktok.com/login">
-                <img class="tiktokImg" src="image/tiktok_logo.png" alt="tiktok logo">
+                <img class="tiktokImg" src="img/tiktokLogo.png" alt="tiktok logo">
             </a>
         </div>
     </footer>

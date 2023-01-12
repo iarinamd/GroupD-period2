@@ -4,27 +4,26 @@
     <meta charset="UTF-8">
     <title>Login Page</title>
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
-    <div class="container">
-        <div class="loginBox">
-            <div class="userName">
-                <label class="usernameText" for="textbox"> Username </label>
-                <div class="usernameBox">
-                    <input class="usernametextBox" type="text" id="textbox" name="textbox">
-                </div>
+<form action="login.php" method="POST">
+    <div class = "container">
+        <div class = "loginBox">
+            <div class = "usernameBox">
+                <label class = "username" for="userInput">Username</label><br>
+                <input class = "usernameInput" type="text" name="userInput" id="userInput" required="" />
             </div>
-            <div class="passWord">
-                <label class="passwordText" for="textbox"> Password </label>
-                <div class="passwordBox">
-                    <input class="passwordtextBox" type="text" id="textbox" name="textbox">
-                </div>
+            <div class = "passwordBox">
+                <label class = "password" for="passwordInput">Password</label><br>
+                <input class = "passwordInput" type="text" name="passwordInput" id="passwordInput" required="" />
             </div>
-            <div class="loginButton">
-                <button class="loginText" type="button"> Log In </button>
+            <div class = "loginButton">
+                <input class="submitButton" type="submit" name="submit" id="submit" value="Login"/>
             </div>
         </div>
     </div>
+</form>
 </body>
 </html>
+

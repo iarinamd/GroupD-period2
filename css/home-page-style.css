@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 @font-face{
     font-family: Montserrat;
     src: url(fonts/Montserrat-Regular.ttf);
@@ -72,18 +74,13 @@ main{
     justify-content: space-around;
     padding-top: 0.5rem;
 
+    background-image: url("../img/festivals/festival_5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: grey;
     background-blend-mode: multiply;
 
     color: white;
-}
-
-#backgroundImage > img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
 }
 
 #mainTitle{
@@ -148,4 +145,67 @@ aside > h2{
 
 .asideLink{
     align-self: end;
+}
+
+
+
+
+
+
+header{
+    grid-column: 1/13;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 10px 10px #888888;
+    width: 100%;
+    height: 100px;
+}
+
+header>img{
+    height: 100px;
+    width: auto;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+}
+
+ul>li>a{
+    text-decoration: none;
+    color: RGBA(161, 119, 193, 1);
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+footer{
+    background-color: RGBA(123, 92, 148, 1);
+    grid-column: 1/13;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footerLogos{
+    height: 100px;
+    width: 100px;
+}
+
+footer>div>h2{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+footer>div>p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 20px;
 }

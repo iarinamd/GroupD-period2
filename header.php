@@ -1,9 +1,6 @@
-
     <header>
         <div id ="headerImage">
-            <a href="#">
-                <img class="logoImg" src="image/E3T_LOGO.png" alt="E3T logo">
-            </a>
+            <a href="#"><img class="logoImg" src="img/e3tLogo.png" alt="E3T logo"></a>
         </div>
         <nav>
             <ul>
