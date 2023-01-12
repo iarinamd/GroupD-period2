@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>header and footer</title>
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="header.css">
-</head>
-<body>
+
     <header>
         <div id ="headerImage">
             <a href="#">
@@ -21,5 +13,3 @@
             </ul>
         </nav>
     </header>
-</body>
-</html>
