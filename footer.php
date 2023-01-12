@@ -1,4 +1,3 @@
-
     <footer>
         <div class="contactInformations">
            <h3> CONTACT</h3>
