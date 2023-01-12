@@ -13,16 +13,19 @@ header{
     width: 100%;
     height: 100px;
 }
+
 header>img{
-    height: 100px;
+    height: 100%;
     width: auto;
 }
+
 ul{
     list-style: none;
     display: flex;
-    width: 800px;
+    width: 50rem;
     justify-content: space-around;
 }
+
 ul>li>a{
     text-decoration: none;
     color: RGBA(161, 119, 193, 1);
