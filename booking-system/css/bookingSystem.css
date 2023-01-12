@@ -46,8 +46,15 @@ input{
 input[type=file]{
     border: 1px solid #555;
 }
-.files{
+.dropZone{
+    margin-bottom: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #FFFFFF;
+    border: 1px solid #555;
 }
