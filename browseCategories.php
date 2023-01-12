@@ -9,13 +9,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <title>Browse Categories</title>
 </head>
 <div class="mainContainer">
     <header>
-        <!-- Paste Iarina's header code
-        For now using color block for header-->
-        <h1>Placeholder for header</h1>
+        <?php include("header.php");?>
     </header>
     <!-- Start of talent categories section
          "cat" = "categories"-->
@@ -35,5 +35,6 @@
         </div>
 
     </main>
+    <?include("footer.php");?>
 </div>
 </html>

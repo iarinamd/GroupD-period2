@@ -5,10 +5,10 @@
 }
 #gridContainer{
     display: grid;
-    grid-template-columns: repeat(1fr, 12);
+    grid-template-columns: repeat(1fr, 6);
 }
 header{
-    grid-column: 1/13;
+    grid-column: 1/7;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,7 +36,7 @@ ul>li>a{
 #mainBody{
     height: 600px;
     display: flex;
-    grid-column: 1/13;
+    grid-column: 1/7;
     justify-content: space-evenly;
     align-items: center;
 }

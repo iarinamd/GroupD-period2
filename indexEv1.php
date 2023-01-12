@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php
+    //connection to the database
         try{
             $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
         }
@@ -20,6 +21,7 @@
             $ev_id = $_GET['id'];
         }
         else{
+            //failstop
             echo"<h1>Something went wrong, please go back</h1>";
             exit();
         }
@@ -27,7 +29,7 @@
             $stmt = $dbHandler -> prepare("SELECT * FROM events WHERE id=:id");
             $stmt -> bindParam(":id", $ev_id, PDO::PARAM_INT);
             $stmt -> execute();
-
+            //fetching necesary information
             $event = $stmt->fetch(PDO::FETCH_ASSOC);
         }
         catch(Exception $ex){
@@ -35,28 +37,14 @@
         }
     ?>
     <div id = "gridContainer">
-        <header>
-            <img src="img/e3tLogo.png" alt="E3T_logo">
-            <nav>
-                <ul>
-                    <li><a href="#">BROWSE TALENTS</a></li>
-                    <li><a href="#">EVENTS</a></li>
-                    <?php
-                        if(isset($_SESSION['login']) AND $_SESSION['login'] == 'loged'){
-                            echo"<li><a href = '#'>PROFILE</a></li>";
-                        }
-                        else{
-                            echo"<li><a href = '#'>LOGIN</a></li>";
-                        }
-                    ?>
-                </ul>
-            </nav>
-        </header>
+        <!--inclusion of header-->
+        <?php include("header.php")?>
         <div id = "mainBody">
             <div id = "eventInf">
                 <?php
                 echo"<h1>".$event['name']."</h1>";
                 echo"<p>".$event['descriptions']."</p>";
+                //all of the information gained in fetch is displayd bellow
                 ?>
                 <div id="shapes">
                     <div class="shapesTextBox">
@@ -76,27 +64,8 @@
             </div>
             <img src=<?php echo $event["photos"]?> alt="PlaceHolder" id = "eventPicture">
         </div>
-        <footer>
-            <div>
-                <h2>CONTACT</h2>
-                <p>+31 123456789</p>
-                <p>+31 987654321</p>
-            </div>
-            <div>
-                <p>contact@e3t.com</p>
-                <p>111AA, Emmen</p>
-            </div>
-            <div>
-                <h2>OPENING HOURS</h2>
-                <p>Monday-Saturday: 9:30-18:00</p>
-                <p>Sunday: Closed</p>
-            </div>
-            <div>
-                <a href="https://nl-nl.facebook.com/"><img src="img/facebookLogo.png" alt="Facebook logo" class="footerLogos"></a>
-                <a href="https://www.instagram.com/"><img src="img/instagramLogo.png" alt="Instagram logo" class="footerLogos"></a>
-                <a href="https://www.tiktok.com/login"><img src="img/tiktokLogo.png" alt="tiktok logo" class="footerLogos"></a>
-            </div>
-        </footer>
+        <!--inclusion of footer-->
+        <?php include("footer.php");?>
     </div>
 </body>
 </html>
