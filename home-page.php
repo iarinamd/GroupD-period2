@@ -65,16 +65,7 @@
 
         ?>
 
-        <header>
-            <img src="img/e3tLogo.png" alt="E3T_logo">
-            <nav>
-                <ul>
-                    <li><a href="#">BROWSE TALENTS</a></li>
-                    <li><a href="#">EVENTS</a></li>
-                    <li><a href="#">LOGIN</a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php include_once "header.php"; ?>
 
         <div id="container">
             <main>
@@ -125,27 +116,7 @@
             </aside>
         </div>
 
-        <footer>
-            <div>
-                <h2>CONTACT</h2>
-                <p>+31 123456789</p>
-                <p>+31 987654321</p>
-            </div>
-            <div>
-                <p>contact@e3t.com</p>
-                <p>111AA, Emmen</p>
-            </div>
-            <div>
-                <h2>OPENING HOURS</h2>
-                <p>Monday-Saturday: 9:30-18:00</p>
-                <p>Sunday: Closed</p>
-            </div>
-            <div>
-                <img src="img/facebookLogo.png" alt="Facebook logo" class="footerLogos">
-                <img src="img/instagramLogo.png" alt="Instagram logo" class="footerLogos">
-                <img src="img/tiktokLogo.png" alt="tiktok logo" class="footerLogos">
-            </div>
-        </footer>
+        <?php include_once "footer.php"; ?>
 
     </body>
 </html>
