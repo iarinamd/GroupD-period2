@@ -153,7 +153,7 @@ aside > h2{
 
 
 header{
-    grid-column: 1/13;
+    grid-column: 1/7;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -163,46 +163,74 @@ header{
 }
 
 header>img{
-    height: 100px;
+    height: 100%;
     width: auto;
 }
 
 ul{
     list-style: none;
     display: flex;
-    width: 800px;
+    width: 50rem;
     justify-content: space-around;
 }
 
-ul>li>a{
+ul>li>a:link{
     text-decoration: none;
     color: RGBA(161, 119, 193, 1);
     font-size: 35px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+
+    background-color: transparent;
+    padding: 0;
 }
 
+ul>li>a:visited{
+    text-decoration: none;
+    color: RGBA(161, 119, 193, 1);
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    background-color: transparent;
+    padding: 0;
+}
+
+ul>li>a:hover{
+    text-decoration: none;
+    color: RGBA(161, 119, 193, 1);
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    background-color: transparent;
+    padding: 0;
+}
+
+footer>div>p{
+    line-height: 150%;
+    font-size: 20px;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
 footer{
     background-color: RGBA(123, 92, 148, 1);
     grid-column: 1/13;
-    height: 100px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-
 .footerLogos{
-    height: 100px;
-    width: 100px;
+    height: 15%;
+    width: 15%;
 }
-
 footer>div>h2{
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 30px;
 }
-
 footer>div>p{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
