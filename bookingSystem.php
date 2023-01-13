@@ -88,14 +88,14 @@
                             $uploadedFileType = finfo_file(finfo_open(FILEINFO_MIME_TYPE), $_FILES["uploadedFile"]["tmp_name"]);
 
                             if (in_array($uploadedFileType, $acceptedTypes)) {
-                                if (!file_exists("uploads/" . $_FILES["uploadedFile"]["name"])) {
+                                if (!file_exists("img/uploads/" . $_FILES["uploadedFile"]["name"])) {
                                     if (move_uploaded_file($_FILES["uploadedFile"]["tmp_name"], "uploads/" . $_FILES["uploadedFile"]["name"])) {
                                         if (count($err)==0){
-                                            $uploadedFile = "uploads/" . $_FILES["uploadedFile"]["name"];
+                                            $uploadedFile = "img/uploads/" . $_FILES["uploadedFile"]["name"];
 
                                             echo "File uploaded";
                                         }else{
-                                            echo "xxx";
+                                            echo "Form not filled correctly";
                                         } //end else
 
                                     } else {
@@ -136,7 +136,7 @@
         } //end if
         else{
             //Form
-            include("../header.php");
+            include("header.php");
             echo'
         <h1>Book a talent</h1>
         <div id="container">
@@ -195,7 +195,7 @@
                     <button type="submit" value="submit">Submit</button>
                 </div>
             </form>';
-            include("../footer.php");
+            include("footer.php");
         } //end else
         //Footer
     ?>
