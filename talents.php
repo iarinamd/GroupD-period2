@@ -9,7 +9,7 @@
     <body>
     <?php
         try{
-            $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+            $dbHandler = new PDO("mysql:host=mysql;dbname=project_2;charset=utf8", "root", "qwerty");
         }catch (Exception $ex){
             echo $ex;
         }

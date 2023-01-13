@@ -1,9 +1,12 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])){
-    $username = $_SESSION['username'];
+if(isset($_POST['talent']) or isset($_SESSION['visited_talent'])){
+    if(isset($_POST['talent'])){
+        $_SESSION['visited_talent'] = $_POST['talent'];
+    }
+    $username= $_SESSION['visited_talent'];
     $sql= new mysqli("mysql","root","qwerty","project_2"); // Connection to db
-    $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `email` = '$username'"); // Here we select user's raw in db
+    $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `name` = '$username'"); // Here we select user's raw in db
      while($row = mysqli_fetch_array($result)) {
          $name = $row['name'];
          $user_id = $row['id'];
@@ -38,10 +41,11 @@ if(isset($_SESSION['username'])){
 
 }
 else{
-    echo '<script type="text/javascript">location.href = "login.php";</script>'; // If user is not logged in
+    echo '<script type="text/javascript">location.href = "talents.php";</script>'; // If talent being visited is not chosen
 }
 if($active == 0){
-    echo '<script type="text/javascript">location.href = "li-profile-inactive.php";</script>'; // If user is inactive
+
+    echo '<script type="text/javascript">location.href = "li-profile-inactive-visitor.php";</script>'; // If user is inactive
 
 }
 
@@ -51,7 +55,7 @@ if($active == 0){
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
-    <link rel="stylesheet" type="text/css" href="css/li-profile.css">
+    <link rel="stylesheet" type="text/css" href="css/li-profile-visitor.css">
 </head>
 <body>
 
@@ -64,7 +68,7 @@ if($active == 0){
         </div>
 
         <div class="top2">
-            <button><a href="li-profile-edit.php">Edit Profile</a></button>
+
         </div>
 
     </div>
@@ -143,6 +147,11 @@ if($active == 0){
                 </div>
 
                 <div class="createreview">
+                    <form action="sendreview.php" method="post">
+                    <input type="text" name="review_heading" class="review_heading" placeholder="Heading (2-3 words)"><br>
+                    <textarea name="review" class="review" placeholder="Write a review"></textarea><br>
+                    <button class="reviewsend" type="submit"> Send</button>
+                    </form>
 
                 </div>
             </div>
@@ -150,6 +159,7 @@ if($active == 0){
         </div>
 
     </div>
+
 
 
 </div>

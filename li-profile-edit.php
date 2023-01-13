@@ -1,3 +1,35 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+    $username = $_SESSION['username'];
+    $sql= new mysqli("mysql","root","qwerty","project_2"); // Connection to db
+    $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `email` = '$username'"); // Here we select user's raw in db
+    while($row = mysqli_fetch_array($result)) {
+        $name = $row['name'];
+        $user_id = $row['id'];
+        $description = $row['descriptions'];
+        $avatar = $row['avatar'];
+        $photo1 = $row['photo1'];
+        $photo2 = $row['photo2'];
+        $photo3 = $row['photo3'];
+    }
+    $eventquery = mysqli_query($sql,"SELECT * FROM `events` WHERE `id` = '$user_id' ORDER BY `start_time` ASC LIMIT 3"); // Here we select all user's events
+    $i = -1;
+    while($roww = mysqli_fetch_array($eventquery))
+    {
+        $i++;
+
+        $event_name[$i]['event_name']=$roww['name'];
+        $event_date[$i]['event_date']=$roww['start_time'];
+
+    }
+
+}
+else{
+    echo '<script type="text/javascript">location.href = "login.php";</script>'; // If user is not logged in
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,54 +39,49 @@
 </head>
 <body>
 <div id="maincontainer">
-  <header>
-    <h1>Header</h1> <h1>Header</h1> <h1>Header</h1> <h1>Header</h1>
-    <h1>Header</h1> <h1>Header</h1> <h1>Header</h1> <h1>Header</h1>
-    <h1>Header</h1> <h1>Header</h1>
-  </header>
+    <?php include_once "header.php" ?>
 
   <div id="top">
     <div class="top1">
-      <h1>*username*'s Profile</h1>
+      <h1><?php echo $name."'s"; ?> Profile</h1>
     </div>
 
     <div class="top2">
-      <button><a href="li-profile.php">Save Profile</a></button>
+        <button type="submit" form="descriptionedit"><a>Save Profile</a></button>
     </div>
 
   </div>
 
   <div id="about">
     <div class="about1">
-      <img src="img/b_4.jpg">
+      <img src="<?php echo $avatar;?>">
     </div>
 
     <div class="about2">
       <div class="abouttext">
         <div class="about2_1">
-          <h2>About *name*</h2>
+          <h2>About <?php echo $name; ?></h2>
         </div>
 
         <div class="about2_2">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </p>
+
+                <form id="descriptionedit" action="saveprofile.php" method="post" class="form" >
+                    <textarea name="edited_description" cols="30" rows="10" class="textarea"
+                    placeholder="Please write something about you"><?php echo $description;?></textarea>
+                </form>
+
         </div>
       </div>
-      <div class="editbutton">
-        <button><a href="">Edit</a></button>
-      </div>
+
 
     </div>
 
   </div>
 
   <div id="pictures">
-    <img src="img/b_3.jpg">
-    <img src="img/b_1.jpg">
-    <img src="img/b_2.jpg">
+    <img src="<?php echo $photo1;?>">
+    <img src="<?php echo $photo2;?>">
+    <img src="<?php echo $photo3;?>">
   </div>
 
   <div id="upperfooter">
@@ -64,37 +91,24 @@
         <h1>UPCOMING EVENTS</h1>
       </div>
 
-      <div class="eventbox">
-        <div class="eventheader">
-          <p>DATE</p>
-          <h1>EVENT 1</h1>
-        </div>
-        <div class="buttondiv">
-          <button> <a href="">More Info</a></button>
-        </div>
+        <?php
+        for($b=0;$b<=$i;$b++){
+            echo"
+                    <div class = 'eventbox'>
+                        <div class='eventheader'>
+                            <p>" . $event_name[$b]['event_name'] ."</p>
+                            <h2>" . $event_date[$b]['event_date'] . "</h2>
+                        </div>
+                        <div class='buttondiv'>
+                            <button><a href='browseCategories.php'>More Info</a></button>
+                        </div>
+                    </div>
+                        ";
 
-      </div>
+        }
+        ?>
 
-      <div class="eventbox">
-        <div class="eventheader">
-          <p>DATE</p>
-          <h1>EVENT 2</h1>
-        </div>
-        <div class="buttondiv">
-          <button><a href="">More Info</a></button>
-        </div>
 
-      </div>
-      <div class="eventbox">
-        <div class="eventheader">
-          <p>DATE</p>
-          <h1>EVENT 3</h1>
-        </div>
-        <div class="buttondiv">
-          <button><a href="">More Info</a></button>
-        </div>
-
-      </div>
     </div>
 
     <div id="reviews">
@@ -138,6 +152,9 @@
 
 
 </div>
+<?php include_once "footer.php" ?>
+
+<?php mysqli_close($sql); ?>
 
 
 
