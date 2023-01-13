@@ -17,7 +17,7 @@
     }catch (Exception $ex){
         print $ex;
     }
-    
+
     try {
         $sql = $dbHandler->prepare("SELECT * FROM booking");
         $sql ->execute();
@@ -97,7 +97,7 @@
 
                                             echo "File uploaded";
                                         }else{
-                                            echo "xxx";
+                                            echo "Form not filled in correctly";
                                         } //end else
 
                                     } else {
