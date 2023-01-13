@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = "css/styleEv1.css" type = "text/css" rel = "stylesheet">
+    <link href = "css/header.css" type = "text/css" rel = "stylesheet">
+    <link href = "css/footer.css" type = "text/css" rel = "stylesheet">
     <title>Event</title>
 </head>
 <body>
@@ -36,9 +38,9 @@
             echo $ex;
         }
     ?>
+    <?php include("header.php")?>
     <div id = "gridContainer">
         <!--inclusion of header-->
-        <?php include("header.php")?>
         <div id = "mainBody">
             <div id = "eventInf">
                 <?php
