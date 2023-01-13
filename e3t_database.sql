@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 12:57 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Host: mysql
+-- Generation Time: Jan 13, 2023 at 02:37 PM
+-- Server version: 10.9.2-MariaDB-1:10.9.2+maria~ubu2204
+-- PHP Version: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `id` int(11) NOT NULL,
+  `talent` text NOT NULL,
+  `category` text NOT NULL,
+  `date` char(50) NOT NULL,
+  `time` char(50) NOT NULL,
+  `address` char(50) NOT NULL,
+  `zip_code` varchar(10) NOT NULL,
+  `description` text NOT NULL,
+  `uploaded_files` char(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `events`
 --
 
@@ -36,15 +54,15 @@ CREATE TABLE `events` (
   `end_time` datetime NOT NULL,
   `capacity` int(11) NOT NULL,
   `photos` varchar(100) NOT NULL,
-  `hot` bit NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `hot` bit(1) NOT NULL DEFAULT b'0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `name`, `descriptions`, `location`, `start_time`, `end_time`, `capacity`, `photos`, `hot`) VALUES
-(1, 'The Weeknd Concert', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Emmen, Netherlands ', '2022-12-19 22:35:33', '2022-12-19 00:35:33', 100, 'img/festivals/festival_4.jpg', 1);
+(1, 'The Weeknd Concert', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Emmen, Netherlands ', '2022-12-19 22:35:33', '2022-12-19 00:35:33', 100, 'img/festivals/festival_4.jpg', b'1');
 
 -- --------------------------------------------------------
 
@@ -57,7 +75,7 @@ CREATE TABLE `login` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `usertype` varchar(50) NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `login`
@@ -82,7 +100,7 @@ CREATE TABLE `talents` (
   `speciality_2` varchar(50) NOT NULL,
   `speciality_3` varchar(50) NOT NULL,
   `photos` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `talents`
@@ -94,6 +112,12 @@ INSERT INTO `talents` (`id`, `name`, `descriptions`, `speciality_1`, `speciality
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `events`
@@ -116,6 +140,12 @@ ALTER TABLE `talents`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `events`
