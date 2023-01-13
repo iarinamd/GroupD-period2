@@ -57,10 +57,13 @@ if($active == 1){
   <meta charset="UTF-8">
   <title>Profile</title>
   <link rel="stylesheet" type="text/css" href="css/li-profile-inactive-visitor.css">
+  <link rel="stylesheet" type="text/css" href="css/header1.css">
+  <link rel="stylesheet" type="text/css" href="css/footer1.css">
 </head>
 <body>
+<?php include_once "header.php" ?>
 <div id="maincontainer">
-  <?php include_once "header.php" ?>
+
   <h1 class="inactive">Profile is currently inactive</h1>
 <div id="darken">
     <div id="top">
