@@ -62,7 +62,7 @@
                         <?php echo"<p class='anchor'>".$event['capacity']."</p>"?>
                     </div>
                 </div>
-                <button onclick="location.href='#'" id="button">BOOK</button>
+                <button onclick="location.href='bookingSystem.php'" id="button">BOOK</button>
             </div>
             <img src=<?php echo $event["photos"]?> alt="PlaceHolder" id = "eventPicture">
         </div>
