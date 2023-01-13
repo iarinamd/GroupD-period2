@@ -8,15 +8,32 @@
     <!-- Linking CSS and meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/browseTalents.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <title>Browse Talents</title>
 </head>
+<body>
+<header>
+    <img src="img/e3tLogo.png"
+         alt="E3T_logo">
+    <nav>
+        <ul>
+            <li><a href="browseTalents.php">BROWSE TALENTS</a></li>
+            <li><a href="browseCategories.php">EVENTS</a></li>
+            <?php
+            if(isset($_SESSION['login']) AND $_SESSION['login'] == 'loged'){
+                echo"<li><a href = 'li-profile.php'>PROFILE</a></li>";
+            }
+            else{
+                echo"<li><a href = 'login2.php'>LOGIN</a></li>";
+            }
+            ?>
+        </ul>
+    </nav>
+</header>
+
 <div class="mainContainer">
-    <header>
-        <!-- Paste Iarina's header code
-        For now using color block for header-->
-        <h1>Placeholder for header</h1>
-    </header>
     <!-- Start of talent categories section
          "cat" = "categories"-->
     <main>
@@ -35,4 +52,5 @@
 
     </main>
 </div>
+</body>
 </html>
