@@ -62,8 +62,11 @@
                             <p>-> <?php echo $talent1speciality2;?></p>
                             <p>-> <?php echo $talent1speciality3;?></p>
                         </div>
+                        <form id = "id_talent1" action="li-profile-visitor.php" method="post">
+                            <input type="hidden" name="talent" value="<?php echo $talent1?>">
+                        </form>
                         <div class="button">
-                            <a class="link" href="#">Find out more</a>
+                            <input class="buttonText" type="submit" form="id_talent1" value="Find out more">
                         </div>
                     </div>
 
@@ -83,8 +86,11 @@
                             <p>-> <?php echo $talent2speciality2;?></p>
                             <p>-> <?php echo $talent2speciality3;?></p>
                         </div>
+                        <form id = "id_talent2" action="li-profile-visitor.php" method="post">
+                            <input type="hidden" name="talent" value="<?php echo $talent2?>">
+                        </form>
                         <div class="button">
-                            <a href="#">Find out more</a>
+                            <input class="buttonText" type="submit" form="id_talent2" value="Find out more">
                         </div>
                     </div>
                 </div>
@@ -105,13 +111,16 @@
                             <p>-> <?php echo $talent3speciality2;?></p>
                             <p>-> <?php echo $talent3speciality3;?></p>
                         </div>
+                        <form id = "id_talent3" action="li-profile-visitor.php" method="post">
+                            <input type="hidden" name="talent" value="<?php echo $talent3?>">
+                        </form>
                         <div class="button">
-                            <a href="#">Find out more</a>
+                            <input class="buttonText" type="submit" form="id_talent3" value="Find out more">
                         </div>
                     </div>
                 </div>
             </div>
-            <?php include("footer.php")?>
         </div>
+    <?php include("footer.php")?>
     </body>
 </html>
