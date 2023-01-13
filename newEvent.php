@@ -101,14 +101,18 @@ try {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/newEventStyle.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
         <title>Create a new Event!</title>
     </head>
     <body>
+    <header>
+        <?php
+            include 'header.php';
+
+        ?>
+    </header>
         <div id="container">
-            <div id="header">
-                <!-- PASTE IARINA'S HEADER HERE!-->
-                <h1>Header Placeholder</h1>
-            </div>
             <div id="mainContainer">
                 <h1>Create a new event</h1>
                 <div id="form">
@@ -159,5 +163,10 @@ try {
                 </div>
             </div>
         </div>
+    <footer>
+        <?php
+            include 'footer.php';
+        ?>
+    </footer>
     </body>
 </html>
