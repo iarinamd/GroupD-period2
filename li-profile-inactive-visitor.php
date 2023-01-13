@@ -1,9 +1,9 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])){
-    $username = $_SESSION['username'];
+if(isset($_SESSION['visited_talent'])){
+    $username = $_SESSION['visited_talent'];
     $sql= new mysqli("mysql","root","qwerty","project_2"); // Connection to db
-    $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `email` = '$username'"); // Here we select user's raw in db
+    $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `name` = '$username'"); // Here we select user's raw in db
     while($row = mysqli_fetch_array($result)) {
         $name = $row['name'];
         $user_id = $row['id'];
@@ -37,9 +37,18 @@ if(isset($_SESSION['username'])){
 
 }
 else{
-    echo '<script type="text/javascript">location.href = "login.php";</script>'; // If user is not logged in
+    echo '<script type="text/javascript">location.href = "talents.php";</script>'; // If user is not logged in
 }
 
+}
+else{
+    echo '<script type="text/javascript">location.href = "talents.php";</script>'; // If user is not logged in
+}
+if($active == 1){
+
+    echo '<script type="text/javascript">location.href = "li-profile-visitor.php";</script>'; // If user is active
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -47,11 +56,11 @@ else{
 <head>
   <meta charset="UTF-8">
   <title>Profile</title>
-  <link rel="stylesheet" type="text/css" href="css/li-profile-inactive.css">
+  <link rel="stylesheet" type="text/css" href="css/li-profile-inactive-visitor.css">
 </head>
 <body>
 <div id="maincontainer">
-    <?php include_once "header.php" ?>
+  <?php include_once "header.php" ?>
   <h1 class="inactive">Profile is currently inactive</h1>
 <div id="darken">
     <div id="top">
@@ -60,7 +69,7 @@ else{
       </div>
 
       <div class="top2">
-        <button><a>Edit Profile</a></button>
+
       </div>
 
     </div>
@@ -105,7 +114,7 @@ else{
                             <h2>" . $event_date[$c]['event_date'] . "</h2>
                         </div>
                         <div class='buttondiv'>
-                            <button><a>More Info</a></button>
+                            <button>More Info</button>
                         </div>
                     </div>
                         ";
@@ -122,18 +131,18 @@ else{
             <h1>REVIEWS</h1>
           </div>
 
-            <?php
+          <?php
 
-            for($a=0; $a<=$b;$a++){
-                echo"<div class='reviewbox'>
+                for($a=0; $a<=$b;$a++){
+                    echo"<div class='reviewbox'>
                             <div class='reviewtext'>
                                 <h1>".$review_heading[$a]['review_heading']."</h1>
                                 <p>".$review[$a]['review']."</p>
                             </div>
                          </div>";
-            }
+                }
 
-            ?>
+                ?>
 
           <div class="reviewsheader">
             <h1>LEAVE A REVIEW</h1>
@@ -148,6 +157,7 @@ else{
 
     </div>
   </div>
+
 
 </div>
 <?php include_once "footer.php" ?>

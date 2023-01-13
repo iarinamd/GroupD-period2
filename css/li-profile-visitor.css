@@ -2,6 +2,7 @@
     font-family: Montserrat;
     src: url("../fonts/Montserrat-Regular.ttf");
 }
+
 body {
     padding: 0;
     margin: 0;
@@ -40,19 +41,18 @@ header{
 .top2 > button{
     background-color: #7B5C94;
     color: white;
-    width:16vw;
+    width:14vw;
     height: 3vw;
     font-size: 33.45px;
     border: 0px;
     font-family: Montserrat;
 }
-.top2 > h1{
-    color: white;
-}
-.top2 > button > a {
+.top2 > button > a{
     text-decoration: none;
     color: white;
-    cursor: pointer;
+}
+.top2 > h1{
+    color: white;
 }
 #about{
     display: flex;
@@ -74,32 +74,7 @@ header{
     width: 73.8vw;
     height: 18vw;
     background-color: #A1A1A1;
-    justify-content: space-between;
-
-}
-.abouttext{
     flex-direction: column;
-
-}
-.editbutton{
-    display: flex;
-}
-.editbutton > button{
-    height: 3vw;
-    margin-top: auto;
-    background-color: #7B5C94;
-    color: white;
-    border-width: 0px;
-    font-family: Montserrat;
-    font-size: 33.4545px;
-    cursor: pointer;
-    float: bottom;
-    margin-bottom: 1vw;
-    margin-right: 1vw;
-}
-.editbutton > button > a {
-    text-decoration: none;
-    color: white;
 }
 .about2_1{
     display: flex;
@@ -113,7 +88,7 @@ header{
 .about2_2{
     display: flex;
     margin-left: 2vw;
-    min-width: 65vw;
+    max-width: 65vw;
 }
 .about2_2 > p{
     font-size: 24px;
@@ -171,10 +146,6 @@ header{
     font-family: Montserrat;
     font-size: 33.4545px;
     cursor: pointer;
-}
-.buttondiv > button > a {
-    text-decoration: none;
-    color: white;
 }
 .buttondiv{
     display: flex;
@@ -236,51 +207,37 @@ header{
     height: 14vw;
     max-height: 13vw;
 }
-#wrapper {
-    background: pink;
-    border-radius: 10px;
-    width: 800px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.textarea {
-    background: none;
-    color: black;
-    font-size: 23px;
-    width: 1000px;
-    border-radius: 20px;
-    padding: 10px;
-    border: none;
-    outline: none;
-    resize: none;
-    font-family: Montserrat;
-}
-
-.wrapper .form .btn {
-    background: invisible;
-    color: white;
-    font-size: 15px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 10px;
-    width: 200px;
-    border-radius: 20px;
-    margin: 0 auto;
-    display: block;
+input{
+    margin-left: 5px;
     margin-top: 5px;
-    margin-bottom: 20px;
-    opacity: 0.8;
-    transition: 0.3s all ease;
+    font-family: "Montserrat";
+    border-width: 0px;
 }
-
-.wrapper .form .btn:hover {
-    opacity: 1;
+textarea{
+    margin-left: 5px;
+    margin-top: 5px;
+    font-family: "Montserrat";
+    border-width: 0px;
+}
+.review_heading{
+    height: 3vw;
+    min-width: 20vw;
+}
+.review{
+    height: 6.40vw;
+    max-width: 51.1vw;
+    min-width: 51.1vw;
+    max-height: 6.40vw;
+}
+.reviewsend{
+    font-family: "Montserrat";
+    background-color: blueviolet;
+    border-width: 0px;
+    color: white;
+    height: 2vw;
+    width: 5vw;
+    font-size: 1.5vw;
+    margin-left: 5px;
 }
 a{
     text-decoration: none;

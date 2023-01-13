@@ -44,12 +44,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') // related to form, verify if the meth
                 switch ($userType)
                 {
                     case "admin":
+                        $_SESSION['username'] = $memberUsername;
                         echo '<script type="text/javascript">location.href = "#";</script>';
                         break;
                     case "user":
+                        $_SESSION['username'] = $memberUsername;
                         echo '<script type="text/javascript">location.href = "#";</script>';
                     break;
                     case "talent":
+                        $_SESSION['username'] = $memberUsername;
                         echo '<script type="text/javascript">location.href = "#";</script>';
                     break;
                     default:
