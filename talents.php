@@ -33,17 +33,16 @@ if($dbHandler) {
         $talent2speciality3 = $talentInfo[1]["speciality_3"];
         $talent2Photo = $talentInfo[1]["photos"];
 
-<<<<<<< HEAD
-                $talent3 = $talentInfo[2]["name"];
-                $talent3Description = $talentInfo[2]["descriptions"];
-                $talent3speciality1 = $talentInfo[2]["speciality_1"];
-                $talent3speciality2 = $talentInfo[2]["speciality_2"];
-                $talent3speciality3 = $talentInfo[2]["speciality_3"];
-                $talent3Photo = $talentInfo[2]["photos"];
-            } catch (Exception $ex) {
-                echo $ex;
-            }
-        }
+        $talent3 = $talentInfo[2]["name"];
+        $talent3Description = $talentInfo[2]["descriptions"];
+        $talent3speciality1 = $talentInfo[2]["speciality_1"];
+        $talent3speciality2 = $talentInfo[2]["speciality_2"];
+        $talent3speciality3 = $talentInfo[2]["speciality_3"];
+        $talent3Photo = $talentInfo[2]["photos"];
+    } catch (Exception $ex) {
+        echo $ex;
+    }
+}
     ?>
 
         <div id="container">
