@@ -106,7 +106,7 @@
                                 <p>" .$eventDate. "</p>
                                 <h3>" .$eventName. "</h3>
                             </div>
-                            <a href=' .$eventPageLink. ' class='asideLink'>More Info</a>
+                            <a href='" .$eventPageLink. "' class='asideLink'>More Info</a>
                         </div>
                         ";
                     }//end while
