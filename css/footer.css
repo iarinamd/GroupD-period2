@@ -6,7 +6,6 @@
 
 footer>div>p{
     line-height: 150%;
-    font-size: 20px;
     font-size: 30px;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
@@ -20,7 +19,7 @@ footer{
 }
 .footerLogos{
     height: 15%;
-    width: 15%;
+    width: 100px;
 }
 footer>div>h2{
     color: white;
