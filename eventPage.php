@@ -7,8 +7,11 @@
     <title>Patrick</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
+<?php include_once "header.php" ?>
     <div id="container">
         <section>
             <div id="textcontent">
@@ -25,5 +28,6 @@
         <img id="partyimg" src="img/partyimg.jpeg" title="partyimg" alt="partyimg">
 
     </div>
+<?php include_once "footer.php" ?>
 </body>
 </html>
