@@ -4,34 +4,38 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="css/addedEventStyle.css">
+            <link rel="stylesheet" href="css/header.css">
+            <link rel="stylesheet" href="css/footer.css">
             <title>Event added to Database</title>
         </head>
         <body>
+        <header>
+            <?php
+
+                include 'header.php';
+            ?>
+        </header>
             <div id="container">
-                <div id="header">
-                    <!-- PASTE IARINA'S HEADER HERE!-->
-                    <h1>Header Placeholder</h1>
-                </div>
                 <div id="mainContainer">
                     <?php
                     //FILE VALIDATION
 
                         $fileSize = (7*1024*1024);
 
-                        if ($_FILES["uploadedFile"]["error"] == 0) {
-                            if (strlen($_FILES["uploadedFile"]["name"]) < 50 && preg_match('/[A-Z]/', $_FILES["uploadedFile"]["name"])) {
-                                if ($_FILES["uploadedFile"]["size"] < $fileSize) {
+                        if ($_FILES["photos"]["error"] == 0) {
+                            if (strlen($_FILES["photos"]["name"]) < 50 && preg_match('/[A-Z]/', $_FILES["photos"]["name"])) {
+                                if ($_FILES["photos"]["size"] < $fileSize) {
                                     $acceptedTypes = ["image/png", "image/jpeg", "image/jpg"];
-                                    $uploadedFileType = finfo_file(finfo_open(FILEINFO_MIME_TYPE), $_FILES["uploadedFile"]["tmp_name"]);
+                                    $uploadedFileType = finfo_file(finfo_open(FILEINFO_MIME_TYPE), $_FILES["photos"]["tmp_name"]);
 
                                     echo "<h1> Your event has been saved with the following data: </h1>" . "<br>";
                                     if (in_array($uploadedFileType, $acceptedTypes)) {
-                                        if (!file_exists("uploadFile/" . $_FILES["uploadedFile"]["name"])) {
-                                            if(move_uploaded_file($_FILES["uploadedFile"]["tmp_name"], "uploadFile/". $_FILES["uploadedFile"]["name"])) {
-                                                $uploadedFile = "uploadFile/". $_FILES["uploadedFile"]["name"];
+                                        if (!file_exists("uploadFile/" . $_FILES["photos"]["name"])) {
+                                            if(move_uploaded_file($_FILES["photos"]["tmp_name"], "uploadFile/". $_FILES["photos"]["name"])) {
+                                                $photos = "uploadFile/". $_FILES["photos"]["name"];
 
-                                                echo "<b> You have uploaded: " . $uploadedFile . "</b> <br>";
-                                                echo '<img src="'.$uploadedFile.'" width="300px" height="auto"> <br>';
+                                                echo "<b> You have uploaded: " . $photos . "</b> <br>";
+                                                echo '<img src="'.$photos.'" width="300px" height="auto"> <br>';
                                                // echo "Upload: ". $_FILES["uploadedFile"]["name"] ."<br>";
                                                // echo "Type: ". $_FILES["uploadedFile"]["type"] ."<br>";
                                                // echo "Size: ". ($_FILES["uploadedFile"]["size"] / 1024) ." Kb<br>";
@@ -41,25 +45,25 @@
                                                 echo "Something went wrong while uploading";
                                             }
                                         } else {
-                                            echo $_FILES["uploadedFile"]["name"] . " already exists";
+                                            echo $_FILES["photos"]["name"] . " already exists";
                                         }
                                     } else {
-                                        echo "Invalid file type (" . $_FILES["uploadedFile"]["type"] . ")";
+                                        echo "Invalid file type (" . $_FILES["photos"]["type"] . ")";
                                     }
                                 } else {
-                                    echo "Invalid file size (" . $_FILES["uploadedFile"]["size"] . ")";
+                                    echo "Invalid file size (" . $_FILES["photos"]["size"] . ")";
                                 }
                             } else {
                                 echo "Name must contain an uppercase and must not exceed 50 chars";
                             }
                         } else {
-                            echo "Error: ". $_FILES["uploadedFile"]["error"] ."<br>";
+                            echo "Error: ". $_FILES["photos"]["error"] ."<br>";
                         }
 
                         if ($_SERVER["REQUEST_METHOD"]=="POST"){
                             $eventName = filter_input(INPUT_POST, "eventName");
                             $date = filter_input(INPUT_POST, "date");
-                            $time = filter_input(INPUT_POST, "time");
+                            $start_time = filter_input(INPUT_POST, "start_time");
                             $capacity = filter_input(INPUT_POST, "capacity");
                             $category = filter_input(INPUT_POST, "category");
                             $address = filter_input(INPUT_POST, "address");
@@ -70,7 +74,7 @@
                                 echo "Please enter the event name";
                             } elseif (empty($date)){
                                 echo "Please enter a date";
-                            } elseif (empty($time)){
+                            } elseif (empty($start_time)){
                                 echo "Please enter a time";
                             } elseif (empty($capacity)){
                                 echo "Please enter a capacity";
@@ -85,7 +89,7 @@
                                 echo "<table>";
                                 echo "<th>Event Name:</th> ". "<td>" . $eventName . "</td>";
                                 echo "<tr><th>Date:</th> ". "<td>" . $date . "</td></tr>";
-                                echo "<tr><th>Time:</th> ". "<td>" . $time . "</td></tr>";
+                                echo "<tr><th>Time:</th> ". "<td>" . $start_time . "</td></tr>";
                                 echo "<tr><th>Capacity:</th> ". "<td>" . $capacity . "</td></tr>";
                                 echo "<tr><th>Category:</th> ". "<td>" . $category . "</td></tr>";
                                 echo "<tr><th>Address:</th> ". "<td>" . $address . "</td></tr>";
@@ -93,15 +97,15 @@
                                 echo "</table><br>";
 
                             }
-                            if ($eventName && $date && $time && $capacity && $category && $address && $zip){
+                            if ($eventName && $date && $start_time && $capacity && $category && $address && $zip){
 
                                 try {
                                     $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
-                                    $sql= $dbHandler->prepare("INSERT INTO events(`id`,`eventName`,`date`,`time`,`capacity`,`category`,`address`,`zip`,`description`,`uploadedFile`)
-                                    VALUES(NULL,:eventName,:date,:time,:capacity,:category,:address,:zip,:description,:uploadedFile);");
+                                    $sql= $dbHandler->prepare("INSERT INTO events(`id`,`eventName`,`date`,`start_time`,`capacity`,`category`,`address`,`zip`,`description`,`uploadedFile`)
+                                    VALUES(NULL,:eventName,:date,:start_time,:capacity,:category,:address,:zip,:description,:uploadedFile);");
                                     $sql->bindParam("eventName",$eventName,PDO::PARAM_STR);
                                     $sql->bindParam("date",$date,PDO::PARAM_STR);
-                                    $sql->bindParam("time",$time,PDO::PARAM_STR);
+                                    $sql->bindParam("start_time",$start_time,PDO::PARAM_STR);
                                     $sql->bindParam("capacity",$capacity,PDO::PARAM_INT);
                                     $sql->bindParam("category",$category,PDO::PARAM_STR);
                                     $sql->bindParam("address",$address,PDO::PARAM_STR);
@@ -126,5 +130,10 @@
                     ?>
                 </div>
             </div>
+        <footer>
+            <?php
+                include 'footer.php';
+            ?>
+        </footer>
         </body>
     </html>
