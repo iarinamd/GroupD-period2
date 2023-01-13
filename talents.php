@@ -46,10 +46,10 @@
     ?>
 
         <div id="container">
-            <?php include("../header.php")?>
+            <?php include("header.php")?>
             <! horizontal box including image and description>
             <div id="talent">
-                <img class="picture1" src="images/b_3.jpg" alt="talent picture">
+                <img class="picture1" src="img/b_3.jpg" alt="talent picture">
                 <! Grey box for the info about the talent>
                 <div class="information1">
                     <div class="description"> <! left column>
@@ -88,11 +88,11 @@
                         </div>
                     </div>
                 </div>
-                <img class="picture2" src="images/a_1.jpg" alt="talent picture">
+                <img class="picture2" src="img/a_1.jpg" alt="talent picture">
             </div>
             <! horizontal box including image and description>
             <div id="talent">
-                <img class="picture3" src="images/c_1.jpg" alt="talent picture">
+                <img class="picture3" src="img/c_1.jpg" alt="talent picture">
                 <! Grey box for the info about the talent>
                 <div class="information3">
                     <div class="description"> <! left column>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <?php include("../footer.php")?>
+            <?php include("footer.php")?>
         </div>
     </body>
 </html>
