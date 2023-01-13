@@ -4,6 +4,7 @@
         <title>bookingSystem</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="css/bookingSystem.css">
+        <link rel="stylesheet" type="text/css" href="css/footer.css">
     </head>
 
     <body>
@@ -196,8 +197,8 @@
                 </div>
             </form>';
             include("footer.php");
-        } //end else
-        //Footer
-    ?>
+                echo'
+        </div>';
+        } //end else?>
     </body>
 </html>
