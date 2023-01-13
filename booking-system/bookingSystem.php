@@ -8,8 +8,6 @@
 
     <body>
     <?php
-    //Header
-
     ob_start();
     $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
     try{
@@ -138,7 +136,9 @@
         } //end if
         else{
             //Form
-            echo'<h1>Book a talent</h1>
+            include("../header.php");
+            echo'
+        <h1>Book a talent</h1>
         <div id="container">
             <form name="booking" action="bookingSystem.php" enctype="multipart/form-data" method="POST" id="form">
             <!-- Row 1 -->
@@ -195,6 +195,7 @@
                     <button type="submit" value="submit">Submit</button>
                 </div>
             </form>';
+            include("../footer.php");
         } //end else
         //Footer
     ?>
