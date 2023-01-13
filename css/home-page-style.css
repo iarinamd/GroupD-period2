@@ -223,7 +223,7 @@ footer{
 }
 .footerLogos{
     height: 15%;
-    width: 15%;
+    width: 100px;
 }
 footer>div>h2{
     color: white;
@@ -236,4 +236,37 @@ footer>div>p{
     font-weight: 400;
     color: white;
     font-size: 20px;
+}
+
+footer>div>a:link{
+    text-decoration: none;
+    color: RGBA(161, 119, 193, 1);
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    background-color: transparent;
+    padding: 0;
+}
+
+footer>div>a:visited{
+    text-decoration: none;
+    color: transparent;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    background-color: transparent;
+    padding: 0;
+}
+
+footer>div>a:hover{
+    text-decoration: none;
+    color: RGBA(161, 119, 193, 1);
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    background-color: transparent;
+    padding: 0;
 }
