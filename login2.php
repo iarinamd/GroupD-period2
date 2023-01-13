@@ -5,8 +5,11 @@
     <title>Login Page</title>
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
 </head>
 <body>
+<?php include_once "header.php"?>
 <form action="login.php" method="POST">
     <div class = "container">
         <div class = "loginBox">
@@ -24,6 +27,7 @@
         </div>
     </div>
 </form>
+<?php include_once "footer.php"?>
 </body>
 </html>
 
