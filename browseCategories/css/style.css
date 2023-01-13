@@ -1,0 +1,68 @@
+*{
+    margin: 0%;
+}
+.mainContainer{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    font-family: Montserrat;
+}
+
+main{
+    grid-column: 2/12;
+}
+.catContainer{
+    height: 27em;
+    display: flex;
+    background-color: lightgrey;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5% 0% 10% 0%;
+}
+.catContainer > div{
+    width: 23em;
+    height: 23em;
+    text-align: center;
+    color: white;
+
+}
+.musicCat{
+    background-image: url("../img/event_images/concerts/concert_5.jpg");
+    background-size: cover;
+    display: grid;
+
+}
+
+.partiesCat{
+    background-image: url("../img/event_images/formal/formal_4.jpg");
+    background-size: cover;
+    display: grid;
+}
+
+.othersCat{
+    background-image: url("../img/event_images/formal/formal_1.jpg");
+    background-size: cover;
+    display: grid;
+}
+.concerts{
+    display: grid;
+    align-items: center;
+}
+
+.parties{
+    display: grid;
+    align-content: center;
+}
+
+.others{
+    display: grid;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: bisque;
+}
