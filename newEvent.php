@@ -147,13 +147,13 @@ try {
                             </select>
                         </div>
                         <div id="thirdRowInput">
-                            <input type="text" name="address" id="address" placeholder="Address">
+                            <input type="text" name="location" id="address" placeholder="Address">
                             <input type="text" name="zip" id="zip" placeholder="ZIP Code">
                             <p></p>
                         </div>
 
 
-                        <textarea placeholder="Write your description here" name="description"></textarea>
+                        <textarea placeholder="Write your description here" name="descriptions"></textarea>
                         <div id="fileUpload">
                             <input type="file" name="photos" id="uploadedFile">
                             <p></p>
