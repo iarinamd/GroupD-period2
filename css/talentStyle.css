@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
+header{
+    margin-left: -10px;
+    padding-right: 18px;
 
+}
 
 header{
     grid-column: 1/7;
@@ -38,7 +42,7 @@ ul>li>a{
 #container{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-	
+
 }
 #talent{
     grid-column: 1/7;
@@ -82,7 +86,7 @@ ul>li>a{
     margin-left: 30px;
     display: flex;
     flex-direction: row;
-	
+
 }
 .information3{
     width: 1000px;
@@ -102,13 +106,13 @@ ul>li>a{
     font-weight: 500;
     font-family: Montserrat;
 }
-.button{
-    height: 50px;
+.buttonText{
     background-color: #7B5C94;
-    color: white;
+    color: #D9D9D9;
+    border: none;
     font-family: Montserrat;
     font-weight: bold;
-    word-spacing: 1px;
+    font-size: x-large;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -116,7 +120,11 @@ ul>li>a{
     margin-top: 70px;
     margin-right: 30px;
     margin-left: 30px;
+    height: 50px;
+    padding-right: 55px;
+    padding-left: 55px;
 }
+
 a{
     text-decoration: none;
     color: #D9D9D9;
@@ -139,7 +147,6 @@ p{
 footer>div>p{
     line-height: 150%;
     font-size: 20px;
-    font-size: 30px;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
 }
@@ -152,7 +159,7 @@ footer{
 }
 .footerLogos{
     height: 15%;
-    width: 15%;
+    width: 100px;
 }
 footer>div>h2{
     color: white;

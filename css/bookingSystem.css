@@ -101,39 +101,3 @@ input[type=file]{
     margin-top:10px;
     margin-bottom: 30px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-
-*{
-    margin: 0px;
-}
-
-footer>div>p{
-    line-height: 150%;
-    font-size: 20px;
-    font-size: 30px;
-    font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
-}
-footer{
-    background-color: RGBA(123, 92, 148, 1);
-    grid-column: 1/13;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.footerLogos{
-    height: 15%;
-    width: 15%;
-}
-footer>div>h2{
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 30px;
-}
-footer>div>p{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    color: white;
-    font-size: 20px;
-}

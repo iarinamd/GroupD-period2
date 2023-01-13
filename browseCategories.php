@@ -8,15 +8,21 @@
     <!-- Linking CSS and meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/browseCategories.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <title>Browse Categories</title>
 </head>
+<body>
+<header>
+    <?php
+        include 'header.php';
+    ?>
+</header>
+
+
 <div class="mainContainer">
-    <header>
-        <?php include("header.php");?>
-    </header>
+
     <!-- Start of talent categories section
          "cat" = "categories"-->
     <main>
@@ -35,6 +41,12 @@
         </div>
 
     </main>
-    <?include("footer.php");?>
+
+<footer>
+    <?php
+        include 'footer.php';
+    ?>
+</footer>
 </div>
+</body>
 </html>
