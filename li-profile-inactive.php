@@ -2,10 +2,11 @@
 session_start();
 if(isset($_SESSION['username'])){
     $username = $_SESSION['username'];
-    $sql= new mysqli("mysql","root","qwerty","project_2"); // Connection to db
+    $sql= new mysqli("mysql","root","qwerty","e3t_database"); // Connection to db
     $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `email` = '$username'"); // Here we select user's raw in db
     while($row = mysqli_fetch_array($result)) {
-        $name = $row['name'];
+        $name = $row['fName'];
+        $lname = $row['lName'];
         $user_id = $row['id'];
         $description = $row['descriptions'];
         $avatar = $row['avatar'];
@@ -37,7 +38,7 @@ if(isset($_SESSION['username'])){
 
 }
 else{
-    echo '<script type="text/javascript">location.href = "login.php";</script>'; // If user is not logged in
+    echo '<script type="text/javascript">location.href = "login2.php";</script>'; // If user is not logged in
 }
 
 

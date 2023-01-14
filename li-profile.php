@@ -2,11 +2,12 @@
 session_start();
 if(isset($_SESSION['username'])){
     $username = $_SESSION['username']; // user's email
-    $sql= new mysqli("mysql","root","qwerty","project_2"); // Connection to db
+    $sql= new mysqli("mysql","root","qwerty","e3t_database"); // Connection to db
     $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `email` = '$username'"); // Here we select user's raw in db
     //this query is selecting a talent's raw with the email
      while($row = mysqli_fetch_array($result)) {
          $name = $row['fName'];
+         $lname = $row['lName'];
          $user_id = $row['id'];
          $description = $row['descriptions'];
          $avatar = $row['avatar'];
@@ -15,7 +16,7 @@ if(isset($_SESSION['username'])){
          $photo3 = $row['photo3'];
          $active = $row['active'];
      }
-    $eventquery = mysqli_query($sql,"SELECT * FROM `events` WHERE `id` = '$user_id' ORDER BY `start_time` ASC LIMIT 3"); // Here we select all user's events
+    $eventquery = mysqli_query($sql,"SELECT * FROM `events` ORDER BY `start_time` ASC LIMIT 3"); // Here we select all user's events
     $i = -1;
     while($roww = mysqli_fetch_array($eventquery))
     {
@@ -39,7 +40,7 @@ if(isset($_SESSION['username'])){
 
 }
 else{
-    echo '<script type="text/javascript">location.href = "login.php";</script>'; // If user is not logged in
+    echo '<script type="text/javascript">location.href = "login2.php";</script>'; // If user is not logged in
 }
 if($active == 0){
     echo '<script type="text/javascript">location.href = "li-profile-inactive.php";</script>'; // If user is inactive
@@ -64,7 +65,7 @@ if($active == 0){
 
     <div id="top">
         <div class="top1">
-            <h1><?php echo $name."'s"; ?> Profile</h1>
+            <h1><?php echo $lname." " .$name."'s"; ?> Profile</h1>
         </div>
 
         <div class="top2">
@@ -113,7 +114,7 @@ if($active == 0){
                             <h2>" . $event_date[$c]['event_date'] . "</h2>
                         </div>
                         <div class='buttondiv'>
-                            <button><a href='browseCategories.php'>More Info</a></button>
+                            <button><a href='index.php'>More Info</a></button>
                         </div>
                     </div>
                         ";
