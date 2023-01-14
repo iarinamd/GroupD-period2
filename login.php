@@ -1,7 +1,7 @@
 <?php
 session_start(); //
 //Processing Page for logging in
-//f ($_SERVER['REQUEST_METHOD'] == 'POST') // related to form, verify if the method is POST
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){ // related to form, verify if the method is POST
     $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
     $stmt = $dbHandler->prepare("SELECT * FROM login");
     $stmt->execute();
@@ -11,4 +11,5 @@ session_start(); //
             $_SESSION["login"] = "loged";
         }
     }
+}
 ?>
