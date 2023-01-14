@@ -3,7 +3,7 @@
     ob_start();
     $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 try {
-    $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+    $dbHandler = new PDO("mysql:host=localhost;port=3306;dbname=e3t_database;charset=utf8mb4", "phpmyadmin", "!User_12");
 
 }catch (Exception $ex){
     print $ex;
@@ -76,7 +76,7 @@ try {
             echo "Date of Birth: ". $bday ."<br>";
         }
         if (!$fName && !$lName && !$speciality_1 && !$speciality_2 && !$speciality_3 && !$email && !$phoneNr && !$bday){
-        $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+        $dbHandler = new PDO("mysql:host=localhost;port=3306;dbname=e3t_database;charset=utf8mb4", "phpmyadmin", "!User_12");
 
             $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`active`,`email`,`fName`,`lName`,`descriptions`,`speciality_1`,`speciality_2`,
                                                     `speciality_3`,`phoneNr`,`bday`,`avatar`, `photo1`, `photo2`,`photo3`)
