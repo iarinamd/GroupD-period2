@@ -41,7 +41,7 @@
                     $mainEventTime = "Time: " .substr($mainEventDateTime, -8);
 
                     //getting the artist list from the main event
-                    $artistQry = $dbHandler -> prepare("SELECT * FROM talents INNER JOIN talents_events ON talents.id = talents_events.talent_id WHERE event_id = " .$mainEventID. ";");
+                    $artistQry = $dbHandler -> prepare("SELECT * FROM talents INNER JOIN talents_events ON talents.id = talents_events.talent_id WHERE event_id = " .$mainEventID. " LIMIT 3;");
                     $artistQry -> execute();
                     $artistQry->bindColumn("fName", $artistfName, PDO::PARAM_STR);
                     $artistQry->bindColumn("lName", $artistlName, PDO::PARAM_STR);
