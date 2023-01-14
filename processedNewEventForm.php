@@ -100,7 +100,7 @@
                             if ($name && $date && $start_time && $capacity && $category && $location && $zip){
 
                                 try {
-                                    $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+                                    $dbHandler = new PDO("mysql:host=localhost;port=3306;dbname=e3t_database;charset=utf8mb4", "phpmyadmin", "!User_12");
                                     $sql= $dbHandler->prepare("INSERT INTO events(`id`,`name`,`date`,`start_time`,`capacity`,`category`,`photos`,`location`,`zip`,`descriptions`,`hot`)
                                     VALUES(NULL,:name,:date,:start_time,:capacity,:category,:photos,:location,:zip,:descriptions,0);");
                                     $sql->bindParam("name",$name,PDO::PARAM_STR);
