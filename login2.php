@@ -32,7 +32,7 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){ // related to form, verify if the method is POST
     $dbHandler=null;
     try {
-        $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+        $dbHandler = new PDO("mysql:host=localhost;port=3306;dbname=e3t_database;charset=utf8mb4", "phpmyadmin", "!User_12");
         $stmt = $dbHandler->prepare("SELECT * FROM login");
         $stmt->execute();
     } catch (Exception $e)
