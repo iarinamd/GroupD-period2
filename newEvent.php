@@ -1,4 +1,5 @@
 <?php
+    session_start();
     ob_start();
     $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 try {
@@ -19,68 +20,68 @@ try {
     print $ex;
 }
 
-    $sql->bindColumn("eventName",$eventName);
+    $sql->bindColumn("name",$name);
     $sql->bindColumn("date",$date);
-    $sql->bindColumn("time",$time);
+    $sql->bindColumn("start_time",$start_time);
     $sql->bindColumn("capacity",$capacity);
     $sql->bindColumn("category",$category);
-    $sql->bindColumn("address",$address);
+    $sql->bindColumn("location",$location);
     $sql->bindColumn("zip",$zip);
-    $sql->bindColumn("description",$description);
-    $sql->bindColumn("uploadedFile",$uploadedFile);
+    $sql->bindColumn("descriptions",$descriptions);
+    $sql->bindColumn("photos",$photos);
 
     $result = $sql->fetch();
     $dbHandler=NULL;
 
     if ($_SERVER["REQUEST_METHOD"]=="POST"){
-        $eventName = filter_input(INPUT_POST, "eventName");
+        $name = filter_input(INPUT_POST, "name");
         $date = filter_input(INPUT_POST, "date");
-        $time = filter_input(INPUT_POST, "time");
+        $start_time = filter_input(INPUT_POST, "start_time");
         $capacity = filter_input(INPUT_POST, "capacity");
         $category = filter_input(INPUT_POST, "category");
-        $address = filter_input(INPUT_POST, "address");
+        $location = filter_input(INPUT_POST, "location");
         $zip = filter_input(INPUT_POST, "zip");
-        $description = filter_input(INPUT_POST, "description");
+        $descriptions = filter_input(INPUT_POST, "descriptions");
 
-        if(empty($eventName)){
+        if(empty($name)){
             echo "Please enter the event name";
         } elseif (empty($date)){
             echo "Please enter a date";
-        } elseif (empty($time)){
+        } elseif (empty($start_time)){
             echo "Please enter a time";
         } elseif (empty($capacity)){
             echo "Please enter a capacity";
         }elseif (empty($category)){
             echo "Please select a category";
-        } elseif (empty($address)){
+        } elseif (empty($location)){
             echo "Please enter an address";
         } elseif (empty($zip)){
             echo "Please enter a ZIP code";
         } else{
             echo "Your event has been saved with the following data:" . "<br>";
-            echo "Event Name: ". $eventName ."<br>";
+            echo "Event Name: ". $name ."<br>";
             echo "Date: ". $date ."<br>";
-            echo "Time: ". $time ."<br>";
+            echo "Time: ". $start_time ."<br>";
             echo "Capacity: ". $capacity ."<br>";
             echo "Category: ". $category ."<br>";
-            echo "Address: ". $address ."<br>";
+            echo "Address: ". $location ."<br>";
             echo "ZIP Code: ". $zip ."<br>";
         }
-        if (!$eventName && !$date && !$time && !$capacity && !$category && !$address && !$zip){
+        if (!$name && !$date && !$start_time && !$capacity && !$category && !$location && !$zip){
         $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
 
-            $sql= $dbHandler->prepare("INSERT INTO events(`id`,`eventName`,`date`,`time`,`capacity`,
-                                                    `category`,`address`,`zip`,`description`,`uploadedFile`)
-                                                    VALUES(NULL,':eventName',':date',':time',':capacity',':category',
-                                                         ':address',':zip',':description',':uploadedFile');");
+            $sql= $dbHandler->prepare("INSERT INTO events(`id`,`name`,`date`,`start_time`,`capacity`,`category`,`photos`,`location`,`zip`,`descriptions`,`hot`)
+                                                    VALUES(NULL,':name',':date',':start_time',':capacity',':category',':photos',':location',':zip',':descriptions','0');");
             $sql->bindParam("id",$id,PDO::PARAM_INT);
-            $sql->bindParam("eventName",$eventName,PDO::PARAM_STR);
+            $sql->bindParam("name",$name,PDO::PARAM_STR);
             $sql->bindParam("date",$date,PDO::PARAM_STR);
-            $sql->bindParam("time",$time,PDO::PARAM_STR);
+            $sql->bindParam("start_time",$start_time,PDO::PARAM_STR);
             $sql->bindParam("capacity",$capacity,PDO::PARAM_INT);
             $sql->bindParam("category",$category,PDO::PARAM_STR);
-            $sql->bindParam("address",$address,PDO::PARAM_STR);
+            $sql->bindParam("location",$location,PDO::PARAM_STR);
             $sql->bindParam("zip",$zip,PDO::PARAM_STR);
+            $sql->bindParam("photos",$photos,PDO::PARAM_STR);
+            $sql->bindParam("descriptions",$descriptions,PDO::PARAM_STR);
 
             $sql->execute();
             $result=$sql->execute();
@@ -118,7 +119,7 @@ try {
                 <div id="form">
                     <form action="processedNewEventForm.php" method="POST" enctype="multipart/form-data">
                         <div id="firstRowInput">
-                            <input type="text" name="eventName" id="eventName" placeholder="Event Name">
+                            <input type="text" name="name" id="eventName" placeholder="Event Name">
                             <p></p>
                         </div>
                         <div id="secondRowInput">

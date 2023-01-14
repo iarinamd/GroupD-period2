@@ -1,9 +1,11 @@
 <?php
 session_start();
+
 if(isset($_POST['talent']) or isset($_SESSION['visited_talent'])){
     if(isset($_POST['talent'])){
         $_SESSION['visited_talent'] = $_POST['talent'];
     }
+
     $username= $_SESSION['visited_talent'];
     $sql= new mysqli("mysql","root","qwerty","e3t_database"); // Connection to db
     $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `fName` = '$username'"); // Here we select user's raw in db
@@ -46,7 +48,7 @@ else{
 }
 if($active == 0){
 
-    echo '<script type="text/javascript">location.href = "li-profile-inactive-visitor.php";</script>'; // If user is inactive
+    echo '<script type="text/javascript">location.href = "li-profile-inactive-visitor.php";</script>'; // If user is not active
 
 }
 

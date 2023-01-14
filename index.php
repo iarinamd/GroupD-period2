@@ -1,10 +1,11 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Home page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/home-page-style.css">
+        <link rel="stylesheet" type="text/css" href="css/indexStyle.css">
     </head>
 
     <body>
@@ -28,6 +29,7 @@
                     $mainEventQry -> execute();
 
                     $mainEventInfo = $mainEventQry->fetchAll(PDO::FETCH_ASSOC);
+                    $mainEventID = $mainEventInfo[0]["id"];
                     $mainEvent = $mainEventInfo[0]["name"];
                     $mainEventDateTime = $mainEventInfo[0]["start_time"];
                     $mainEventLocation = $mainEventInfo[0]["location"];
@@ -39,7 +41,7 @@
                     $mainEventTime = "Time: " .substr($mainEventDateTime, -8);
 
                     //getting the artist list from the main event
-                    $artistQry = $dbHandler -> prepare("SELECT * FROM `talents` LIMIT 3");
+                    $artistQry = $dbHandler -> prepare("SELECT * FROM talents INNER JOIN talents_events ON talents.id = talents_events.talent_id WHERE event_id = " .$mainEventID. " LIMIT 3;");
                     $artistQry -> execute();
                     $artistQry->bindColumn("fName", $artistfName, PDO::PARAM_STR);
                     $artistQry->bindColumn("lName", $artistlName, PDO::PARAM_STR);

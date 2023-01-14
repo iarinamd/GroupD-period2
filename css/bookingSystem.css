@@ -14,8 +14,8 @@ header{
     height: 100px;
 }
 
-header>img{
-    height: 100%;
+header>a>img{
+    height: 100px;
     width: auto;
 }
 
@@ -36,6 +36,7 @@ ul>li>a{
 #container{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    font-family: 'Montserrat', sans-serif;
 }
 #form{
     grid-column: 1/7;
@@ -46,6 +47,7 @@ ul>li>a{
 h1{
     margin-left: 20px;
     margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 .row1{
     display: flex;
@@ -65,11 +67,13 @@ h1{
 select{
     width: 300px;
     margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
 }
 textarea {
     height: 150px;
     width: 91.5%;
     margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
 }
 .description{
     display: flex;
@@ -78,6 +82,7 @@ textarea {
 }
 input{
     width: 300px;
+    font-family: 'Montserrat', sans-serif;
 }
 input[type=file]{
     border: 1px solid #555;
@@ -93,6 +98,9 @@ input[type=file]{
     margin-right: 50px;
     background-color: #FFFFFF;
     border: 1px solid #555;
+}
+input[type=submit]{
+    font-family: 'Montserrat', sans-serif;
 }
 .submitButton{
     display: flex;

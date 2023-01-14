@@ -1,9 +1,10 @@
 <?php
 session_start();
+
 if(isset($_SESSION['visited_talent'])){
     $username = $_SESSION['visited_talent'];
     $sql= new mysqli("mysql","root","qwerty","e3t_database"); // Connection to db
-    $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `fname` = '$username'"); // Here we select user's raw in db
+    $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `fName` = '$username'"); // Here we select user's raw in db
     while($row = mysqli_fetch_array($result)) {
         $name = $row['fName'];
         $lname = $row['lName'];
@@ -13,6 +14,7 @@ if(isset($_SESSION['visited_talent'])){
         $photo1 = $row['photo1'];
         $photo2 = $row['photo2'];
         $photo3 = $row['photo3'];
+        $active = $row['active'];
     }
     $eventquery = mysqli_query($sql,"SELECT * FROM `events` ORDER BY `start_time` ASC LIMIT 3"); // Here we select all user's events
     $i = -1;

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
     <html lang="en">
         <head>
@@ -61,9 +64,9 @@
                         if ($_SERVER["REQUEST_METHOD"]=="POST"){
                             $fName = filter_input(INPUT_POST, "fName");
                             $lName = filter_input(INPUT_POST, "lName");
-                            $specialty_1 = filter_input(INPUT_POST, "specialty_1");
-                            $specialty_2 = filter_input(INPUT_POST, "specialty_2");
-                            $specialty_3 = filter_input(INPUT_POST, "specialty_3");
+                            $speciality_1 = filter_input(INPUT_POST, "speciality_1");
+                            $speciality_2 = filter_input(INPUT_POST, "speciality_2");
+                            $speciality_3 = filter_input(INPUT_POST, "speciality_3");
                             $email = filter_input(INPUT_POST, "email",FILTER_VALIDATE_EMAIL);
                             $phoneNr = filter_input(INPUT_POST, "phoneNr");
                             $bday = filter_input(INPUT_POST, "bday");
@@ -73,11 +76,11 @@
                                 echo "Please enter your first name";
                             } elseif (empty($lName)){
                                 echo "Please enter your last name";
-                            } elseif (empty($specialty_1)){
+                            } elseif (empty($speciality_1)){
                                 echo "Please select a specialty";
-                            } elseif (empty($specialty_2)){
+                            } elseif (empty($speciality_2)){
                                 echo "Please select a specialty";
-                            }elseif (empty($specialty_3)){
+                            }elseif (empty($speciality_3)){
                                 echo "Please select a specialty";
                             } elseif (empty($email)){
                                 echo "Please enter an E-Mail address";
@@ -90,33 +93,35 @@
                                 echo "<table>";
                                 echo "<th>First Name:</th> ". "<td>" . $fName . "</td>";
                                 echo "<tr><th>Last Name:</th> ". "<td>" . $lName . "</td></tr>";
-                                echo "<tr><th>Specialty 1:</th> ". "<td>" . $specialty_1 . "</td></tr>";
-                                echo "<tr><th>Specialty 2:</th> ". "<td>" . $specialty_2 . "</td></tr>";
-                                echo "<tr><th>Specialty 3:</th> ". "<td>" . $specialty_3 . "</td></tr>";
+                                echo "<tr><th>Specialty 1:</th> ". "<td>" . $speciality_1 . "</td></tr>";
+                                echo "<tr><th>Specialty 2:</th> ". "<td>" . $speciality_2 . "</td></tr>";
+                                echo "<tr><th>Specialty 3:</th> ". "<td>" . $speciality_3 . "</td></tr>";
                                 echo "<tr><th>E-Mail:</th> ". "<td>" . $email . "</td></tr>";
                                 echo "<tr><th>Phone Number:</th> ". "<td>" . $phoneNr . "</td></tr>";
                                 echo "<tr><th>Date of birth:</th> ". "<td>" . $bday . "</td></tr>";
                                 echo "</table><br>";
 
                             }
-                            if ($fName && $lName && $specialty_1 && $specialty_2 && $specialty_3 && $email && $phoneNr && $bday){
+                            if ($fName && $lName && $speciality_1 && $speciality_2 && $speciality_3 && $email && $phoneNr && $bday){
                                 $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
                                 try {
-                                    $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`active`,`email`,`fName`,`lName`,`descriptions`,`specialty_1`,`specialty_2`,
-                                                                            `specialty_3`,`phoneNr`,`bday`,`avatar`,`descriptions`,`photo1`)
-                                                                            VALUES( NOT NULL,NULL,:email,:fName,:lName,:descriptions,:specialty_1,:specialty_2,:specialty_3,
+                                    $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`active`,`email`,`fName`,`lName`,`descriptions`,`speciality_1`,`speciality_2`,
+                                                                            `speciality_3`,`phoneNr`,`bday`,`avatar`,`descriptions`,`photo1`)
+                                                                            VALUES( NOT NULL,NULL,:email,:fName,:lName,:descriptions,:speciality_1,:speciality_2,:speciality_3,
                                                                                    :phoneNr,:bday,:avatar,:photo1,:photo1,:photo1);");
                                     $sql->bindParam("active",$active,PDO::PARAM_INT);
                                     $sql->bindParam("fName",$fName,PDO::PARAM_STR);
                                     $sql->bindParam("lName",$lName,PDO::PARAM_STR);
-                                    $sql->bindParam("specialty_1",$specialty_1,PDO::PARAM_STR);
-                                    $sql->bindParam("specialty_2",$specialty_2,PDO::PARAM_STR);
-                                    $sql->bindParam("specialty_3",$specialty_3,PDO::PARAM_STR);
+                                    $sql->bindParam("speciality_1",$speciality_1,PDO::PARAM_STR);
+                                    $sql->bindParam("speciality_2",$speciality_2,PDO::PARAM_STR);
+                                    $sql->bindParam("speciality_3",$speciality_3,PDO::PARAM_STR);
                                     $sql->bindParam("email",$email,PDO::PARAM_STR);
                                     $sql->bindParam("phoneNr",$phoneNr,PDO::PARAM_STR);
                                     $sql->bindParam("bday",$bday,PDO::PARAM_STR);
                                     $sql->bindParam("descriptions",$descriptions,PDO::PARAM_STR);
                                     $sql->bindParam("photo1",$photo1,PDO::PARAM_STR);
+                                    $sql->bindParam("photo2",$photo1,PDO::PARAM_STR);
+                                    $sql->bindParam("photo3",$photo1,PDO::PARAM_STR);
                                     $sql->bindParam("avatar",$avatar,PDO::PARAM_STR);
 
                                     $sql->execute();

@@ -1,4 +1,5 @@
 <?php
+ session_start();
     ob_start();
     $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 try {
@@ -21,14 +22,17 @@ try {
 
     $sql->bindColumn("fName",$fName);
     $sql->bindColumn("lName",$lName);
-    $sql->bindColumn("specialty1",$specialty1);
-    $sql->bindColumn("specialty2",$specialty2);
-    $sql->bindColumn("specialty3",$specialty3);
+    $sql->bindColumn("speciality_1",$speciality_1);
+    $sql->bindColumn("speciality_2",$speciality_2);
+    $sql->bindColumn("speciality_3",$speciality_3);
     $sql->bindColumn("email",$email);
     $sql->bindColumn("phoneNr",$phoneNr);
     $sql->bindColumn("bday",$bday);
-    $sql->bindColumn("description",$description);
-    $sql->bindColumn("uploadedFile",$uploadedFile);
+    $sql->bindColumn("descriptions",$descriptions);
+    $sql->bindColumn("avatar",$photo1);
+    $sql->bindColumn("photo1",$photo1);
+    $sql->bindColumn("photo2",$photo1);
+    $sql->bindColumn("photo3",$photo1);
 
     $result = $sql->fetch();
     $dbHandler=NULL;
@@ -36,23 +40,23 @@ try {
     if ($_SERVER["REQUEST_METHOD"]=="POST"){
         $fName = filter_input(INPUT_POST, "fName");
         $lName = filter_input(INPUT_POST, "lName");
-        $specialty1 = filter_input(INPUT_POST, "specialty1");
-        $specialty2 = filter_input(INPUT_POST, "specialty2");
-        $specialty3 = filter_input(INPUT_POST, "specialty3");
+        $speciality_1 = filter_input(INPUT_POST, "speciality_1");
+        $speciality_2 = filter_input(INPUT_POST, "speciality_2");
+        $speciality_3 = filter_input(INPUT_POST, "speciality_3");
         $email = filter_input(INPUT_POST, "email",FILTER_VALIDATE_EMAIL);
         $phoneNr = filter_input(INPUT_POST, "phoneNr");
         $bday = filter_input(INPUT_POST, "bday");
-        $description = filter_input(INPUT_POST, "description");
+        $descriptions = filter_input(INPUT_POST, "descriptions");
 
         if(empty($fName)){
             echo "Please enter your first name";
         } elseif (empty($lName)){
             echo "Please enter your last name";
-        } elseif (empty($specialty1)){
+        } elseif (empty($speciality_1)){
             echo "Please select a specialty";
-        } elseif (empty($specialty2)){
+        } elseif (empty($speciality_2)){
             echo "Please select a specialty";
-        }elseif (empty($specialty3)){
+        }elseif (empty($speciality_3)){
             echo "Please select a specialty";
         } elseif (empty($email)){
             echo "Please enter an E-Mail address";
@@ -64,29 +68,34 @@ try {
             echo "Your profile has been saved with the following data:" . "<br>";
             echo "First Name: ". $fName ."<br>";
             echo "Last Name: ". $lName ."<br>";
-            echo "Specialty 1: ". $specialty1 ."<br>";
-            echo "Specialty 2: ". $specialty2 ."<br>";
-            echo "Specialty 3: ". $specialty3 ."<br>";
+            echo "Specialty 1: ". $speciality_1 ."<br>";
+            echo "Specialty 2: ". $speciality_2 ."<br>";
+            echo "Specialty 3: ". $speciality_3 ."<br>";
             echo "E-Mail: ". $email ."<br>";
             echo "Phone Number: ". $phoneNr ."<br>";
             echo "Date of Birth: ". $bday ."<br>";
         }
-        if (!$fName && !$lName && !$specialty1 && !$specialty2 && !$specialty3 && !$email && !$phoneNr && !$bday){
+        if (!$fName && !$lName && !$speciality_1 && !$speciality_2 && !$speciality_3 && !$email && !$phoneNr && !$bday){
         $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
 
-            $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`fName`,`lName`,`specialty1`,`specialty2`,
-                                                    `specialty3`,`email`,`phoneNr`,`bday`,`description`,`uploadedFile`)
-                                                    VALUES(NULL,':fName',':lName',':specialty1',':specialty2',':specialty3',
-                                                           ':email',':phoneNr',':bday',':description',':uploadedFile');");
+            $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`active`,`email`,`fName`,`lName`,`descriptions`,`speciality_1`,`speciality_2`,
+                                                    `speciality_3`,`phoneNr`,`bday`,`avatar`, `photo1`, `photo2`,`photo3`)
+                                                    VALUES(NULL,1,:email,:fName,:lName,:descriptions,:speciality_1,:speciality_2,
+                                                    :speciality_3,:phoneNr,:bday,:photo1, :photo1, :photo1,:photo1);");
             $sql->bindParam("id",$id,PDO::PARAM_INT);
             $sql->bindParam("fName",$fName,PDO::PARAM_STR);
             $sql->bindParam("lName",$lName,PDO::PARAM_STR);
-            $sql->bindParam("specialty1",$specialty1,PDO::PARAM_STR);
-            $sql->bindParam("specialty2",$specialty2,PDO::PARAM_STR);
-            $sql->bindParam("specialty3",$specialty3,PDO::PARAM_STR);
+            $sql->bindParam("descriptions",$descriptions,PDO::PARAM_STR);
+            $sql->bindParam("specialty_1",$speciality_1,PDO::PARAM_STR);
+            $sql->bindParam("specialty_2",$speciality_2,PDO::PARAM_STR);
+            $sql->bindParam("specialty_3",$speciality_3,PDO::PARAM_STR);
             $sql->bindParam("email",$email,PDO::PARAM_STR);
             $sql->bindParam("phoneNr",$phoneNr,PDO::PARAM_INT);
             $sql->bindParam("bday",$bday,PDO::PARAM_STR);
+            $sql->bindParam("avatar",$photo1,PDO::PARAM_STR);
+            $sql->bindParam("photo1",$photo1,PDO::PARAM_STR);
+            $sql->bindParam("photo2",$photo1,PDO::PARAM_STR);
+            $sql->bindParam("photo3",$photo1,PDO::PARAM_STR);
 
             $sql->execute();
             $result=$sql->execute();
@@ -127,8 +136,8 @@ try {
                             <input type="text" name="fName" id="fName" placeholder="First Name">
                             <input type="text" name="lName" id="lName" placeholder="Last Name">
                             <p></p>
-                            <label for="specialty_1">Specialty 1</label>
-                            <select name="specialty_1" autocomplete="off">
+                            <label for="speciality_1">Specialty 1</label>
+                            <select name="speciality_1" autocomplete="off">
                                 <optgroup label="Music">
                                     <option value="musician">Musician</option>
                                     <option value="djs">DJs</option>
@@ -143,8 +152,8 @@ try {
                                 </optgroup>
                             </select>
                             <p></p>
-                            <label for="specialty_2">Specialty 2</label>
-                            <select name="specialty_2" autocomplete="off">
+                            <label for="speciality_2">Specialty 2</label>
+                            <select name="speciality_2" autocomplete="off">
                                 <optgroup label="Music">
                                     <option value="musician">Musician</option>
                                     <option value="djs">DJs</option>
@@ -159,8 +168,8 @@ try {
                                 </optgroup>
                             </select>
                             <p></p>
-                            <label for="specialty_3">Specialty 3</label>
-                            <select name="specialty_3" autocomplete="off">
+                            <label for="speciality_3">Specialty 3</label>
+                            <select name="speciality_3" autocomplete="off">
                                 <optgroup label="Music">
                                     <option value="musician">Musician</option>
                                     <option value="djs">DJs</option>
@@ -185,7 +194,7 @@ try {
                         </div>
                         <textarea placeholder="Write your description here" name="descriptions"></textarea>
                         <div id="fileUpload">
-                            <input type="file" name="photo1" id="uploadedFile">
+                            <input type="file" name="photo1" id="photo1">
                             <p></p>
                         </div>
                         <input type="submit" value="Add User">
