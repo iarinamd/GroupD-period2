@@ -66,7 +66,7 @@ if($dbHandler) {
                             <input class="buttonText" type="hidden" name="talent" value="<?php echo $talent1?>">
                         </form>
                             <div>
-                                <input class="buttonText" type="submit" form="id_talent2" value="Find out more">
+                                <input class="buttonText" type="submit" form="id_talent1" value="Find out more">
                             </div>
 
                     </div>
@@ -115,7 +115,7 @@ if($dbHandler) {
                             <input class="buttonText" type="hidden" name="talent" value="<?php echo $talent3?>">
                         </form>
                         <div class="button">
-                            <input class="buttonText" type="submit" form="id_talent2" value="Find out more">
+                            <input class="buttonText" type="submit" form="id_talent3" value="Find out more">
                         </div>
                     </div>
                 </div>
