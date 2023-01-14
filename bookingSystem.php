@@ -90,7 +90,7 @@
 
                             if (in_array($uploadedFileType, $acceptedTypes)) {
                                 if (!file_exists("img/uploads/" . $_FILES["uploadedFile"]["name"])) {
-                                    if (move_uploaded_file($_FILES["uploadedFile"]["tmp_name"], "uploads/" . $_FILES["uploadedFile"]["name"])) {
+                                    if (move_uploaded_file($_FILES["uploadedFile"]["tmp_name"], "img/uploads/" . $_FILES["uploadedFile"]["name"])) {
                                         if (count($err)==0){
                                             $uploadedFile = "img/uploads/" . $_FILES["uploadedFile"]["name"];
 
@@ -149,7 +149,7 @@
                         <select name="talent" id="talent">
                             <option disabled selected>Select a talent</option>
                             <option> Talent1</option>
-                            <option><Talent2></option>
+                            <option>Talent2</option>
                             <option>Talent3</option>
                         </select>
                     </div>

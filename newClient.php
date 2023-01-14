@@ -107,14 +107,18 @@ try {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/newClientStyle.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
         <title>Create a new Client!</title>
     </head>
     <body>
+    <header>
+        <?php
+            include 'header.php';
+
+        ?>
+    </header>
         <div id="container">
-            <div id="header">
-                <!-- PASTE IARINA'S HEADER HERE!-->
-                <h1>Header Placeholder</h1>
-            </div>
             <div id="mainContainer">
                 <h1>Create a new user</h1>
                 <div id="form">
@@ -123,9 +127,8 @@ try {
                             <input type="text" name="fName" id="fName" placeholder="First Name">
                             <input type="text" name="lName" id="lName" placeholder="Last Name">
                             <p></p>
-
-                            <label for="specialty1">Specialty 1</label>
-                            <select name="specialty1" autocomplete="off">
+                            <label for="specialty_1">Specialty 1</label>
+                            <select name="specialty_1" autocomplete="off">
                                 <optgroup label="Music">
                                     <option value="musician">Musician</option>
                                     <option value="djs">DJs</option>
@@ -139,8 +142,9 @@ try {
                                     <option value="other">Other</option>
                                 </optgroup>
                             </select>
-                            <label for="specialty2">Specialty 2</label>
-                            <select name="specialty2" autocomplete="off">
+                            <p></p>
+                            <label for="specialty_2">Specialty 2</label>
+                            <select name="specialty_2" autocomplete="off">
                                 <optgroup label="Music">
                                     <option value="musician">Musician</option>
                                     <option value="djs">DJs</option>
@@ -154,8 +158,9 @@ try {
                                     <option value="other">Other</option>
                                 </optgroup>
                             </select>
-                            <label for="specialty3">Specialty 3</label>
-                            <select name="specialty3" autocomplete="off">
+                            <p></p>
+                            <label for="specialty_3">Specialty 3</label>
+                            <select name="specialty_3" autocomplete="off">
                                 <optgroup label="Music">
                                     <option value="musician">Musician</option>
                                     <option value="djs">DJs</option>
@@ -178,9 +183,9 @@ try {
                             <label for="bday">Date of Birth</label>
                             <input type="date" name="bday" id="bday" placeholder="Day of Birth">
                         </div>
-                        <textarea placeholder="Write your description here" name="description"></textarea>
+                        <textarea placeholder="Write your description here" name="descriptions"></textarea>
                         <div id="fileUpload">
-                            <input type="file" name="uploadedFile" id="uploadedFile">
+                            <input type="file" name="photo1" id="uploadedFile">
                             <p></p>
                         </div>
                         <input type="submit" value="Add User">
@@ -188,6 +193,10 @@ try {
                 </div>
             </div>
         </div>
+    <footer>
+        <?php
+            include 'footer.php'
+        ?>
+    </footer>
     </body>
 </html>
-

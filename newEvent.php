@@ -101,14 +101,18 @@ try {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/newEventStyle.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
         <title>Create a new Event!</title>
     </head>
     <body>
+    <header>
+        <?php
+            include 'header.php';
+
+        ?>
+    </header>
         <div id="container">
-            <div id="header">
-                <!-- PASTE IARINA'S HEADER HERE!-->
-                <h1>Header Placeholder</h1>
-            </div>
             <div id="mainContainer">
                 <h1>Create a new event</h1>
                 <div id="form">
@@ -121,7 +125,7 @@ try {
                             <label for="date">Date of event</label>
                             <input type="date" name="date" id="date">
                             <label for="date">Time of event</label>
-                            <input type="time" name="time" id="time">
+                            <input type="time" name="start_time" id="time">
                             <input type="number" name="capacity" id="capacity" placeholder="Capacity">
                             <label for="category">Category</label>
                             <select name="category" autocomplete="off">
@@ -143,15 +147,15 @@ try {
                             </select>
                         </div>
                         <div id="thirdRowInput">
-                            <input type="text" name="address" id="address" placeholder="Address">
+                            <input type="text" name="location" id="address" placeholder="Address">
                             <input type="text" name="zip" id="zip" placeholder="ZIP Code">
                             <p></p>
                         </div>
 
 
-                        <textarea placeholder="Write your description here" name="description"></textarea>
+                        <textarea placeholder="Write your description here" name="descriptions"></textarea>
                         <div id="fileUpload">
-                            <input type="file" name="uploadedFile" id="uploadedFile">
+                            <input type="file" name="photos" id="uploadedFile">
                             <p></p>
                         </div>
                         <input type="submit" value="Add Event">
@@ -159,5 +163,10 @@ try {
                 </div>
             </div>
         </div>
+    <footer>
+        <?php
+            include 'footer.php';
+        ?>
+    </footer>
     </body>
 </html>
