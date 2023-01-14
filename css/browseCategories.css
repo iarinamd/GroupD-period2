@@ -8,7 +8,7 @@
 }
 
 main{
-    grid-column: 2/12;
+    grid-column: 1/13;
 }
 .catContainer{
     height: 27em;

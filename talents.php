@@ -65,7 +65,9 @@ if($dbHandler) {
                         <form id = "id_talent1" action="li-profile-visitor.php" method="post">
                             <input class="buttonText" type="hidden" name="talent" value="<?php echo $talent1;?>">
                             <div>
+
                                 <input form="id_talent1" class="buttonText" type="submit" value="Find out more">
+
                             </div>
                         </form>
 
