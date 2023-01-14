@@ -1,5 +1,4 @@
-<?php session_start();
-var_dump($_SESSION)?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,7 @@ var_dump($_SESSION)?>
 </head>
 <body>
 <?php include_once "header.php"?>
-<form action="login.php" method="POST">
+<form action="login2.php" method="POST">
     <div class = "container">
         <div class = "loginBox">
             <div class = "usernameBox">
@@ -29,6 +28,19 @@ var_dump($_SESSION)?>
         </div>
     </div>
 </form>
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){ // related to form, verify if the method is POST
+    $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+    $stmt = $dbHandler->prepare("SELECT * FROM login");
+    $stmt->execute();
+
+    while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+        if($result["username"] == $_POST["userInput"] AND password_verify($_POST["passwordInput"], $result["password"])){
+            $_SESSION["login"] = "loged";
+        }
+    }
+}
+?>
 <?php include_once "footer.php"?>
 </body>
 </html>
