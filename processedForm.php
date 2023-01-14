@@ -28,9 +28,9 @@
 
                                     echo "<h1> Your profile has been saved with the following data: </h1>" . "<br>";
                                     if (in_array($uploadedFileType, $acceptedTypes)) {
-                                        if (!file_exists("uploadFile/" . $_FILES["photo1"]["name"])) {
+                                        if (!file_exists("img/uploadFile/" . $_FILES["photo1"]["name"])) {
                                             if(move_uploaded_file($_FILES["photo1"]["tmp_name"], "uploadFile/". $_FILES["photo1"]["name"])) {
-                                                $photo1 = "uploadFile/". $_FILES["photo1"]["name"];
+                                                $photo1 = "img/uploadFile/". $_FILES["photo1"]["name"];
 
                                                 echo "<b> You have uploaded: " . $photo1 . "</b> <br>";
                                                 echo '<img src="'.$photo1.'" width="300px" height="auto"> <br>';
