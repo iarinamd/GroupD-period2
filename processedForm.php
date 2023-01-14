@@ -103,7 +103,7 @@ session_start();
 
                             }
                             if ($fName && $lName && $speciality_1 && $speciality_2 && $speciality_3 && $email && $phoneNr && $bday){
-                                $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
+                                $dbHandler = new PDO("mysql:host=localhost;port=3306;dbname=e3t_database;charset=utf8mb4", "phpmyadmin", "!User_12");
                                 try {
                                     $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`active`,`email`,`fName`,`lName`,`descriptions`,`speciality_1`,`speciality_2`,
                                                                             `speciality_3`,`phoneNr`,`bday`,`avatar`,`descriptions`,`photo1`)
