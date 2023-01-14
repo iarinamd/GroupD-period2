@@ -49,7 +49,7 @@ CREATE TABLE `events` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `date` text NOT NULL,
-  `start_time` datetime NOT NULL,
+  `start_time` text NOT NULL,
   `capacity` int(11) NOT NULL,
   `category` varchar(255) NOT NULL,
   `photos` varchar(100) NOT NULL,
