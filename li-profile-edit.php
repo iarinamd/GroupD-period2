@@ -2,7 +2,8 @@
 session_start();
 if(isset($_SESSION['username'])){
     $username = $_SESSION['username'];
-    $sql= new mysqli("mysql","root","qwerty","e3t_database"); // Connection to db
+    $sql= new mysqli("localhost","phpmyadmin","!User_12","e3t_database",3306); // Connection to db
+    $sql -> set_charset("utf8mb4");
     $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `email` = '$username'"); // Here we select user's raw in db
     while($row = mysqli_fetch_array($result)) {
         $name = $row['fName'];
