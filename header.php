@@ -1,5 +1,5 @@
 <header>
-    <img src="img/e3tLogo.png" alt="E3T_logo">
+    <img src="img/e3tLogo.png" alt="E3T_logo" href="index.php">
     <nav>
         <ul>
             <li><a href="browseTalents.php">BROWSE TALENTS</a></li>
