@@ -13,15 +13,7 @@ body {
     margin-left: 2vw;
     margin-right: 2vw;
 }
-header{
-    display: flex;
-    grid-column: 1/7;
-    gap: 20px;
-    background-color: #fffff;
-    box-shadow: 2px 2px;
-    margin-left: -2vw;
-    margin-right: -2vw;
-}
+
 #top{
     display: flex;
     grid-column: 1/7;
