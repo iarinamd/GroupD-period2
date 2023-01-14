@@ -125,7 +125,7 @@ try {
                             <label for="date">Date of event</label>
                             <input type="date" name="date" id="date">
                             <label for="date">Time of event</label>
-                            <input type="time" name="time" id="time">
+                            <input type="time" name="start_time" id="time">
                             <input type="number" name="capacity" id="capacity" placeholder="Capacity">
                             <label for="category">Category</label>
                             <select name="category" autocomplete="off">
@@ -147,15 +147,15 @@ try {
                             </select>
                         </div>
                         <div id="thirdRowInput">
-                            <input type="text" name="address" id="address" placeholder="Address">
+                            <input type="text" name="location" id="address" placeholder="Address">
                             <input type="text" name="zip" id="zip" placeholder="ZIP Code">
                             <p></p>
                         </div>
 
 
-                        <textarea placeholder="Write your description here" name="description"></textarea>
+                        <textarea placeholder="Write your description here" name="descriptions"></textarea>
                         <div id="fileUpload">
-                            <input type="file" name="uploadedFile" id="uploadedFile">
+                            <input type="file" name="photos" id="uploadedFile">
                             <p></p>
                         </div>
                         <input type="submit" value="Add Event">

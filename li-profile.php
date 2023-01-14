@@ -1,11 +1,12 @@
 <?php
 session_start();
 if(isset($_SESSION['username'])){
-    $username = $_SESSION['username'];
+    $username = $_SESSION['username']; // user's email
     $sql= new mysqli("mysql","root","qwerty","project_2"); // Connection to db
     $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `email` = '$username'"); // Here we select user's raw in db
+    //this query is selecting a talent's raw with the email
      while($row = mysqli_fetch_array($result)) {
-         $name = $row['name'];
+         $name = $row['fName'];
          $user_id = $row['id'];
          $description = $row['descriptions'];
          $avatar = $row['avatar'];

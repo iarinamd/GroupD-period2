@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') // related to form, verify if the meth
     //Here we are trying to connect to the database.
     if ($conn = mysqli_connect('localhost','root',''))
     {
-        mysqli_select_db($conn, 'project_2'); // change the database name at the end!!
+        mysqli_select_db($conn, 'e3t_database');
 
         //this is prepare statement for security
         $sql = "SELECT `username`, `password`, `usertype` FROM `login` WHERE `username`= ?";

@@ -29,13 +29,13 @@
         <div class="catContainer">
             <div class="musicCat">
                 <!-- will add links later-->
-                <h1 class="concerts"><a href="#">Concerts</a></h1>
+                <h1 class="concerts"><a href="eventPage.php">Concerts</a></h1>
             </div>
             <div class="partiesCat">
-                <h1 class="parties"><a href="#">Parties</a></h1>
+                <h1 class="parties"><a href="eventPage.php">Parties</a></h1>
             </div>
             <div class="othersCat">
-                <h1 class="others"><a href="#">Others</a></h1>
+                <h1 class="others"><a href="eventPage.php">Others</a></h1>
             </div>
 
         </div>
