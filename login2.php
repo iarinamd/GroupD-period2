@@ -42,8 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){ // related to form, verify if the met
         while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
         if($result["username"] == $_POST["userInput"] AND password_verify($_POST["passwordInput"], $result["password"])){
             $_SESSION["login"] = "loged";
+<<<<<<< HEAD
+            echo "You have succesfuly loged in";
+            echo "<a href ='index.php'>Go to main page</a>";
+=======
             echo "SUCCES";
             $dbHandler = NULL;
+>>>>>>> 5a6ed159f8982865d6566f1a05a0ae58a4bdd96c
         }
     }
 }
