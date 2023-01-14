@@ -49,6 +49,7 @@ ul>li>a{
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
+
 }
 .picture1{
     object-fit: cover;
