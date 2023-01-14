@@ -21,9 +21,9 @@ try {
 
     $sql->bindColumn("fName",$fName);
     $sql->bindColumn("lName",$lName);
-    $sql->bindColumn("specialty_1",$specialty_1);
-    $sql->bindColumn("specialty_2",$specialty_2);
-    $sql->bindColumn("specialty_3",$specialty_3);
+    $sql->bindColumn("speciality_1",$speciality_1);
+    $sql->bindColumn("speciality_2",$speciality_2);
+    $sql->bindColumn("speciality_3",$speciality_3);
     $sql->bindColumn("email",$email);
     $sql->bindColumn("phoneNr",$phoneNr);
     $sql->bindColumn("bday",$bday);
@@ -39,9 +39,9 @@ try {
     if ($_SERVER["REQUEST_METHOD"]=="POST"){
         $fName = filter_input(INPUT_POST, "fName");
         $lName = filter_input(INPUT_POST, "lName");
-        $specialty_1 = filter_input(INPUT_POST, "specialty_1");
-        $specialty_2 = filter_input(INPUT_POST, "specialty_2");
-        $specialty_3 = filter_input(INPUT_POST, "specialty_3");
+        $speciality_1 = filter_input(INPUT_POST, "speciality_1");
+        $speciality_2 = filter_input(INPUT_POST, "speciality_2");
+        $speciality_3 = filter_input(INPUT_POST, "speciality_3");
         $email = filter_input(INPUT_POST, "email",FILTER_VALIDATE_EMAIL);
         $phoneNr = filter_input(INPUT_POST, "phoneNr");
         $bday = filter_input(INPUT_POST, "bday");
@@ -51,11 +51,11 @@ try {
             echo "Please enter your first name";
         } elseif (empty($lName)){
             echo "Please enter your last name";
-        } elseif (empty($specialty_1)){
+        } elseif (empty($speciality_1)){
             echo "Please select a specialty";
-        } elseif (empty($specialty_2)){
+        } elseif (empty($speciality_2)){
             echo "Please select a specialty";
-        }elseif (empty($specialty_3)){
+        }elseif (empty($speciality_3)){
             echo "Please select a specialty";
         } elseif (empty($email)){
             echo "Please enter an E-Mail address";
@@ -67,27 +67,27 @@ try {
             echo "Your profile has been saved with the following data:" . "<br>";
             echo "First Name: ". $fName ."<br>";
             echo "Last Name: ". $lName ."<br>";
-            echo "Specialty 1: ". $specialty_1 ."<br>";
-            echo "Specialty 2: ". $specialty_2 ."<br>";
-            echo "Specialty 3: ". $specialty_3 ."<br>";
+            echo "Specialty 1: ". $speciality_1 ."<br>";
+            echo "Specialty 2: ". $speciality_2 ."<br>";
+            echo "Specialty 3: ". $speciality_3 ."<br>";
             echo "E-Mail: ". $email ."<br>";
             echo "Phone Number: ". $phoneNr ."<br>";
             echo "Date of Birth: ". $bday ."<br>";
         }
-        if (!$fName && !$lName && !$specialty_1 && !$specialty_2 && !$specialty_3 && !$email && !$phoneNr && !$bday){
+        if (!$fName && !$lName && !$speciality_1 && !$speciality_2 && !$speciality_3 && !$email && !$phoneNr && !$bday){
         $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
 
-            $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`active`,`email`,`fName`,`lName`,`descriptions`,`specialty_1`,`specialty_2`,
-                                                    `specialty_3`,`phoneNr`,`bday`,`avatar`, `photo1`, `photo2`,`photo3`)
-                                                    VALUES(NULL,1,:email,:fName,:lName,:descriptions,:specialty_1,:specialty_2,
-                                                    :specialty_3,:phoneNr,:bday,:photo1, :photo1, :photo1,:photo1);");
+            $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`active`,`email`,`fName`,`lName`,`descriptions`,`speciality_1`,`speciality_2`,
+                                                    `speciality_3`,`phoneNr`,`bday`,`avatar`, `photo1`, `photo2`,`photo3`)
+                                                    VALUES(NULL,1,:email,:fName,:lName,:descriptions,:speciality_1,:speciality_2,
+                                                    :speciality_3,:phoneNr,:bday,:photo1, :photo1, :photo1,:photo1);");
             $sql->bindParam("id",$id,PDO::PARAM_INT);
             $sql->bindParam("fName",$fName,PDO::PARAM_STR);
             $sql->bindParam("lName",$lName,PDO::PARAM_STR);
             $sql->bindParam("descriptions",$descriptions,PDO::PARAM_STR);
-            $sql->bindParam("specialty_1",$specialty_1,PDO::PARAM_STR);
-            $sql->bindParam("specialty_2",$specialty_2,PDO::PARAM_STR);
-            $sql->bindParam("specialty_3",$specialty_3,PDO::PARAM_STR);
+            $sql->bindParam("specialty_1",$speciality_1,PDO::PARAM_STR);
+            $sql->bindParam("specialty_2",$speciality_2,PDO::PARAM_STR);
+            $sql->bindParam("specialty_3",$speciality_3,PDO::PARAM_STR);
             $sql->bindParam("email",$email,PDO::PARAM_STR);
             $sql->bindParam("phoneNr",$phoneNr,PDO::PARAM_INT);
             $sql->bindParam("bday",$bday,PDO::PARAM_STR);
@@ -135,8 +135,8 @@ try {
                             <input type="text" name="fName" id="fName" placeholder="First Name">
                             <input type="text" name="lName" id="lName" placeholder="Last Name">
                             <p></p>
-                            <label for="specialty_1">Specialty 1</label>
-                            <select name="specialty_1" autocomplete="off">
+                            <label for="speciality_1">Specialty 1</label>
+                            <select name="speciality_1" autocomplete="off">
                                 <optgroup label="Music">
                                     <option value="musician">Musician</option>
                                     <option value="djs">DJs</option>
@@ -151,8 +151,8 @@ try {
                                 </optgroup>
                             </select>
                             <p></p>
-                            <label for="specialty_2">Specialty 2</label>
-                            <select name="specialty_2" autocomplete="off">
+                            <label for="speciality_2">Specialty 2</label>
+                            <select name="speciality_2" autocomplete="off">
                                 <optgroup label="Music">
                                     <option value="musician">Musician</option>
                                     <option value="djs">DJs</option>
@@ -167,8 +167,8 @@ try {
                                 </optgroup>
                             </select>
                             <p></p>
-                            <label for="specialty_3">Specialty 3</label>
-                            <select name="specialty_3" autocomplete="off">
+                            <label for="speciality_3">Specialty 3</label>
+                            <select name="speciality_3" autocomplete="off">
                                 <optgroup label="Music">
                                     <option value="musician">Musician</option>
                                     <option value="djs">DJs</option>
