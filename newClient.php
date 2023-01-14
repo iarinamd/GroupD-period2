@@ -21,14 +21,17 @@ try {
 
     $sql->bindColumn("fName",$fName);
     $sql->bindColumn("lName",$lName);
-    $sql->bindColumn("specialty1",$specialty1);
-    $sql->bindColumn("specialty2",$specialty2);
-    $sql->bindColumn("specialty3",$specialty3);
+    $sql->bindColumn("specialty_1",$specialty_1);
+    $sql->bindColumn("specialty_2",$specialty_2);
+    $sql->bindColumn("specialty_3",$specialty_3);
     $sql->bindColumn("email",$email);
     $sql->bindColumn("phoneNr",$phoneNr);
     $sql->bindColumn("bday",$bday);
-    $sql->bindColumn("description",$description);
-    $sql->bindColumn("uploadedFile",$uploadedFile);
+    $sql->bindColumn("descriptions",$descriptions);
+    $sql->bindColumn("avatar",$photo1);
+    $sql->bindColumn("photo1",$photo1);
+    $sql->bindColumn("photo2",$photo1);
+    $sql->bindColumn("photo3",$photo1);
 
     $result = $sql->fetch();
     $dbHandler=NULL;
@@ -36,23 +39,23 @@ try {
     if ($_SERVER["REQUEST_METHOD"]=="POST"){
         $fName = filter_input(INPUT_POST, "fName");
         $lName = filter_input(INPUT_POST, "lName");
-        $specialty1 = filter_input(INPUT_POST, "specialty1");
-        $specialty2 = filter_input(INPUT_POST, "specialty2");
-        $specialty3 = filter_input(INPUT_POST, "specialty3");
+        $specialty_1 = filter_input(INPUT_POST, "specialty_1");
+        $specialty_2 = filter_input(INPUT_POST, "specialty_2");
+        $specialty_3 = filter_input(INPUT_POST, "specialty_3");
         $email = filter_input(INPUT_POST, "email",FILTER_VALIDATE_EMAIL);
         $phoneNr = filter_input(INPUT_POST, "phoneNr");
         $bday = filter_input(INPUT_POST, "bday");
-        $description = filter_input(INPUT_POST, "description");
+        $descriptions = filter_input(INPUT_POST, "descriptions");
 
         if(empty($fName)){
             echo "Please enter your first name";
         } elseif (empty($lName)){
             echo "Please enter your last name";
-        } elseif (empty($specialty1)){
+        } elseif (empty($specialty_1)){
             echo "Please select a specialty";
-        } elseif (empty($specialty2)){
+        } elseif (empty($specialty_2)){
             echo "Please select a specialty";
-        }elseif (empty($specialty3)){
+        }elseif (empty($specialty_3)){
             echo "Please select a specialty";
         } elseif (empty($email)){
             echo "Please enter an E-Mail address";
@@ -64,29 +67,34 @@ try {
             echo "Your profile has been saved with the following data:" . "<br>";
             echo "First Name: ". $fName ."<br>";
             echo "Last Name: ". $lName ."<br>";
-            echo "Specialty 1: ". $specialty1 ."<br>";
-            echo "Specialty 2: ". $specialty2 ."<br>";
-            echo "Specialty 3: ". $specialty3 ."<br>";
+            echo "Specialty 1: ". $specialty_1 ."<br>";
+            echo "Specialty 2: ". $specialty_2 ."<br>";
+            echo "Specialty 3: ". $specialty_3 ."<br>";
             echo "E-Mail: ". $email ."<br>";
             echo "Phone Number: ". $phoneNr ."<br>";
             echo "Date of Birth: ". $bday ."<br>";
         }
-        if (!$fName && !$lName && !$specialty1 && !$specialty2 && !$specialty3 && !$email && !$phoneNr && !$bday){
+        if (!$fName && !$lName && !$specialty_1 && !$specialty_2 && !$specialty_3 && !$email && !$phoneNr && !$bday){
         $dbHandler = new PDO("mysql:host=mysql;dbname=e3t_database;charset=utf8", "root", "qwerty");
 
-            $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`fName`,`lName`,`specialty1`,`specialty2`,
-                                                    `specialty3`,`email`,`phoneNr`,`bday`,`description`,`uploadedFile`)
-                                                    VALUES(NULL,':fName',':lName',':specialty1',':specialty2',':specialty3',
-                                                           ':email',':phoneNr',':bday',':description',':uploadedFile');");
+            $sql= $dbHandler->prepare("INSERT INTO talents(`id`,`active`,`email`,`fName`,`lName`,`descriptions`,`specialty_1`,`specialty_2`,
+                                                    `specialty_3`,`phoneNr`,`bday`,`avatar`, `photo1`, `photo2`,`photo3`)
+                                                    VALUES(NULL,1,:email,:fName,:lName,:descriptions,:specialty_1,:specialty_2,
+                                                    :specialty_3,:phoneNr,:bday,:photo1, :photo1, :photo1,:photo1);");
             $sql->bindParam("id",$id,PDO::PARAM_INT);
             $sql->bindParam("fName",$fName,PDO::PARAM_STR);
             $sql->bindParam("lName",$lName,PDO::PARAM_STR);
-            $sql->bindParam("specialty1",$specialty1,PDO::PARAM_STR);
-            $sql->bindParam("specialty2",$specialty2,PDO::PARAM_STR);
-            $sql->bindParam("specialty3",$specialty3,PDO::PARAM_STR);
+            $sql->bindParam("descriptions",$descriptions,PDO::PARAM_STR);
+            $sql->bindParam("specialty_1",$specialty_1,PDO::PARAM_STR);
+            $sql->bindParam("specialty_2",$specialty_2,PDO::PARAM_STR);
+            $sql->bindParam("specialty_3",$specialty_3,PDO::PARAM_STR);
             $sql->bindParam("email",$email,PDO::PARAM_STR);
             $sql->bindParam("phoneNr",$phoneNr,PDO::PARAM_INT);
             $sql->bindParam("bday",$bday,PDO::PARAM_STR);
+            $sql->bindParam("avatar",$photo1,PDO::PARAM_STR);
+            $sql->bindParam("photo1",$photo1,PDO::PARAM_STR);
+            $sql->bindParam("photo2",$photo1,PDO::PARAM_STR);
+            $sql->bindParam("photo3",$photo1,PDO::PARAM_STR);
 
             $sql->execute();
             $result=$sql->execute();
@@ -185,7 +193,7 @@ try {
                         </div>
                         <textarea placeholder="Write your description here" name="descriptions"></textarea>
                         <div id="fileUpload">
-                            <input type="file" name="photo1" id="uploadedFile">
+                            <input type="file" name="photo1" id="photo1">
                             <p></p>
                         </div>
                         <input type="submit" value="Add User">
