@@ -63,8 +63,12 @@ if($dbHandler) {
                             <p>-> <?php echo $talent1speciality3;?></p>
                         </div>
                         <form id = "id_talent1" action="li-profile-visitor.php" method="post">
-                            <input type="hidden" name="talent" value="<?php echo $talent1?>">
+                            <input class="buttonText" type="hidden" name="talent" value="<?php echo $talent1?>">
                         </form>
+                            <div>
+                                <input class="buttonText" type="submit" form="id_talent2" value="Find out more">
+                            </div>
+
                     </div>
                 </div>
             </div>
@@ -83,8 +87,11 @@ if($dbHandler) {
                             <p>-> <?php echo $talent2speciality3;?></p>
                         </div>
                         <form id = "id_talent2" action="li-profile-visitor.php" method="post">
-                            <input type="hidden" name="talent" value="<?php echo $talent2?>">
+                            <input class="buttonText" type="hidden" name="talent" value="<?php echo $talent2?>">
                         </form>
+                        <div>
+                            <input class="buttonText" type="submit" form="id_talent2" value="Find out more">
+                        </div>
                      </div>
                 </div>
                 <img class="picture2" src= "<?php echo $talent2Photo ?>" alt= "talent picture">
@@ -105,8 +112,11 @@ if($dbHandler) {
                             <p>-> <?php echo $talent3speciality3;?></p>
                         </div>
                         <form id = "id_talent3" action="li-profile-visitor.php" method="post">
-                            <input type="hidden" name="talent" value="<?php echo $talent3?>">
+                            <input class="buttonText" type="hidden" name="talent" value="<?php echo $talent3?>">
                         </form>
+                        <div class="button">
+                            <input class="buttonText" type="submit" form="id_talent2" value="Find out more">
+                        </div>
                     </div>
                 </div>
             </div>
