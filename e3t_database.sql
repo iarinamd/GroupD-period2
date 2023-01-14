@@ -66,10 +66,6 @@ CREATE TABLE `events` (
 INSERT INTO `events` (`id`, `name`, `date`, `start_time`, `capacity`, `category`, `photos`, `location`, `zip`, `descriptions`, `hot`) VALUES
 (1, 'The Weeknd Concert', '', '2022-12-19 22:35:33', 100, '', 'img/festivals/festival_4.jpg', 'Emmen, Netherlands ', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', b'1');
 (2, '18th birthday', '12-02-2023', '20:00', 150, 'party', 'img/uploads/Sunny_socks_yellow.jpg', 'emmen center', '1234ab', 'birthday party ', b'0');
-<<<<<<< HEAD
-=======
-(2, '18th birthday', '12-02-2023', '20:00', 150, 'party', 'img/uploads/Sunny_socks_yellow.jpg', 'emmen center', '1234ab', 'birthday party ', b'0');
->>>>>>> 772573b (BF: header link added and css fixed for header)
 (NULL, 'Test event', '4 October', '2022-11-19 22:35:00', '400', 'Concert', 'img/concerts/concert_1.jpg', 'Minecraft, Netherlands', '12345', 'THis is a concert, a concert which will happen, maybe', b'0');
 (NULL, '18th birthday', '12-02-2023', '20:00', '150', 'party', 'img/uploads/Sunny_socks_yellow.jpg', 'emmen center', '1234ab', 'birthday party ', b'0');
 -- --------------------------------------------------------
