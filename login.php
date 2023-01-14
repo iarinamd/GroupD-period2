@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') // related to form, verify if the meth
     $memberPassword = $_POST["passwordInput"]; // this is how you take the value from an input text box.
 
     //Here we are trying to connect to the database.
-    if ($conn = mysqli_connect('localhost','root',''))
+    if ($conn = mysqli_connect('mysql','root','qwerty'))
     {
         mysqli_select_db($conn, 'e3t_database');
 
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') // related to form, verify if the meth
                     break;
                     case "talent":
                         $_SESSION['username'] = $memberUsername;
-                        echo '<script type="text/javascript">location.href = "#";</script>';
+                        echo '<script type="text/javascript">location.href = "li-profile.php";</script>';
                     break;
                     default:
                         echo "<script type='text/javascript'>alert('Something went wrong.Please try again!');</script>";

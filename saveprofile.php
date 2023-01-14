@@ -2,7 +2,7 @@
 session_start();
 $username = $_SESSION['username'];
 $new_description = $_POST['edited_description'];
-$sql= new mysqli("mysql","root","qwerty","project_2"); // Connection to db
+$sql= new mysqli("mysql","root","qwerty","e3t_database"); // Connection to db
 $result = mysqli_query($sql,"SELECT * FROM `talents` WHERE `email` = '$username'"); // Here we select user's raw in db
 while($row = mysqli_fetch_array($result)) {
     $user_id = $row['id'];
