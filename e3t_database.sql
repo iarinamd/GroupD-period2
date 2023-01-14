@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Jan 14, 2023 at 10:52 AM
+-- Generation Time: Jan 14, 2023 at 12:11 PM
 -- Server version: 10.9.2-MariaDB-1:10.9.2+maria~ubu2204
 -- PHP Version: 8.0.23
 
@@ -39,16 +39,6 @@ CREATE TABLE `booking` (
   `uploaded_files` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`id`, `talent`, `category`, `date`, `time`, `address`, `zip_code`, `description`, `uploaded_files`) VALUES
-(2, 'Scooby-doo', 'Performer', '4 October', '12pm', 'Emmen Netherlands', '12345', 'Scooby dooby doo, where are you?', 'img/a_1.jpg'),
-(3, 'Shagy', 'Mistery buster', '6 December', '3pm', 'Minecraft,', '54321', 'Zoinks Scoob', 'img/partytime.jpeg'),
-(4, 'Scooby-doo', 'Performer', '4 October', '12pm', 'Emmen Netherlands', '12345', 'Scooby dooby doo, where are you?', 'img/a_1.jpg'),
-(5, 'Shagy', 'Mistery buster', '6 December', '3pm', 'Minecraft,', '54321', 'Zoinks Scoob', 'img/partytime.jpeg');
-
 -- --------------------------------------------------------
 
 --
@@ -59,7 +49,7 @@ CREATE TABLE `events` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `date` text NOT NULL,
-  `start_time` varchar(30) NOT NULL,
+  `start_time` datetime NOT NULL,
   `capacity` int(11) NOT NULL,
   `category` varchar(255) NOT NULL,
   `photos` varchar(100) NOT NULL,
@@ -74,9 +64,9 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `name`, `date`, `start_time`, `capacity`, `category`, `photos`, `location`, `zip`, `descriptions`, `hot`) VALUES
-(1, 'The Weeknd Concert', '4 October', '2022-12-19 22:35:33', 100, 'Concert', 'img/festivals/festival_4.jpg', 'Emmen, Netherlands ', '1234', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', b'1'),
-(2, 'Test event', '4 October', '2022-11-19 22:35:00', 400, 'Concert', 'img/concerts/concert_1.jpg', 'Minecraft, Netherlands', '12345', 'THis is a concert, a concert which will happen, maybe', b'0'),
-(3, '18th birthday', '12-02-2023', '20:00', 150, 'party', 'img/uploads/Sunny_socks_yellow.jpg', 'emmen center', '1234ab', 'birthday party ', b'0');
+(1, 'The Weeknd Concert', '', '2022-12-19 22:35:33', 100, 'Party', 'img/festivals/festival_4.jpg', 'Emmen, Netherlands ', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', b'1'),
+(2, 'Fantastic Friday', '', '2023-01-14 11:22:05', 50, 'Party', '', 'Ommen', '', 'This boi sucks', b'0'),
+(3, 'Fantastic Friday', '', '2023-01-14 11:22:05', 50, 'Party', '', 'Ommen', '', 'This boi sucks', b'0');
 
 -- --------------------------------------------------------
 
@@ -87,7 +77,7 @@ INSERT INTO `events` (`id`, `name`, `date`, `start_time`, `capacity`, `category`
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(129) NOT NULL,
   `usertype` varchar(50) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -96,9 +86,9 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `usertype`) VALUES
-(1, 'client@gmail.com', '123', 'user'),
-(2, 'admin@gmail.com', '1234', 'admin'),
-(3, 'talents@gmail.com', '12345', 'talent');
+(1, 'client@gmail.com', '$2y$10$AzRstImtVy8noibHqs6Kfee/bYA/lY13t.T8fT7Xk8O5HLan4btoe', 'user'),
+(2, 'admin@gmail.com', '$2y$10$JX9Yx9BPXIKMJ6lPeAUQMuRFKP0enX4QfsO0PAR/Mrrd7wc0SzwhG', 'admin'),
+(3, 'talents@gmail.com', '$2y$10$Df5i6gtIGJvXqLl7AM.vZ.zj7o7TQrb.2R1jfmOOXyuW0aBLPAn/S', 'talent');
 
 -- --------------------------------------------------------
 
@@ -109,8 +99,8 @@ INSERT INTO `login` (`id`, `username`, `password`, `usertype`) VALUES
 CREATE TABLE `reviews` (
   `review_id` int(255) NOT NULL,
   `id` int(255) NOT NULL,
-  `heading` int(11) NOT NULL,
-  `review` int(11) NOT NULL
+  `heading` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `review` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -142,9 +132,9 @@ CREATE TABLE `talents` (
 --
 
 INSERT INTO `talents` (`id`, `active`, `email`, `fName`, `lName`, `descriptions`, `speciality_1`, `speciality_2`, `speciality_3`, `phoneNr`, `bday`, `avatar`, `photo1`, `photo2`, `photo3`) VALUES
-(1, 1, 'david.talent@gmail.com', 'David ', 'Saltzpyre', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'magic_tricks ', 'acrobatics', 'jokes', 0, '12 January', 'img/a_1.jpg', 'img/b_2.jpg', 'img/partytime.jpeg', 'img/concerts/concert_5.jpg'),
-(2, 1, 'testemail@gmail.com', 'FName', 'LName', 'violinist', 'band', 'musician', 'band', 12345678, '12-05-2003', 'img/uploads/Sunny_socks_yellow.jpg', 'img/uploads/Sunny_socks_yellow.jpg', 'img/uploads/Sunny_socks_yellow.jpg', 'img/uploads/Sunny_socks_yellow.jpg'),
-(3, 1, 'aa@gmail.com', 'Nia', 'Smith', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'something', 'something', 'something', 11111111, '12/02/1999', 'img/b_2.jpg', 'img/b_2.jpg', 'img/b_2.jpg', 'img/b_2.jpg');
+(1, 1, '', 'David', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'magic_tricks ', 'acrobatics', 'jokes', 0, '', '', 'img/b_2.jpg', '', ''),
+(2, 1, 'something@something.com', 'Daniel', 'Bruh', 'Twin brother of the not-as-well-known German actor', 'Acting', 'Actorning', 'Actioning', 25, '$th OCTOBER', 'img/concerts/concert_4.jpg', 'img/concerts/concert_4.jpg', 'img/concerts/concert_4.jpg', 'img/concerts/concert_4.jpg'),
+(3, 1, 'something2@something.com', 'XAE A-12', 'Musk', 'Who dis', 'Being born', 'Existing', 'Living', 60, 'Second day', 'img/festivals/festival_4.jpg', 'img/festivals/festival_4.jpg', 'img/festivals/festival_4.jpg', 'img/festivals/festival_4.jpg');
 
 -- --------------------------------------------------------
 
@@ -157,6 +147,15 @@ CREATE TABLE `talents_events` (
   `event_id` int(11) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `talents_events`
+--
+
+INSERT INTO `talents_events` (`talent_id`, `event_id`, `id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 3, 3);
 
 --
 -- Indexes for dumped tables
@@ -196,7 +195,9 @@ ALTER TABLE `talents`
 -- Indexes for table `talents_events`
 --
 ALTER TABLE `talents_events`
-  ADD PRIMARY KEY (`talent_id`,`event_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `event_id` (`event_id`),
+  ADD KEY `talent_id` (`talent_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -206,7 +207,7 @@ ALTER TABLE `talents_events`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -231,6 +232,23 @@ ALTER TABLE `reviews`
 --
 ALTER TABLE `talents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `talents_events`
+--
+ALTER TABLE `talents_events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `talents_events`
+--
+ALTER TABLE `talents_events`
+  ADD CONSTRAINT `talents_events_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`),
+  ADD CONSTRAINT `talents_events_ibfk_2` FOREIGN KEY (`talent_id`) REFERENCES `talents` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
