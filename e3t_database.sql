@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Jan 14, 2023 at 12:11 PM
+-- Generation Time: Jan 14, 2023 at 01:08 PM
 -- Server version: 10.9.2-MariaDB-1:10.9.2+maria~ubu2204
 -- PHP Version: 8.0.23
 
@@ -64,9 +64,9 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `name`, `date`, `start_time`, `capacity`, `category`, `photos`, `location`, `zip`, `descriptions`, `hot`) VALUES
-(1, 'The Weeknd Concert', '', '2022-12-19 22:35:33', 100, 'Party', 'img/festivals/festival_4.jpg', 'Emmen, Netherlands ', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', b'1'),
-(2, 'Fantastic Friday', '', '2023-01-14 11:22:05', 50, 'Party', '', 'Ommen', '', 'This boi sucks', b'0'),
-(3, 'Fantastic Friday', '', '2023-01-14 11:22:05', 50, 'Party', '', 'Ommen', '', 'This boi sucks', b'0');
+(1, 'The Weeknd Concert', '4 October', '2022-12-19 22:35:33', 100, 'Party', 'img/festivals/festival_4.jpg', 'Emmen, Netherlands ', '12346', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', b'1'),
+(2, 'Fantastic Friday', '6 January', '2023-01-14 11:22:05', 50, 'Party', 'img/festivals/festival_1.jpg', 'Ommen', '6578', 'This boi sucks', b'0'),
+(3, 'Fantastic Friday', '8 May', '2023-01-14 11:22:05', 50, 'Party', 'img/festivals/festival_4.jpg', 'Ommen', '7891', 'This boi sucks', b'0');
 
 -- --------------------------------------------------------
 
