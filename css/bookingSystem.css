@@ -36,6 +36,7 @@ ul>li>a{
 #container{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    font-family: 'Montserrat';
 }
 #form{
     grid-column: 1/7;
