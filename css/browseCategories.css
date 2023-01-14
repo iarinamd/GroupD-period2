@@ -26,20 +26,20 @@ main{
 
 }
 .musicCat{
-    background-image: url("../img/event_images/concerts/concert_5.jpg");
+    background-image: url("../img/concerts/concert_5.jpg");
     background-size: cover;
     display: grid;
 
 }
 
 .partiesCat{
-    background-image: url("../img/event_images/formal/formal_4.jpg");
+    background-image: url("../img/formal/formal_4.jpg");
     background-size: cover;
     display: grid;
 }
 
 .othersCat{
-    background-image: url("../img/event_images/formal/formal_1.jpg");
+    background-image: url("../img/formal/formal_1.jpg");
     background-size: cover;
     display: grid;
 }
