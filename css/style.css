@@ -5,129 +5,50 @@ body{
 
 #container{
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 }
-
-section{
-    grid-column: 1/10;
+.left_side{
+    grid-column: 1/4;
+    display: grid;
     background-color: #D9D9D9;
-    margin: 40px 30px;
-    height: 661px;
+    margin: 30px;
+    margin-bottom: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 830px;
 }
-
-#partyimg{
-    grid-column: 10/16;
-    margin-top: 40px;
+.right_side{
+    grid-column:4/7;
+    display: grid;
 }
-
-section > div > h1{
-    font-size: 64px;
-    margin: 0;
+.right_image{
+    margin: 30px;
+    margin-bottom: 50px;
+    margin-left: 15px;
+    width: 620px;
+    height: 540px;
 }
-
-#textcontent{
-    padding: 10px;
-}
-
-.textsettings{
-    font-size: 36px;
-    
-}
-
-section > div > img{
-    width: 100%;
-    height: 70px;
-    margin-left: 10px;
-}
-
-.buttonplace{
+.images{
     display: flex;
+    justify-content: space-around;
+}
+.button{
+    display:flex;
     justify-content: center;
     align-items: center;
 }
-
-section > div > div > button{
+.book_button{
+    border: 0;
     background-color: #7B5C94;
     color: white;
-    border: none;
-    width: 189px;
-    height: 58px;
-    font-size: 36px;
-    font-family: Arial, serif;
-    margin-top: 15px;
-
-*{
-    margin: 0%;
+    height: 38px;
+    width: 149px;
+    font-size: 25px;
 }
-.mainContainer{
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    font-family: Montserrat;
+.left_side h1{
+    margin-left: 10px;
+}
+.left_side h5{
+    margin-left: 10px;
 }
 
-header{
-    grid-column: 1/13;
-    background-color: mediumslateblue;
-    padding: 1em;
-    margin-bottom: 5em;
-
-}
-main{
-    grid-column: 2/12;
-}
-.catContainer{
-    height: 27em;
-    display: flex;
-    background-color: lightgrey;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.catContainer > div{
-    width: 23em;
-    height: 23em;
-    text-align: center;
-    color: white;
-
-}
-.musicCat{
-    background-image: url("../img/event_images/concerts/concert_5.jpg");
-    background-size: cover;
-    display: grid;
-
-}
-
-.partiesCat{
-    background-image: url("../img/event_images/formal/formal_4.jpg");
-    background-size: cover;
-    display: grid;
-}
-
-.othersCat{
-    background-image: url("../img/event_images/formal/formal_1.jpg");
-    background-size: cover;
-    display: grid;
-}
-.concerts{
-    display: grid;
-    align-items: center;
-}
-
-.parties{
-    display: grid;
-    align-content: center;
-}
-
-.others{
-    display: grid;
-    align-items: center;
-}
-
-a{
-    text-decoration: none;
-    color: white;
-}
-
-a:hover{
-    color: bisque;
-
-}
