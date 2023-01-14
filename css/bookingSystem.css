@@ -36,7 +36,11 @@ ul>li>a{
 #container{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+<<<<<<< HEAD
     font-family: 'Montserrat';
+=======
+
+>>>>>>> fbc763a (bug fixed to css)
 }
 #form{
     grid-column: 1/7;
