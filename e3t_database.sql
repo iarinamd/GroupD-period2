@@ -39,8 +39,6 @@ CREATE TABLE `booking` (
   `uploaded_files` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
 -- Table structure for table `events`
 --
@@ -58,6 +56,7 @@ CREATE TABLE `events` (
   `descriptions` varchar(1000) NOT NULL,
   `hot` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Dumping data for table `events`
@@ -83,6 +82,7 @@ CREATE TABLE `login` (
   `usertype` varchar(50) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
 --
 -- Dumping data for table `login`
 --
@@ -104,6 +104,7 @@ CREATE TABLE `reviews` (
   `heading` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `review` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 
@@ -128,6 +129,7 @@ CREATE TABLE `talents` (
   `photo2` varchar(100) NOT NULL,
   `photo3` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Dumping data for table `talents`
@@ -158,6 +160,7 @@ INSERT INTO `talents_events` (`talent_id`, `event_id`, `id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 3, 3);
+
 
 --
 -- Indexes for dumped tables
@@ -217,6 +220,7 @@ ALTER TABLE `booking`
 ALTER TABLE `events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
+
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -251,6 +255,7 @@ ALTER TABLE `talents_events`
 ALTER TABLE `talents_events`
   ADD CONSTRAINT `talents_events_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`),
   ADD CONSTRAINT `talents_events_ibfk_2` FOREIGN KEY (`talent_id`) REFERENCES `talents` (`id`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
