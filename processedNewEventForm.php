@@ -30,9 +30,9 @@
 
                                     echo "<h1> Your event has been saved with the following data: </h1>" . "<br>";
                                     if (in_array($uploadedFileType, $acceptedTypes)) {
-                                        if (!file_exists("img/uploadFile/" . $_FILES["photos"]["name"])) {
-                                            if(move_uploaded_file($_FILES["photos"]["tmp_name"], "uploadFile/". $_FILES["photos"]["name"])) {
-                                                $photos = "img/uploadFile/". $_FILES["photos"]["name"];
+                                        if (!file_exists("img/uploads/" . $_FILES["photos"]["name"])) {
+                                            if(move_uploaded_file($_FILES["photos"]["tmp_name"], "uploads/". $_FILES["photos"]["name"])) {
+                                                $photos = "img/uploads/". $_FILES["photos"]["name"];
 
                                                 echo "<b> You have uploaded: " . $photos . "</b> <br>";
                                                 echo '<img src="'.$photos.'" width="300px" height="auto"> <br>';

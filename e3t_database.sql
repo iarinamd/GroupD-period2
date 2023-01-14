@@ -49,7 +49,7 @@ CREATE TABLE `events` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `date` text NOT NULL,
-  `start_time` datetime NOT NULL,
+  `start_time` text NOT NULL,
   `capacity` int(11) NOT NULL,
   `category` varchar(255) NOT NULL,
   `photos` varchar(100) NOT NULL,
@@ -65,7 +65,9 @@ CREATE TABLE `events` (
 
 INSERT INTO `events` (`id`, `name`, `date`, `start_time`, `capacity`, `category`, `photos`, `location`, `zip`, `descriptions`, `hot`) VALUES
 (1, 'The Weeknd Concert', '', '2022-12-19 22:35:33', 100, '', 'img/festivals/festival_4.jpg', 'Emmen, Netherlands ', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', b'1');
-
+(2, '18th birthday', '12-02-2023', '20:00', 150, 'party', 'img/uploads/Sunny_socks_yellow.jpg', 'emmen center', '1234ab', 'birthday party ', b'0');
+(NULL, 'Test event', '4 October', '2022-11-19 22:35:00', '400', 'Concert', 'img/concerts/concert_1.jpg', 'Minecraft, Netherlands', '12345', 'THis is a concert, a concert which will happen, maybe', b'0');
+(NULL, '18th birthday', '12-02-2023', '20:00', '150', 'party', 'img/uploads/Sunny_socks_yellow.jpg', 'emmen center', '1234ab', 'birthday party ', b'0');
 -- --------------------------------------------------------
 
 --
@@ -133,7 +135,6 @@ INSERT INTO `talents` (`id`, `active`, `email`, `fName`, `lName`, `descriptions`
 (1, 1, '', 'David ', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'magic_tricks ', 'acrobatics', 'jokes', 0, '', '', 'img/b_2.jpg', '', '');
 INSERT INTO `talents` (`id`, `active`, `email`, `fName`, `lName`, `descriptions`, `speciality_1`, `speciality_2`, `speciality_3`, `phoneNr`, `bday`, `avatar`, `photo1`, `photo2`, `photo3`) VALUES (NULL, '1', 'aa@gmail.com', 'Nia', 'Smith', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'something', 'something', 'something', '11111111', '12/02/1999', 'img/b_2.jpg', 'img/b_2.jpg', 'img/b_2.jpg', 'img/b_2.jpg');
 INSERT INTO `talents` (`id`, `active`, `email`, `fName`, `lName`, `descriptions`, `speciality_1`, `speciality_2`, `speciality_3`, `phoneNr`, `bday`, `avatar`, `photo1`, `photo2`, `photo3`) VALUES (NULL, '1', 'bb@gmial.com', 'John', 'Smith', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'something', 'something', 'something', '22222', '3/03/2001', ' \r\nimg/b_2.jpg', ' \r\nimg/b_2.jpg', ' \r\nimg/b_2.jpg', ' \r\nimg/b_2.jpg');
-
 -- --------------------------------------------------------
 
 --
