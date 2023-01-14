@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0px;
+}
+
+header{
+    grid-column: 1/7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 10px 10px #888888;
+    width: 100%;
+    height: 100px;
+}
+
+header>a>img{
+    height: 100px;
+    width: auto;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    width: 50rem;
+    justify-content: space-around;
+}
+
+ul>li>a{
+    text-decoration: none;
+    color: RGBA(161, 119, 193, 1);
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    font-family: 'Montserrat', sans-serif;
+}
+#form{
+    grid-column: 1/7;
+    background-color: #D9D9D9;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+h1{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.row1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.date{
+    width: 310px;
+}
+
+.row2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+select{
+    width: 300px;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+textarea {
+    height: 150px;
+    width: 91.5%;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+.description{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+input{
+    width: 300px;
+    font-family: 'Montserrat', sans-serif;
+}
+input[type=file]{
+    border: 1px solid #555;
+}
+.dropZone{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #FFFFFF;
+    border: 1px solid #555;
+}
+input[type=submit]{
+    font-family: 'Montserrat', sans-serif;
+}
+.submitButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top:10px;
+    margin-bottom: 30px;
+}
