@@ -13,15 +13,7 @@ body {
     margin-left: 2vw;
     margin-right: 2vw;
 }
-header{
-    display: flex;
-    grid-column: 1/7;
-    gap: 20px;
-    background-color: #fffff;
-    box-shadow: 2px 2px;
-    margin-left: -2vw;
-    margin-right: -2vw;
-}
+
 #top{
     display: flex;
     grid-column: 1/7;
@@ -52,6 +44,7 @@ header{
 .top2 > button > a {
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 #about{
     display: flex;
@@ -112,7 +105,7 @@ header{
 .about2_2{
     display: flex;
     margin-left: 2vw;
-    max-width: 65vw;
+    min-width: 65vw;
 }
 .about2_2 > p{
     font-size: 24px;
@@ -235,3 +228,52 @@ header{
     height: 14vw;
     max-height: 13vw;
 }
+#wrapper {
+    background: pink;
+    border-radius: 10px;
+    width: 800px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.textarea {
+    background: none;
+    color: black;
+    font-size: 23px;
+    width: 1000px;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: Montserrat;
+}
+
+.wrapper .form .btn {
+    background: invisible;
+    color: white;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 200px;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: 0.3s all ease;
+}
+
+.wrapper .form .btn:hover {
+    opacity: 1;
+}
+a{
+    text-decoration: none;
+    color: white;
