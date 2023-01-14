@@ -23,11 +23,7 @@ try {
     $sql->bindColumn("lName",$lName);
     $sql->bindColumn("specialty_1",$specialty_1);
     $sql->bindColumn("specialty_2",$specialty_2);
-<<<<<<< HEAD
     $sql->bindColumn("specialty_3",$specialty_3);
-=======
-    $sql->bindColumn("specialty3",$specialty3);
->>>>>>> b89a8ea (bug fix to connect to db)
     $sql->bindColumn("email",$email);
     $sql->bindColumn("phoneNr",$phoneNr);
     $sql->bindColumn("bday",$bday);
