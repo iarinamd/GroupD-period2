@@ -27,7 +27,7 @@ if(isset($_SESSION['username'])){
 
 }
 else{
-    echo '<script type="text/javascript">location.href = "login2.php";</script>'; // If user is not logged in
+    echo '<script type="text/javascript">location.href = "login.php";</script>'; // If user is not logged in
 }
 
 ?>
