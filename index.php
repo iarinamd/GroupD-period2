@@ -41,11 +41,13 @@
                     //getting the artist list from the main event
                     $artistQry = $dbHandler -> prepare("SELECT * FROM `talents` LIMIT 3");
                     $artistQry -> execute();
-                    $artistQry->bindColumn("name", $artistName, PDO::PARAM_STR);
+                    $artistQry->bindColumn("fName", $artistfName, PDO::PARAM_STR);
+                    $artistQry->bindColumn("lName", $artistlName, PDO::PARAM_STR);
 
                     $mainEventArtistList = []; //init empty array
                     while($result = $artistQry->fetch(PDO::FETCH_ASSOC)){
-                        $mainEventArtistList[] = $artistName; //add artist names to array
+                        $finName = $artistfName." ".$artistlName;
+                        $mainEventArtistList[] = $finName; //add artist names to array
                     }//end while
                     $mainEventArtistList = implode(", ", $mainEventArtistList); //display the artist names
 
